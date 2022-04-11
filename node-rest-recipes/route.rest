@@ -1,0 +1,30 @@
+GET http://localhost:3000/recipes
+
+###
+POST http://localhost:3000/recipes
+Content-Type: application/json
+
+{
+        "name": "Ensaladita",
+        "recipeDescription": "Cortas lechuga y tomate, le pone un poco de vinagre y la mezclas",
+        "celiac":false,
+        "vegetarian":true,
+        "vegan":true,
+        "porciones":1
+}
+
+###
+
+DELETE  http://localhost:3000/recipes/6253b41edf3186561c1e4c96
+
+###
+
+GET http://localhost:3000/recipes/6253a9b391d22a8a141ee051
+###
+
+PATCH  http://localhost:3000/recipes/6253b6f934ca401e10a85580
+Content-Type: application/json
+
+{
+    "name": "Ensaladita 2.0"
+}
