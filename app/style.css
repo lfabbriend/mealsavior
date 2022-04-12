@@ -22,7 +22,7 @@ header{
 .navigation{
     width: 100%;
     height: 70px;
-    background: rgba(188, 188, 188, 0.964);
+    background: rgba(188, 188, 188, 0.921);
     position: relative;
     display: flex;
     justify-content: center;
@@ -99,13 +99,13 @@ body{
     display: flex;
     justify-content: center;
     position: relative;
+    overflow: auto;
 }
 
 .section-search{
     max-width: 40%;
     float: left;
     background: rgba(231, 231, 231, 0.704);
-
 
     position: relative;
     display: flex;
@@ -114,10 +114,11 @@ body{
     flex-direction: column;
     width: 100%;
     text-align: center;
+    overflow: auto;
 }
 
 .section-recipes{
-    width: 60%;
+    max-width: 60%;
     float: right;
     background: rgba(79, 91, 130, 0.704);
 
@@ -128,6 +129,7 @@ body{
     flex-direction: column;
     width: 100%;
     text-align: center;
+    overflow: auto;
 }
 
 .select-box{
@@ -135,11 +137,14 @@ body{
     background-color: #222327;
     margin: auto;
     position: relative;
+    justify-content: center;
+    align-items: center;
 }
 
 .select-filters{
     background-color: white;
-    width: 100%;
+    height: 35px;
+    width: 250px;/*buscar la manera de que sea porcentual al tamaño del contain y que no se ajuste al texto*/
     box-shadow: 0px, 0px, 0px, rgba(0, 0, 0, .16) ;
     border-radius: 1px;
     cursor: pointer;
@@ -155,4 +160,25 @@ body{
 
 form{
     padding-top: 4%;
+    padding-bottom: 4%;
+}
+
+.btn-search{
+    background-color: aqua;
+    border: none;
+    height: 35px;
+    width: 100%;
+}
+
+.btn-search :hover{
+    transform: scale(1.2);
+}
+
+h2{
+    padding-top: 3%;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
+
+h5{
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
 }
