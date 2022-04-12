@@ -5,8 +5,68 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>MealSavior</title>
+    <link rel="stylesheet" type="text/css" href="style.css">
 </head>
+
+<header>
+    <div class="navigation">
+        <ul>
+            <li class="list">
+                <a href="#">
+                    <span class="icon">
+                        <ion-icon name="home"></ion-icon>
+                    </span>
+                    <span class="text">Home</span>
+                </a>
+            </li>
+            <li class="list">
+                <a href="#">
+                    <span class="icon">
+                        <ion-icon name="search"></ion-icon>
+                    </span>
+                    <span class="text">Search</span>
+                </a>
+            </li>
+            <li class="list">
+                <a href="#">
+                    <span class="icon">
+                        <ion-icon name="add-circle-outline"></ion-icon>
+                    </span>
+                    <span class="text">Add</span>
+                </a>
+            </li>
+            <li class="list">
+                <a href="#">
+                    <span class="icon">
+                        <ion-icon name="heart-empty"></ion-icon>
+                    </span>
+                    <span class="text">Likes</span>
+                </a>
+            </li>
+            <li class="list">
+                <a href="#">
+                    <span class="icon">
+                        <ion-icon name="contact"></ion-icon>
+                    </span>
+                    <span class="text">Profile</span>
+                </a>
+            </li>
+        </ul>
+    </div>
+</header>
+
 <body>
-    
+    <div class="container">
+        <div class="section-search">
+            <h2>Select Filters</h2>
+            <input type="checkbox" name="ingredients" id="select-ingredients">
+        </div>
+        <div class="section-recipes">
+            <h2>Recipes</h2>
+        </div>
+    </div>
+
+    <script src="https://unpkg.com/ionicons@4.5.10-0/dist/ionicons.js"></script>
+    <script src="app.js"></script>
 </body>
 </html>
