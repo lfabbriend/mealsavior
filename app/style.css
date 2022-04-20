@@ -32,7 +32,9 @@ header{
 
 .navigation ul{
     display: flex;
-    width: 350px;
+    justify-content: space-around;
+    width: 100%;
+    max-width: 75vw;
 }
 
 .navigation ul li{
@@ -87,6 +89,7 @@ header{
 
 /*seccion de los containers*/
 
+
 body{
     background-image: url(img/background.jpg);
     align-items: top;
@@ -119,9 +122,7 @@ body{
 
 .section-recipes{
     max-width: 60%;
-    float: right;
     background: rgba(79, 91, 130, 0.704);
-
     position: relative;
     display: flex;
     justify-content: center;
@@ -145,7 +146,7 @@ body{
     background-color: white;
     height: 35px;
     width: 250px;/*buscar la manera de que sea porcentual al tamaño del contain y que no se ajuste al texto*/
-    box-shadow: 0px, 0px, 0px, rgba(0, 0, 0, .16) ;
+    box-shadow: 0px 0px 0px rgba(0, 0, 0, .16) ;
     border-radius: 1px;
     cursor: pointer;
     display: flex;
@@ -156,6 +157,34 @@ body{
     position: relative;
     z-index: 200;
     border: 1px solid transparent;
+}
+
+.select-filters.active, .select-filters:hover{
+    box-shadow: 0px 5px 10px rgba(0, 0, 0, .16);
+    border: 2px solid #213f8f;
+}
+
+.options{
+    background: white;
+    border-radius: 1px;
+    box-shadow: 0px 5px 10px rgba(0, 0, 0, .16);
+    max-height: 60px;
+    overflow: auto;
+    z-index: 100;
+    width: 100%;
+    display: none;
+}
+
+.options.active{
+    display: block;
+}
+
+.option-content{
+    width: 100%;
+    display: flex;
+    align-items: center;
+    border-bottom: 1px solid #213F8F;
+    transition: .2s ease all;
 }
 
 form{
