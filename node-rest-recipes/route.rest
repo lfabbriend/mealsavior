@@ -1,30 +1,52 @@
 GET http://localhost:3000/recipes
 
 ###
+GET http://localhost:3000/ingredients
+
+
+###
+
 POST http://localhost:3000/recipes
 Content-Type: application/json
 
 {
-        "name": "Ensaladita",
-        "recipeDescription": "Cortas lechuga y tomate, le pone un poco de vinagre y la mezclas",
+        "name": "Ensalada Veggie 1",
+        "recipeDescription": "Cortas lechuga, tomate y queso, le pones un poco de vinagre y la mezclas",
         "celiac":false,
         "vegetarian":true,
-        "vegan":true,
-        "porciones":1
+        "vegan":false,
+        "porciones":2,
+        "idIngredient":["6255c185c08eda03362ae136",
+                        "6255cf14355a1933564e8c9d"]
 }
-
 ###
-
-DELETE  http://localhost:3000/recipes/6253b41edf3186561c1e4c96
-
-###
-
-GET http://localhost:3000/recipes/6253a9b391d22a8a141ee051
-###
-
-PATCH  http://localhost:3000/recipes/6253b6f934ca401e10a85580
+POST http://localhost:3000/ingredients
 Content-Type: application/json
 
 {
-    "name": "Ensaladita 2.0"
+        "name": "Tomate"
 }
+
+###
+
+DELETE  http://localhost:3000/recipes/6256dce02bb69c3b48a0a925
+###
+
+DELETE  http://localhost:3000/recipes/6255e4089f5f1f81d4a99915
+###
+
+DELETE  http://localhost:3000/recipes/6255e5611adcea882e2ac330
+###
+
+DELETE  http://localhost:3000/recipes/6255e6611adcea882e2ac336
+###
+
+DELETE  http://localhost:3000/recipes/6255e6f023070a9fd3f0a3d1
+###
+
+DELETE  http://localhost:3000/recipes/6256da563458a532521b4f87
+
+###/
+GET http://localhost:3000/recipes/6255e4089f5f1f81d4a99915
+###
+
