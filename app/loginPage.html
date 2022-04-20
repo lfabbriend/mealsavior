@@ -8,6 +8,27 @@
     <link rel="stylesheet" type="text/css" href="style.css">
 </head>
 <body>
+    <div class="loginPageHeader">
+        <img src="assets/img/mealsavior.png" alt="">
+        <div class="subtitle">
+            <h3>Open your fridge, select your ingredients</h3>
+        </div>
+    </div>
+
+    <div class="containerLogin">
+        <div class="sliderSection">
+           <h4>slider section</h4>
+        </div>
+        <div class="loginSection">
+            <h3>Sign in / Login</h3>
+            <input type="text" name="user" placeholder="userName/Email" id="userUsername">
+            <input type="password" name="password" placeholder="password" id="userPassword">
+            <div class="g-signin2" data-onsuccess="onSignIn"></div><!--creo que esto va en el html-->
+            <input type="submit" name="submit" placeholder="Login" id="submitButton">
+        </div>
+    </div>
+    
     <script src="app.js"></script>
+    <script src="https://apis.google.com/js/platform.js" async defer></script>
 </body>
 </html>

@@ -91,7 +91,7 @@ header{
 
 
 body{
-    background-image: url(img/background.jpg);
+    background-color: #f5cba7;
     align-items: top;
 }
 
@@ -133,81 +133,69 @@ body{
     overflow: auto;
 }
 
-.select-box{
+/* login page */
+
+.loginPageHeader img{
+    height: 500px;
+    width: 700px;
+    padding-top: 5%;
+    padding-left: 5%;
+}
+
+.loginPageHeader h3{
+    padding-left: 10%;
+}
+.loginSection{
+    background-color: #04040475;
+}
+
+.containerLogin{
+    padding-top: 2%;
     width: 100%;
-    background-color: #222327;
-    margin: auto;
     position: relative;
+    display: flex;
+    justify-content: center;
+    position: relative;
+    overflow: auto;
+}
+.loginSection{
+    margin-right: 5%;
+    max-width: 30%;
+    float: right;
+    position: relative;
+    display: flex;
     justify-content: center;
     align-items: center;
-}
-
-.select-filters{
-    background-color: white;
-    height: 35px;
-    width: 250px;/*buscar la manera de que sea porcentual al tamaño del contain y que no se ajuste al texto*/
-    box-shadow: 0px 0px 0px rgba(0, 0, 0, .16) ;
-    border-radius: 1px;
-    cursor: pointer;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    transition: .2s ease all;
-    margin-bottom: 30px;
-    position: relative;
-    z-index: 200;
-    border: 1px solid transparent;
-}
-
-.select-filters.active, .select-filters:hover{
-    box-shadow: 0px 5px 10px rgba(0, 0, 0, .16);
-    border: 2px solid #213f8f;
-}
-
-.options{
-    background: white;
-    border-radius: 1px;
-    box-shadow: 0px 5px 10px rgba(0, 0, 0, .16);
-    max-height: 60px;
+    flex-direction: column;
+    width: 100%;
+    text-align: center;
     overflow: auto;
-    z-index: 100;
-    width: 100%;
-    display: none;
+    border-radius: 5%;
+    min-height: 300px;
 }
-
-.options.active{
-    display: block;
-}
-
-.option-content{
-    width: 100%;
+.sliderSection{
+    max-width: 65%;
+    float: left;
+    position: relative;
     display: flex;
+    justify-content: center;
     align-items: center;
-    border-bottom: 1px solid #213F8F;
-    transition: .2s ease all;
-}
-
-form{
-    padding-top: 4%;
-    padding-bottom: 4%;
-}
-
-.btn-search{
-    background-color: aqua;
-    border: none;
-    height: 35px;
+    flex-direction: column;
     width: 100%;
+    text-align: center;
+    overflow: auto;
 }
 
-.btn-search :hover{
-    transform: scale(1.2);
+.loginSection h3{
+    padding-bottom: 5%;
 }
 
-h2{
-    padding-top: 3%;
-    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+#submitButton{
+    background-color: #26997d;
 }
 
-h5{
-    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+.loginSection input{
+    width: 80%;
+    height: 20%;
+    margin: 1%;
 }
