@@ -8,7 +8,7 @@
 }
 
 :root{
-    --clr: #222327;/*fijate que hace esto*/
+    --clr: #222327;/*chequear que hace esto*/
 }
 
 header{
@@ -133,6 +133,7 @@ body{
     overflow: auto;
 }
 
+
 /* login page */
 
 .loginPageHeader img{
@@ -171,7 +172,7 @@ body{
     text-align: center;
     overflow: auto;
     border-radius: 5%;
-    min-height: 300px;
+    min-height: 400px;
 }
 .sliderSection{
     max-width: 65%;
@@ -187,15 +188,17 @@ body{
 }
 
 .loginSection h3{
-    padding-bottom: 5%;
+    padding-bottom: 8%;
+    color: white;
 }
 
 #submitButton{
     background-color: #26997d;
+    color: white;
 }
 
 .loginSection input{
     width: 80%;
-    height: 20%;
+    height: 15%;
     margin: 1%;
 }
