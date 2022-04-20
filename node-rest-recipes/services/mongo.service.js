@@ -44,7 +44,7 @@ export default class MongoBaseService {
         try {
             // const newElement = await this.#model.save(req.body);
             // res.status(201).json(newElement);
-            console.log(this.#model({}))
+            console.log(req.body)
         } catch (error) {
             this.#throwError(res, { message: error.message });
         }

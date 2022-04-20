@@ -16,15 +16,14 @@ Content-Type: application/json
         "vegetarian":true,
         "vegan":false,
         "porciones":2,
-        "idIngredient":["6255c185c08eda03362ae136",
-                        "6255cf14355a1933564e8c9d"]
+        "idIngredient":["62601f26566535e549fec517"]
 }
 ###
 POST http://localhost:3000/ingredients
 Content-Type: application/json
 
 {
-        "name": "Tomate"
+        "name": "Tomatlkhjge"
 }
 
 ###
