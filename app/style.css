@@ -167,14 +167,14 @@ body{
 /* login page */
 
 .loginPageHeader img{
-    height: 500px;
+    height: 250px;
     width: 700px;
     padding-top: 5%;
     padding-left: 5%;
 }
 
 .loginPageHeader h3{
-    padding-left: 10%;
+    padding-left: 6%;
 }
 .loginSection{
     background-color: #04040475;

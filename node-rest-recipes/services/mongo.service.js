@@ -42,9 +42,8 @@ export default class MongoBaseService {
      */
     async create(req, res) {
         try {
-            // const newElement = await this.#model.save(req.body);
-            // res.status(201).json(newElement);
-            console.log(req.body)
+            const newElement = await this.#model.save(req.body);
+            res.status(201).json(newElement);
         } catch (error) {
             this.#throwError(res, { message: error.message });
         }
