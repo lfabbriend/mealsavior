@@ -1,12 +1,6 @@
 @import url('https://fonts.googleapis.com/css?family=Poppins:100,200,300,400,500,600,700,800,900');
 
 
-
-
-/*Implementar variables, instalar sass al programa*/
-
-
-
 *{
     margin: 0;
     padding: 0;
@@ -14,11 +8,6 @@
     font-family:'Poppins', sans-serif;
 }
 
-
-
-header{
-    
-}
 
 .marca{
     background-color: black;
@@ -109,13 +98,6 @@ header{
     outline: none; /* Saco el contorno al focusear la searchbar */
 }
 
-.loginButton{
-}
-
-
-
-
-
 
 /*seccion de los containers*/
 
@@ -172,6 +154,7 @@ body{
     padding-top: 5%;
     padding-left: 5%;
 }
+
 
 .loginPageHeader p{
     padding-left: 6%;
