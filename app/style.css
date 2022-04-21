@@ -204,3 +204,81 @@ body{
     overflow: auto;
 }
 
+<<<<<<< HEAD
+=======
+
+/* login page */
+
+.loginPageHeader img{
+    height: 225px;
+    width: 700px;
+    padding-top: 5%;
+    padding-left: 5%;
+}
+
+.loginPageHeader h3{
+    padding-left: 6%;
+}
+.loginSection{
+    background-color: #04040475;
+}
+
+.containerLogin{
+    padding-top: 2%;
+    width: 100%;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    position: relative;
+    overflow: auto;
+}
+.loginSection{
+    margin-right: 5%;
+    max-width: 30%;
+    float: right;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    width: 100%;
+    text-align: center;
+    overflow: auto;
+    border-radius: 5%;
+    min-height: 300px;
+}
+.sliderSection{
+    max-width: 65%;
+    float: left;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    width: 100%;
+    text-align: center;
+    overflow: auto;
+}
+
+.loginSection h3{
+    padding-bottom: 8%;
+    color: white;
+}
+
+#submitButton{
+    background-color: #26997d;
+    color: white;
+}
+
+.loginSection input{
+    width: 80%;
+    height: 15%;
+    margin: 1%;
+}
+
+.containerLogin .sliderSection img{
+    width: 75%;
+    height: 100%;
+    border-radius: 5%;
+}
+>>>>>>> 2316df7337379a598257fe1f7cae09e6f9dcc180
