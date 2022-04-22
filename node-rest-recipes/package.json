@@ -11,7 +11,12 @@
   "license": "ISC",
   "dependencies": {
     "express": "^4.17.3",
+<<<<<<< Updated upstream
     "mongoose": "^6.3.0"
+=======
+    "jsonwebtoken": "^8.5.1",
+    "mongoose": "^6.2.10"
+>>>>>>> Stashed changes
   },
   "devDependencies": {
     "dotenv": "^16.0.0",

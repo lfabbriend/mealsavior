@@ -1,15 +1,15 @@
 import MongoBaseService from "../services/mongo.service.js";
 
-import Ingredient from "../models/ingredient.js";
+import User from "../models/user.js";
 
 
 
-export default class IngredientsService {
+export default class UsersService {
 
     #mongoBaseService;
 
     constructor() {
-        this.#mongoBaseService = new MongoBaseService(Ingredient);
+        this.#mongoBaseService = new MongoBaseService(User);
     }
 
     async getMany(req, res) {
@@ -21,7 +21,7 @@ export default class IngredientsService {
     }
 
     async create(req, res) {
-        return await this.#mongoBaseService.create(req, res);
+        return await this.#mongoBaseService.createUser(req, res);
     }
 
     async update(req, res) {
@@ -33,4 +33,3 @@ export default class IngredientsService {
     }
 
 }
-

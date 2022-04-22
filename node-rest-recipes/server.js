@@ -6,13 +6,13 @@ dotenv.config() //To get the url in a safe way (?
 
 const app = express()
 
-mongoose.connect(process.env.DATABASE_URL, { useNewUrlParser: true, useUnifiedTopology: true })
-const db = mongoose.connection
-db.on('error', (error) => console.error(error))
-db.once('open', () => console.log('Connected to Database'))
-
+mongoose.connect(process.env.DATABASE_URL, { useNewUrlParser: true, useUnifiedTopology: true }, (error) => {
+    if (error) console.error(error);
+    else console.log("Connected to Database");
+});
 
 
 app.use(express.json())
+    .use(express.urlencoded({ extended: false, limit: "5mb" }))
     .use("/", router)
-    .listen(3000, () => console.log("Server Started"));
+    .listen(process.env.PORT || 3000, () => console.log("Server Started"));
