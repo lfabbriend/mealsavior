@@ -160,9 +160,6 @@ body{
     padding-left: 6%;
     font-size: 2vw;
 }
-.loginSection{
-    background-color: #04040475;
-}
 
 .containerLogin{
     padding-top: 2%;
@@ -174,6 +171,7 @@ body{
     overflow: auto;
 }
 .loginSection{
+    background-color: #04040475;
     margin-right: 5%;
     max-width: 30%;
     float: right;
@@ -188,6 +186,10 @@ body{
     border-radius: 5%;
     min-height: 300px;
 }
+.loginSection .login-input{
+    max-height: 60px;
+}
+
 .sliderSection{
     max-width: 65%;
     float: left;
@@ -221,4 +223,10 @@ body{
     width: 75%;
     height: 100%;
     border-radius: 5%;
+}
+
+.loginSection .login-signIn{
+    display: flex;
+    color: white;
+    padding-bottom: 5%;
 }
