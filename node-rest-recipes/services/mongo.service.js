@@ -43,10 +43,6 @@ export default class MongoBaseService {
      */
     async create(req, res) {
         try {
-<<<<<<< Updated upstream
-            const newElement = await this.#model.save(req.body);
-            res.status(201).json(newElement);
-=======
             let token = this.#verifyToken(req)
             const newerror = await this.#validToken(token)
             if (newerror == false) {
@@ -56,7 +52,6 @@ export default class MongoBaseService {
             } else {
                 return res.status(403).json({ message: "Forbidden Access" })
             }
->>>>>>> Stashed changes
         } catch (error) {
             this.#throwError(res, { message: error.message });
         }
