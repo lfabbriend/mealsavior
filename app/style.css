@@ -32,6 +32,11 @@ body{
     min-height: 40px;
 }
 
+.marca:hover{
+    transform: scale(1.1);
+    transition: 0.5s;
+}
+
 .mealsaviorAncle{
     height: 40px;
     width: 100%;
