@@ -1,4 +1,3 @@
-@import url('https://fonts.googleapis.com/css?family=Poppins:100,200,300,400,500,600,700,800,900');
 @import url('https://fonts.googleapis.com/css2?family=Oxygen:wght@300;400;700&display=swap');
 
 
@@ -6,8 +5,9 @@
 /*Implementar variables, instalar sass al programa*/
 
 :root{
-    --clr: #000000;
     --font: 'Oxygen', sans-serif;
+    --primaryColor: #B1E693;
+    --secondaryColor: #f10086;
 }
 
 *{
@@ -15,10 +15,15 @@
     padding: 0;
     box-sizing: border-box;
     font-family: var(--font);
+
 }
 
 header{
     
+}
+
+body{
+    background-color: var(--primaryColor);
 }
 
 .marca{
@@ -34,91 +39,75 @@ header{
 }
 
 .navigation{
-    width: 100%;
     height: 75px;
-    background: #f10086;
+    background: var(--secondaryColor);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+}
+
+.searchZone{
+    height: 75px;
     display: flex;
     justify-content: center;
     align-items: center;
-    
-}
-
-.navigation ul{
-    display: flex;
-    justify-content: space-around;
-    align-items: center;
-    width: 100%;
-    max-width: 75vw;
-}
-
-.navigation ul li{
-    position: relative;
-    list-style: none;
-    width: 70px;
-    height: 70px;
-    z-index: 1;
-}
-
-.navigation ul li a{
-    position: relative;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-direction: column;
-    width: 100%;
-    text-align: center;
-    font-weight: 500;
-}
-
-.navigation ul li a .icon{
-    position: relative;
-    display: block;
-    line-height: 75px;
-    font-size: 1.5em;
-    text-align: center;
-    transition: 0.5s;
-    color: #000000; /*Decidir color de iconos*/
-}
-
-.navigation ul li:hover a .icon{
-    transform: translateY(-10px);
-}
-
-.navigation ul li a .text{
-    opacity: 0;
-}
-
-.navigation ul li:hover a .text{
-    position: absolute;
-    color: var(--clr);
-    font-weight: 400;
-    font-size: 0.75em;
-    letter-spacing: 0.05em;
-    transition: 0.5s;
-    opacity: 100;
-    transform: translateY(+10px);
 }
 
 .searchbar{
-    border-radius: 10px;
+    border-radius: 20px;
     padding: 6px;
     margin-right: 50px;
     font-size: 17px;
     border: 0px solid;
     height: 40px;
-    min-width: 300px;
+    min-width: 500px;
     margin-right: 10px;
 }
 
+.searchbar::placeholder{
+    padding-left: 10px;
+    font-weight: bolder;
+}
 .searchbar:focus{
     outline: none; /* Saco el contorno al focusear la searchbar */
+    background-color: lightgray;
+    transition: 150ms;
+}
+
+.sendSearchButton{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #7B0245;
+    border: 0px solid;
+    height: 40px;
+    min-width: 2.5em;
+    border-radius: 50px;
+    margin-right: 30px;
+    cursor: pointer;
+    font-weight: bolder;
+    font-size: 1em;
+    color: whitesmoke;
+}
+
+.sendSearchButton:hover{
+    background-color: #000000;
+    color: white;
+    transition: 500ms
+}
+
+.searchIcon{
+    font-size: 1.5em;
+    margin-right: 5px;
+    margin: 0;
 }
 
 .loginButton{
     display: flex;
     justify-content: center;
     align-items: center;
-    color: black;
+    color: whitesmoke;
     border: 0px solid;
     border-radius: 10px;
     padding: 6px;
@@ -126,13 +115,14 @@ header{
     font-weight: bold;
     height: 40px;
     font-size: 1em;
-    min-width: 150px;
-    background-color: #752445;
+    min-width: 100px;
+    background-color: #7B0245;
     text-decoration: none;
 }
 
 .loginButton:hover{
-    background-color: #FFA000;
+    background-color: #000000;
+    color: white;
     transition: 500ms /*Decidir velocidad de transicion*/
 }
 
@@ -141,4 +131,44 @@ header{
     margin-right: 5px
 }
 
+.container{
+    margin: 10px;
+    display: flex;
+    height: 100%;
+}
 
+.filters{
+    background-color: black;
+    display: flex;
+    justify-content: center; 
+    height: 400px;
+    width: 300px;
+    margin-left: 100px;
+    margin-top: 100px;
+    opacity: 0.5;
+    border-radius: 20px;
+    box-shadow: 0px 0px 20px #000000;
+}
+
+.filters:hover{
+    opacity: 0.8;
+    transition: 500ms;
+}
+
+.textoBlanco{
+    color: white;
+    font-size: 1.5em;
+    font-family: var(--font);
+    margin-top: 10px;
+    font-weight: bolder;
+}
+
+
+.filteredRecipes{
+    background-color: gray;
+    flex-grow: 1;
+    margin-left: 100px;
+    margin-top: 50px;
+    margin-right: 50px;
+    
+}
