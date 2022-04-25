@@ -1,44 +1,47 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Login</title>
-    <link rel="stylesheet" type="text/css" href="../style.css" />
-</head>
-<body>
-    <div class="loginPageHeader">
-        <img src="/app/assets/img/mealsavior.png" alt="">
-        <div class="subtitle">
-            <p>Open your fridge, select your ingredients</p>
-        </div>
-    </div>
+	<head>
+		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Login</title>
+		<link rel="stylesheet" type="text/css" href="../style.css" />
+	</head>
+	<body>
+		<div class="loginPageHeader">
+			<img src="/app/assets/img/mealsavior.png" alt="" />
+			<div class="subtitle">
+				<p>Open your fridge, select your ingredients</p>
+			</div>
+		</div>
 
-    <div class="containerLogin">
+		<div class="containerLogin">
+			<div class="sliderSection">
+				<img src="/app/assets/img/ensaldadita.jpg" alt="" />
+			</div>
 
-        <div class="sliderSection">
-            <img src="/app/assets/img/ensaldadita.jpg" alt="">
-        </div>
+			<div class="loginSection">
+				<div class="login-signIn">
+					<a class="signInBtn">Sign in</a>
+					<p>/</p>
+					<a class="logInBtn"> Login</a>
+				</div>
+				<input class="login-input" type="text" name="name" placeholder="Name" id="userName" />
+				<input class="login-input" type="text" name="secondName" placeholder="Second Name" id="userSecondName" />
+				<input class="login-input" type="text" name="user" placeholder="userName/Email" id="userUsername" />
+				<!--agregarle la clase signIn-input-->
+				<input
+					class="login-input"
+					type="password"
+					name="password"
+					placeholder="password"
+					id="userPassword" /><!--agregarle la clase signIn-input-->
+				<div class="g-signin2" data-onsuccess="onSignIn"></div>
+				<input class="login-input" type="submit" name="submit" placeholder="Login" id="submitButton" />
+			</div>
+		</div>
 
-
-        <div class="loginSection">
-            <div class="login-signIn">
-                <a class="signInBtn">Sign in</a>
-                <p> / </p>
-                <a class="logInBtn"> Login</a>
-            </div>
-            <input class="login-input" type="text" name="name" placeholder="Name" id="userName">
-            <input class="login-input" type="text" name="secondName" placeholder="Second Name" id="userSecondName">
-            <input class="login-input" type="text" name="user" placeholder="userName/Email" id="userUsername"> <!--agregarle la clase signIn-input-->
-            <input class="login-input" type="password" name="password" placeholder="password" id="userPassword"><!--agregarle la clase signIn-input-->
-            <div class="g-signin2" data-onsuccess="onSignIn"></div>
-            <input class="login-input" type="submit" name="submit" placeholder="Login" id="submitButton">
-        </div>
-    </div>
-    
-    
-    <script src="js/app.js"></script>
-    <script src="https://apis.google.com/js/platform.js" async defer></script>
-</body>
+		<script src="js/app.js"></script>
+		<script src="https://apis.google.com/js/platform.js" async defer></script>
+	</body>
 </html>

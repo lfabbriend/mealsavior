@@ -6,7 +6,7 @@
 	"scripts": {
 		"sass": "sass app/styles/main.scss app/style.css --style=compressed --no-source-map",
 		"sass:watch": "sass app/styles/main.scss app/style.css --style=compressed --watch",
-		"prettier": "prettier --write **/*.{js,scss,json}",
+		"prettier": "prettier --write **/*.{js,scss,json,html}",
 		"predev": "npm i",
 		"dev": "npm run sass:watch"
 	},
