@@ -177,31 +177,52 @@ body{
 
 
 .filteredComponent1{
-    border: 4px solid black;
-    justify-self: center;
-    text-align: center;
-    line-height: 225px;
-    width: 100%;
+    display: flex;
+    align-items: flex-end;
     background-image: url(https://i.blogs.es/58e562/hambruguesa/1366_2000.jpg);
     background-size: cover;
     background-repeat: no-repeat;
     background-position: center;
 }
 
+.filteredComponent1:hover{
+    opacity: 0.9;
+    transform: scale(1.01);
+    transition: 0.5s;
+    box-shadow: inset 0px 0px 20px #000000;
+}
+
 .filteredComponent{
-    justify-self: center;
-    background-color: rgb(255, 255, 255);
+    background-color: rgb(99, 99, 99);
     text-align: center;
-    line-height: 225px;
-    width: 100%;
+    height: 250px;
+    color: white;
+}
+
+.filteredComponent:hover{
+    opacity: 0.9;
+    transform: scale(1.01);
+    transition: 0.5s;
+    box-shadow: inset 0px 0px 20px #000000;
 }
 
 
-.componentTitle{
-    font-size: 1.5em;
-    font-weight: bolder;
-    margin-top: 10px;
+.componentDetailsButton{
+    display: flex;
+    justify-self: flex-end;
+    background-color: orange;
+    border-radius: 20px;
     color: white;
+    text-decoration: none;
+    font-weight: bolder;
+    font-size: 1em;
+    text-align: center;
+    padding: 6px;
+    margin: 10px;
+}
+
+.componentDetailsButton:hover{
+    transition: 0.5s;
 }
 
 .componentImage{
@@ -209,3 +230,4 @@ body{
     height: 200px;
     object-fit: cover;
 }
+
