@@ -132,16 +132,16 @@ body{
 }
 
 .container{
-    margin: 10px;
     display: flex;
-    height: 100%;
+    margin-top: 50px;
+    gap: 50px;
 }
 
 .filters{
     background-color: black;
     display: flex;
     justify-content: center; 
-    height: 400px;
+    height: 50px;
     width: 300px;
     margin-left: 100px;
     margin-top: 100px;
@@ -152,6 +152,7 @@ body{
 
 .filters:hover{
     opacity: 0.8;
+    height: 500px;
     transition: 500ms;
 }
 
@@ -165,10 +166,48 @@ body{
 
 
 .filteredRecipes{
-    background-color: gray;
-    flex-grow: 1;
-    margin-left: 100px;
-    margin-top: 50px;
-    margin-right: 50px;
-    
+    display: grid;
+    justify-content: stretch;
+    grid-template-columns: 33.33% 33.33% 33.33%;
+    width: 1300px;
+    background-color: rgb(255, 255, 255);
+    border-radius: 20px;
+
+}
+
+
+.filteredComponent1{
+    border: 4px solid black;
+    justify-self: center;
+    text-align: center;
+    line-height: 225px;
+    width: 100%;
+    background-image: url(https://i.blogs.es/58e562/hambruguesa/1366_2000.jpg);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+.filteredComponent{
+    border: 4px solid black;
+    justify-self: center;
+    background-color: rgb(255, 255, 255);
+    text-align: center;
+    line-height: 225px;
+    width: 100%;
+}
+
+
+.componentTitle{
+    font-size: 1.5em;
+    font-weight: bolder;
+    margin-top: 10px;
+    color: white;
+}
+
+
+.componentImage{
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
 }
