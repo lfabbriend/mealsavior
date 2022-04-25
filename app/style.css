@@ -189,7 +189,6 @@ body{
 }
 
 .filteredComponent{
-    border: 4px solid black;
     justify-self: center;
     background-color: rgb(255, 255, 255);
     text-align: center;
@@ -204,7 +203,6 @@ body{
     margin-top: 10px;
     color: white;
 }
-
 
 .componentImage{
     width: 100%;
