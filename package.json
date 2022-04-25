@@ -1,0 +1,28 @@
+{
+	"name": "mealsavior",
+	"version": "1.0.0",
+	"description": "",
+	"main": "index.js",
+	"scripts": {
+		"sass": "sass app/styles/main.scss app/style.css --style=compressed --no-source-map",
+		"sass:watch": "sass app/styles/main.scss app/style.css --style=compressed --watch",
+		"prettier": "prettier --write **/*.{js,scss,json}",
+		"predev": "npm i",
+		"dev": "npm run sass:watch"
+	},
+	"repository": {
+		"type": "git",
+		"url": "git+https://github.com/lfabbriend/mealsavior.git"
+	},
+	"keywords": [],
+	"author": "",
+	"license": "ISC",
+	"bugs": {
+		"url": "https://github.com/lfabbriend/mealsavior/issues"
+	},
+	"homepage": "https://github.com/lfabbriend/mealsavior#readme",
+	"devDependencies": {
+		"prettier": "^2.6.2",
+		"sass": "^1.50.1"
+	}
+}
