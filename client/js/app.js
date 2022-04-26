@@ -1,3 +1,3 @@
-function funcionTotalmenteInutilDePrueba() {
-	console.log('Jaja soy un boton'); /*No jero, no sos gracioso. */
-}
+const btn = document.getElementById("logInBtn");
+
+btn.addEventListener("click", ()=> {console.log("hola")});
