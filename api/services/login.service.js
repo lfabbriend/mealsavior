@@ -13,7 +13,7 @@ export default class UsersService {
     }
 
     async getMany(req, res) {
-        return await this.#mongoBaseService.getMany(req, res);
+        return await this.#mongoBaseService.getManyPop(req, res,'ownrecipes favrecipes'); //The two properties separated by a space so that it does the populate automatically
     }
 
     async getOne(req, res) {

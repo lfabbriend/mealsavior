@@ -12,7 +12,19 @@ const usersSchema = mongoose.Schema({
 	email: {
 		type: String,
 		required: true
-	}
+	},
+	ownrecipes: [
+		{
+			type: mongoose.Schema.Types.ObjectId,
+			ref: 'Recipe'
+		}
+	],
+	favrecipes: [
+		{
+			type: mongoose.Schema.Types.ObjectId,
+			ref: 'Recipe'
+		}
+	]
 });
 
 export default mongoose.model('User', usersSchema);

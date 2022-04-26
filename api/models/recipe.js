@@ -1,6 +1,4 @@
 import mongoose from 'mongoose';
-//var Ingredient = mongoose.model('Ingredient');
-import Ingredient from '../models/ingredient.js';
 
 const recipeSchema = new mongoose.Schema({
 	name: {
