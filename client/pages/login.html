@@ -20,28 +20,21 @@
 				<img src="../assets/img/ensaldadita.jpg" alt="" />
 			</div>
 
-			<div class="loginSection">
+			<form class="loginSection" id="loginForm" method="post">
 				<div class="login-signIn">
 					<a class="signInBtn">Sign in</a>
 					<p>/</p>
 					<a class="logInBtn"> Login</a>
 				</div>
-				<input class="login-input" type="text" name="name" placeholder="Name" id="userName" />
-				<input class="login-input" type="text" name="secondName" placeholder="Second Name" id="userSecondName" />
-				<input class="login-input" type="text" name="user" placeholder="userName/Email" id="userUsername" />
-				<!--agregarle la clase signIn-input-->
-				<input
-					class="login-input"
-					type="password"
-					name="password"
-					placeholder="password"
-					id="userPassword" /><!--agregarle la clase signIn-input-->
+				<input class="login-input" type="text" name="userName" placeholder="Name" required />
+				<input class="login-input" type="email" name="email" placeholder="userName/Email" required />
+				<input class="login-input" type="password" name="password" placeholder="password" required />
 				<div class="g-signin2" data-onsuccess="onSignIn"></div>
-				<input class="login-input" type="submit" name="submit" placeholder="Login" id="submitButton" />
-			</div>
+				<input class="login-input" type="submit" value="Login" id="submitButton" />
+			</form>
 		</div>
 
-		<script src="client\js\app.js"></script>
+		<script src="../js/app.js" type="module"></script>
 		<script src="https://apis.google.com/js/platform.js" async defer></script>
 	</body>
 </html>
