@@ -1,0 +1,4 @@
+//If this is the first time you run the api you should install this node modules
+npm init
+npm i express mongoose jsonwebtoken
+npm i save-dev dotenv nodemon

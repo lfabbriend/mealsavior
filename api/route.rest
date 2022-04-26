@@ -1,3 +1,5 @@
+@token = eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjp7InVzZXJOYW1lIjoieW9wIiwicGFzc3dvcmQiOiJqdWVnb3M5ODciLCJlbWFpbCI6IkBnbWFpbGwuY29tIiwiX2lkIjoiNjI2ODA5Mzk0OGFkZGE1ODMzNjkzNWRmIiwiX192IjowfSwiaWF0IjoxNjUwOTg1MjczfQ.-XtjI2wVrwgGBtvs1J9yxqqUF2hMyBGEqzMaYLEwnMA
+
 GET http://localhost:3000/recipes
 
 ###
@@ -10,7 +12,7 @@ POST http://localhost:3000/recipes
 Content-Type: application/json
 
 {
-        "name": "Ensalada Veggie 1",
+        "name": "Ensalada Veggie 433",
         "recipeDescription": "Cortas lechuga, tomate y queso, le pones un poco de vinagre y la mezclas",
         "celiac":false,
         "vegetarian":true,
@@ -22,28 +24,21 @@ Content-Type: application/json
 POST http://localhost:3000/ingredients
 Content-Type: application/json
 
+Authorization: Bearer {{token}}
 {
-        "name": "Tomatlkhjge"
+        "name": "quesito sancor"
 }
 
 ###
+POST http://localhost:3000/login
+Content-Type: application/json
 
-DELETE  http://localhost:3000/recipes/6256dce02bb69c3b48a0a925
-###
+{
+        "userName": "yop",
+        "password":"juegos987",
+        "email":"@gmaill.com"
+}
 
-DELETE  http://localhost:3000/recipes/6255e4089f5f1f81d4a99915
-###
-
-DELETE  http://localhost:3000/recipes/6255e5611adcea882e2ac330
-###
-
-DELETE  http://localhost:3000/recipes/6255e6611adcea882e2ac336
-###
-
-DELETE  http://localhost:3000/recipes/6255e6f023070a9fd3f0a3d1
-###
-
-DELETE  http://localhost:3000/recipes/6256da563458a532521b4f87
 
 ###/
 GET http://localhost:3000/recipes/6255e4089f5f1f81d4a99915

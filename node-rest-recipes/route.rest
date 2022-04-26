@@ -23,29 +23,16 @@ POST http://localhost:3000/ingredients
 Content-Type: application/json
 
 {
-        "name": "Tomatlkhjge"
+        "name": "Lechuga"
 }
 
 ###
+POST http://localhost:3000/login
+Content-Type: application/json
 
-DELETE  http://localhost:3000/recipes/6256dce02bb69c3b48a0a925
-###
-
-DELETE  http://localhost:3000/recipes/6255e4089f5f1f81d4a99915
-###
-
-DELETE  http://localhost:3000/recipes/6255e5611adcea882e2ac330
-###
-
-DELETE  http://localhost:3000/recipes/6255e6611adcea882e2ac336
-###
-
-DELETE  http://localhost:3000/recipes/6255e6f023070a9fd3f0a3d1
-###
-
-DELETE  http://localhost:3000/recipes/6256da563458a532521b4f87
-
-###/
-GET http://localhost:3000/recipes/6255e4089f5f1f81d4a99915
-###
+{
+        "userName": "fran",
+        "password":"123",
+        "email":"@gmaill.com"
+}
 

@@ -2,7 +2,7 @@ import dotenv from 'dotenv';
 import express from 'express';
 import mongoose from 'mongoose';
 import router from './routes/index.js';
-dotenv.config(); //To get the url in a safe way (?
+dotenv.config(); //To get the url in a safe way 
 
 const app = express();
 
