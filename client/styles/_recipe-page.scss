@@ -1,0 +1,23 @@
+
+.recipeDetailsComponent{   
+    display: flex;
+    margin: auto;
+    margin-top: 100px;
+    background-color: var(--secondary-color2);
+    border-radius: 20px;
+    width: 50%;
+    height: 500px;
+    
+}
+
+.recipeImageComponent{
+    display: flex;
+    justify-content: center;
+    width: 50%;
+    overflow: hidden;
+
+}
+
+.recipeDetails{
+    width: 50%
+}
