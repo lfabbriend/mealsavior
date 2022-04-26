@@ -1,22 +1,47 @@
 {
-	"type": "module",
-	"name": "rest-recipes",
-	"version": "1.0.0",
-	"description": "",
-	"main": "index.js",
-	"scripts": {
-		"devStart": "nodemon server.js",
-		"start": "node server.js"
-	},
-	"author": "",
-	"license": "ISC",
-	"dependencies": {
-		"express": "^4.17.3",
-		"jsonwebtoken": "^8.5.1",
-		"mongoose": "^6.2.10"
-	},
-	"devDependencies": {
-		"dotenv": "^16.0.0",
-		"nodemon": "^2.0.15"
-	}
+
+    "type": "module",
+
+    "name": "rest-recipes",
+
+    "version": "1.0.0",
+
+    "description": "",
+
+    "main": "index.js",
+
+    "scripts": {
+
+        "predevStart": "npm i",
+
+        "devStart": "nodemon server.js",
+
+        "prestart": "npm i",
+
+        "start": "node server.js"
+
+    },
+
+    "author": "",
+
+    "license": "ISC",
+
+    "dependencies": {
+
+        "express": "^4.17.3",
+
+        "jsonwebtoken": "^8.5.1",
+
+        "mongoose": "^6.2.10"
+
+    },
+
+    "devDependencies": {
+
+        "dotenv": "^16.0.0",
+
+        "nodemon": "^2.0.15"
+
+    }
+
 }
