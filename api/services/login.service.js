@@ -21,6 +21,7 @@ export default class UsersService {
     }
 
     async create(req, res) {
+        console.log(req.body);
         return await this.#mongoBaseService.createUser(req, res);
     }
 

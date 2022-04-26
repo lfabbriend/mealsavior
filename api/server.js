@@ -1,8 +1,9 @@
 import dotenv from 'dotenv';
 import express from 'express';
 import mongoose from 'mongoose';
+import cors from 'cors';
 import router from './routes/index.js';
-dotenv.config(); //To get the url in a safe way 
+dotenv.config(); //To get the url in a safe way
 
 const app = express();
 
@@ -13,5 +14,6 @@ mongoose.connect(process.env.DATABASE_URL, { useNewUrlParser: true, useUnifiedTo
 
 app.use(express.json())
 	.use(express.urlencoded({ extended: false, limit: '5mb' }))
+	.use(cors())
 	.use('/', router)
 	.listen(process.env.PORT || 3000, () => console.log('Server Started'));
