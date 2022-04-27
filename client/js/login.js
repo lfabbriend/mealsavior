@@ -9,7 +9,7 @@ form.addEventListener('submit', event => {
 	const email = formData.get('email');
 	const password = formData.get('password');
 	fetch(`${baseApiUrl}/login`, {
-		method: 'POST',
+		method: 'GET',
 		body: JSON.stringify({
 			userName,
 			email,
