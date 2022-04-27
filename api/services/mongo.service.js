@@ -1,5 +1,6 @@
 import mongoose from "mongoose";
 import JWTBaseService from "../services/jwt.service.js";
+import jwt from "jsonwebtoken"
 
 export default class MongoBaseService {
     #model;
@@ -117,7 +118,7 @@ export default class MongoBaseService {
         try {
             const newElement = new this.#model(req.body);
             const savedElement = await newElement.save();
-            this.#jwtBaseService.jwt.sign({ user: newElement }, 'secretkey', (error, token) => {
+            jwt.sign({ user: newElement }, 'secretkey', (error, token) => {
                 res.status(201).json([savedElement, token]);
             })
             // res.status(201).json(savedElement);

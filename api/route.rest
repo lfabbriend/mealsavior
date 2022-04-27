@@ -5,6 +5,9 @@ GET http://localhost:3000/recipes
 ###
 GET http://localhost:3000/ingredients
 
+###
+GET http://localhost:3000/login
+
 
 ###
 
@@ -23,7 +26,6 @@ Content-Type: application/json
 ###
 POST http://localhost:3000/ingredients
 Content-Type: application/json
-
 Authorization: Bearer {{token}}
 {
         "name": "quesito sancor"
