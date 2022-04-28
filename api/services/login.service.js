@@ -1,5 +1,5 @@
 import MongoBaseService from "../services/mongo.service.js";
-
+import AuthBaseService from "../services/auth.service.js"
 import User from "../models/user.js";
 
 
@@ -7,14 +7,16 @@ import User from "../models/user.js";
 export default class UsersService {
 
     #mongoBaseService;
-
+    #authBaseService;
     constructor() {
         this.#mongoBaseService = new MongoBaseService(User);
+        this.#authBaseService = new AuthBaseService(User);
     }
 
-    // async getLogIn(req, res) {
-    //     return await this.#mongoBaseService.getManyPop(req, res); //The two properties separated by a space so that it does the populate automatically
-    // }
+    async getLogIn(req, res) {
+        return await this.#authBaseService.verifyAuthentication(req, res); //The two properties separated by a space so that it does the populate automatically
+        
+    }
     async getMany(req, res) {
         return await this.#mongoBaseService.getManyPop(req, res,'ownrecipes favrecipes'); //The two properties separated by a space so that it does the populate automatically
     }

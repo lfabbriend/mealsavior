@@ -4,9 +4,7 @@ import jwt from "jsonwebtoken"
 
 export default class MongoBaseService {
     #model;
-
     #jwtBaseService;
-
 
     constructor(model) {
         this.#model = model;
@@ -121,10 +119,6 @@ export default class MongoBaseService {
         try {
             const newElement = new this.#model(req.body);
             const savedElement = await newElement.save();
-            // // const a = await this.#jwtBaseService.createToken(savedElement)
-            // console.log('llego aca')
-            // console.log(await this.#jwtBaseService.createToken(savedElement))
-            // res.status(201).json(a)
             jwt.sign({ user: savedElement }, 'secretkey', (error, token) => {
                 res.status(201).json([savedElement, token]);
             })

@@ -4,46 +4,34 @@ import createError from 'http-errors'
 export default class AuthaseService {
     #model;
 
-    #jwtBaseService;
 
 
     constructor(model) {
         this.#model = model;
-        this.#jwtBaseService = new JWTBaseService()
     }
-    verifyAuthentication(req, res) {
+    async verifyAuthentication(req, res) {
         try {
-            const user = await User.findOne({ username: req.body.username })
-            if (!user) throw createError.NotFound('User not registered')
+            const newElement = new this.#model(req.body);
+            const userSearched = await User.findOne({ userName: newElement.userName });
 
-            const isMatch = await user.isValidPassword(req.body.password)
-            if (!isMatch)
-                throw createError.Unauthorized('Username/password not valid')
-
-            jwt.sign({ user: user }, 'secretkey', (error, token) => {
-                res.status(201).json([savedElement, token]);
+            if (!userSearched) return this.#throwError(res, { message: "Invalid User/Password" });
+            const isMatch = await userSearched.isValidPassword(newElement.password)
+            if (!isMatch) return this.#throwError(res, { message: "Invalid User/Password" });
+            jwt.sign({ user: userSearched }, 'secretkey', (error, token) => {
+                res.status(201).json([token]);
             })
         } catch (error) {
-            if (error.isJoi === true)
-                return next(createError.BadRequest('Invalid Username/Password'))
-            next(error)
+            this.#throwError(res, { message: error.message });
         }
     }
 
+    // #region Private methods
 
-    verifyToken(req, res) {
-        const bearerHeader = req.headers["authorization"];
-        if (typeof bearerHeader !== 'undefined') {
-            const bearerToken = bearerHeader.split(" ")[1];
-            return bearerToken;
-        } else {
-            return res.status(500).json({ message: err.message })
-        }
+    /**
+     * Returns an error code and message
+     */
+    #throwError(res, { code = 500, message }) {
+        return res.status(code).json({ message });
     }
-
-    validToken(token) {
-
-        let valor = jwt.verify(token, 'secretkey', (error) => !!error)
-        return valor
-    }
+    // #endregion
 }
