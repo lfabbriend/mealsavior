@@ -7,10 +7,10 @@ export default class MongoBaseService {
 
     #jwtBaseService;
 
-    
+
     constructor(model) {
         this.#model = model;
-        this.#jwtBaseService= new JWTBaseService()
+        this.#jwtBaseService = new JWTBaseService()
     }
 
     // #region Public methods
@@ -81,8 +81,8 @@ export default class MongoBaseService {
             const newerror = this.#jwtBaseService.validToken(token)
             if (newerror == false) {
                 if (this.#isValidId(req.params.id)) {
-                  // const updatedElement = await this.#model.findOneAndUpdate({ id: mongoose.Types.ObjectId(req.params.id) }, req.body,{ new: true });
-                    const updatedElement = await this.#model.findByIdAndUpdate(mongoose.Types.ObjectId(req.params.id), req.body,{ new: true });
+                    // const updatedElement = await this.#model.findOneAndUpdate({ id: mongoose.Types.ObjectId(req.params.id) }, req.body,{ new: true });
+                    const updatedElement = await this.#model.findByIdAndUpdate(mongoose.Types.ObjectId(req.params.id), req.body, { new: true });
                     res.json(updatedElement);
                 } else {
                     this.#throwError(res, { message: "Invalid ID" });
@@ -111,6 +111,9 @@ export default class MongoBaseService {
         }
     }
 
+    // #endregion
+
+    // #region User Methods
     /**
      * Creates a new user
      */
@@ -118,7 +121,11 @@ export default class MongoBaseService {
         try {
             const newElement = new this.#model(req.body);
             const savedElement = await newElement.save();
-            jwt.sign({ user: newElement }, 'secretkey', (error, token) => {
+            // // const a = await this.#jwtBaseService.createToken(savedElement)
+            // console.log('llego aca')
+            // console.log(await this.#jwtBaseService.createToken(savedElement))
+            // res.status(201).json(a)
+            jwt.sign({ user: savedElement }, 'secretkey', (error, token) => {
                 res.status(201).json([savedElement, token]);
             })
             // res.status(201).json(savedElement);
@@ -143,21 +150,5 @@ export default class MongoBaseService {
     #isValidId(id) {
         return mongoose.Types.ObjectId.isValid(id);
     }
-
-    // // Authorization: Bearer <token>
-    // #verifyToken(req, res) {
-    //     const bearerHeader = req.headers["authorization"];
-    //     if (typeof bearerHeader !== 'undefined') {
-    //         const bearerToken = bearerHeader.split(" ")[1];
-    //         return bearerToken;
-    //     } else {
-    //         return res.status(500).json({ message: err.message })
-    //     }
-    // }
-    // #validToken(token) {
-
-    //     let valor = jwt.verify(token, 'secretkey', (error) => !!error)
-    //     return valor
-    // }
     // #endregion
 }

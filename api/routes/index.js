@@ -33,6 +33,8 @@ router.delete("/ingredients/:id", ingredientsService.delete.bind(ingredientsServ
 // login routes
 router.get("/login", loginServiceService.getMany.bind(loginServiceService)); //bind para no perder refencia del service que estoy usando
 
+router.get("/login/all", loginServiceService.getMany.bind(loginServiceService)); //bind para no perder refencia del service que estoy usando
+
 router.get("/login/:id", loginServiceService.getOne.bind(loginServiceService));
 
 router.post("/login", loginServiceService.create.bind(loginServiceService));
