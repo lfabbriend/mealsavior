@@ -1,6 +1,6 @@
 import { baseApiUrl } from './utils/constants.js';
 
-const form = document.getElementById('loginForm');
+const form = document.getElementById('signUpForm');
 
 form.addEventListener('submit', event => {
 	event.preventDefault();
@@ -9,7 +9,8 @@ form.addEventListener('submit', event => {
 	const email = formData.get('email');
 	const password = formData.get('password');
 	fetch(`${baseApiUrl}/login`, {
-		method: 'GET',
+		//acá iría una ruta singup a la API
+		method: 'POST',
 		body: JSON.stringify({
 			userName,
 			email,
