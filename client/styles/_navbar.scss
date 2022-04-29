@@ -36,7 +36,7 @@
 	}
 }
 
-.sendSearchButton {
+.sendSearchBtn {
 	display: flex;
 	justify-content: center;
 	align-items: center;
@@ -52,7 +52,7 @@
 	color: whitesmoke;
 }
 
-.sendSearchButton:hover {
+.sendSearchBtn:hover {
 	background-color: #000000;
 	color: white;
 	transition: 500ms;
@@ -64,7 +64,7 @@
 	margin: 0;
 }
 
-.loginButton {
+.loginBtn {
 	display: flex;
 	justify-content: center;
 	align-items: center;
@@ -81,7 +81,7 @@
 	text-decoration: none;
 }
 
-.loginButton:hover {
+.loginBtn:hover {
 	background-color: #000000;
 	color: white;
 	transition: 500ms; /*Decidir velocidad de transicion*/
