@@ -1,5 +1,10 @@
 import { Rater } from './rater.js';
 
+import "../slider/js/types.js";
+import "../components/index.js"
+import { setSlider } from "../components/index.js";
+import { slides } from "../slider/js/slides.js";
+
 const btn = document.getElementById("logInBtn");
 
 document.addEventListener('DOMContentLoaded', function(){
@@ -8,3 +13,6 @@ document.addEventListener('DOMContentLoaded', function(){
 		new Rater(rater);
 	});
 });
+
+const slider = setSlider(slides, true);
+document.body.append(slider);

@@ -6,6 +6,7 @@
 		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 		<title>Login</title>
 		<link rel="stylesheet" type="text/css" href="../style.css" />
+		<link rel="stylesheet" type="text/css" href="../slider/components/style.css" />
 	</head>
 	<body>
 		<div class="loginPageHeader">
@@ -17,7 +18,22 @@
 
 		<div class="containerLogin">
 			<div class="sliderSection">
-				<img src="../assets/img/ensaldadita.jpg" alt="" />
+				<template id="slider-template">
+					<div class="slider">
+						<button class="slider-prev-btn"></button>
+						<button class="slider-next-btn"></button>
+						<div class="slider-dots"></div>
+					</div>
+				</template>
+		
+				<template id="slide-template">
+					<div class="slide">
+						<div class="slide-text">
+							<h2 id="slide-title"></h2>
+							<p id="slide-description"></p>
+						</div>
+					</div>
+				</template>
 			</div>
 
 			<form class="loginSection" id="loginForm" method="post">
@@ -32,15 +48,7 @@
 			</form>
 		</div>
 
-		
-
 		<script src="../js/app.js" type="module"></script>
-		<script src="./js/googlelogin.js" async defer></script>
 		<script src="https://apis.google.com/js/platform.js" async defer></script>
-		<script
-			src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/js/bootstrap.bundle.min.js"
-			integrity="sha384-p34f1UUtsS3wqzfto5wAAmdvj+osOnFyQFpp4Ua3gs/ZVWx6oOypYoCJhGGScy+8"
-			crossorigin="anonymous"></script>
-		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 	</body>
 </html>
