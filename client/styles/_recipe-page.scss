@@ -57,7 +57,7 @@ span{
 	background-color: #f0ece7;
 	padding: 1.875rem 15px;
 	width: 1200px;
-	height: 100px;
+    height: 100%;
     font-size: 1.5em;
 	h1 {
 		font-family: var(--secondary-font);
@@ -72,7 +72,7 @@ span{
 .recipeDetailsRate {
 	margin: auto;
 	width: 1200px;
-	height: 100px;
+    height: 100%;
 	background-color: white;
 	color: var(--texto-color);
 	padding: 40px;
@@ -81,10 +81,9 @@ span{
 .recipeDetails {
 	margin: auto;
 	width: 1200px;
-	height: 150px;
+	height: 100%;
 	background-color: white;
     padding: 40px;
-    padding-bottom: 0px;
     vertical-align: baseline;
     color: var(--text-color);
 }
@@ -98,7 +97,7 @@ span{
     background-color: #7E634E;
     width: 1200px;
     margin: auto;
-    height: 350px;
+    height: 100%;
     font-weight: 400;
     font-family: var(--secondary-font);
     padding: 40px;
@@ -122,4 +121,71 @@ span{
         margin-left: 20px;
     }
 }
+
+
+.recipeInstructions{
+    width: 1200px;
+    margin: auto;
+    padding: 40px;
+    height: 100%;
+    background-color: white;
+    font-size: 1.5rem;
+    color: #7E634E;
+    h2{
+        font-family: var(--secondary-font);
+        margin-bottom: 20px;
+        margin-left: 40px;
+        text-decoration: underline;
+    }
+    .numberItem{
+        vertical-align: baseline;
+        margin-right: 25px;
+        color: var(--texto-color);
+    }
+    .instructionItem{
+        font-family: var(--secondary-font);
+        color: #7E634E;
+        font-weight: 200;
+        list-style-type: none;
+        margin-bottom: 20px;
+    }
+
+    .doneButton{
+        background-color: white;
+        color: #7E634E;
+        font-family: var(--secondary-font);
+        font-weight: bolder;
+        font-size: 1.5rem;
+        border: #7E634E solid 5px;
+        border-radius: 5px;
+        padding: 10px;
+        margin-top: 20px;
+        margin-left: 40px;
+        margin-bottom: 20px;
+    }
+
+    .doneButton:hover{
+        background-color: #7E634E;
+        color: white;
+        font-family: var(--secondary-font);
+        font-weight: bolder;
+        font-size: 1.5rem;
+        border: #7E634E solid 5px;
+        border-radius: 5px;
+        padding: 10px;
+        margin-top: 20px;
+        margin-left: 40px;
+        margin-bottom: 20px;
+        transition: 750ms;
+    }
+}
+
+.doneButtonContainer{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+
+
 
