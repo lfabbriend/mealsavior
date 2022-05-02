@@ -15,4 +15,8 @@ document.addEventListener('DOMContentLoaded', function(){
 });
 
 const slider = setSlider(slides, true);
-document.body.append(slider);
+
+const containerSlider = document.querySelector("#sliderContainer");
+containerSlider.appendChild(slider); 
+
+//document.body.append(slider);

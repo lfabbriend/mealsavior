@@ -127,7 +127,6 @@ class Slider extends HTMLElement {
     getCurrentIndex() {
         return +this.getAttribute("current");
     }
-
 }
 
 // The component definition
@@ -136,6 +135,6 @@ customElements.define("app-slider", Slider);
 export function setSlider(slides, infinite = false) {
     const slider = document.createElement("app-slider");
     slider.slides = slides;
-    slider.infinite = infinite; 
+    slider.infinite = infinite;
     return slider;
 }
