@@ -8,7 +8,7 @@ form.addEventListener('submit', event => {
 	const userName = formData.get('userName');
 	const password = formData.get('password');
 	fetch(`${baseApiUrl}/login`, {
-		method: 'GET',
+		method: 'POST',
 		body: JSON.stringify({
 			userName,
 			password
@@ -19,6 +19,6 @@ form.addEventListener('submit', event => {
 		}
 	})
 		.then(response => response.json())
-		.then(json => console.log(json))
+		.then(json => localStorage.setItem('token', json[0])) //validate that is a tokem, not an error
 		.catch(error => console.warn(error));
 });
