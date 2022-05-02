@@ -139,7 +139,7 @@ span{
     }
     .numberItem{
         vertical-align: baseline;
-        margin-right: 25px;
+        margin-right: 15px;
         color: var(--texto-color);
     }
     .instructionItem{
@@ -147,7 +147,13 @@ span{
         color: #7E634E;
         font-weight: 200;
         list-style-type: none;
-        margin-bottom: 20px;
+        margin-bottom: 25px;
+    }
+
+    .instructionItem:hover{
+        transform: scale(1.025);
+        font-weight: bolder;
+        transition: 200ms;
     }
 
     .doneButton{
@@ -157,26 +163,17 @@ span{
         font-weight: bolder;
         font-size: 1.5rem;
         border: #7E634E solid 5px;
-        border-radius: 5px;
+        border-radius: 10px;
         padding: 10px;
         margin-top: 20px;
-        margin-left: 40px;
         margin-bottom: 20px;
     }
 
     .doneButton:hover{
         background-color: #7E634E;
         color: white;
-        font-family: var(--secondary-font);
-        font-weight: bolder;
-        font-size: 1.5rem;
-        border: #7E634E solid 5px;
-        border-radius: 5px;
-        padding: 10px;
-        margin-top: 20px;
-        margin-left: 40px;
-        margin-bottom: 20px;
-        transition: 750ms;
+        transition: all 500ms;
+        cursor: pointer;
     }
 }
 
@@ -186,6 +183,55 @@ span{
     align-items: center;
 }
 
+.nutritionContainer{
+    width: 1200px;
+    height: 100%;
+    margin: auto;
+    background-color: white;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
 
 
+.nutritionButton{
+    background-color: #7E634E;
+    color: white;
+    font-family: var(--secondary-font);
+    font-weight: bolder;
+    font-size: 1.5rem;
+    border: #7E634E solid 5px;
+    border-radius: 5px;
+    padding: 10px;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    cursor: pointer;
+}
 
+.nutritionButton:hover{
+    background-color: white;
+    color: #7E634E;
+    transition: 500ms;
+    cursor: pointer;
+}
+
+.nutritionFacts{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    overflow: hidden;
+    height: 0;
+    transition: all 500ms;
+}
+
+.nutritionFacts2{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    height: auto;
+    transition: all 500ms;
+}
