@@ -1,0 +1,52 @@
+.footerActionZone{
+
+}
+
+.buttonFooter{
+    height: 400px;
+    width: 400px;
+}
+
+
+
+
+
+
+
+
+
+
+.footerBody{
+    display: flex;
+    flex-basis: 0;
+    justify-content: flex-end;
+    background-color: #7E634E;
+    width: 100%;
+    height: auto;
+    .footerRight{
+        display: flex;
+        flex-direction: column;
+        align-items: center;    
+        height: auto;
+        padding: 20px;
+        gap: 10px;
+        a{
+            color: white;
+            text-decoration: none;
+        }
+        .socialMedia{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 20px;
+            width: 100%;
+            height: auto;
+            :hover{
+                color: gray;
+                transition: color ease-in 250ms;
+            }
+        }
+
+    }
+}
+
