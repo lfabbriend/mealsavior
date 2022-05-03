@@ -19,14 +19,7 @@ span{
     font-size: 1.5rem;
 }
 
-.detailsItem{
-    list-style-type: none;
-    font-family: var(--secondary-font);
-    color: var(--texto-color);
-    font-weight: bolder;
-    font-weight: 900;
-    font-size: 1.5rem;
-}
+
 
 .recipeDetailsImage {
 	display: flex;
@@ -69,24 +62,42 @@ span{
 	}
 }
 
-.recipeDetailsRate {
+.recipeDetailsContainer {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
 	margin: auto;
 	width: 1200px;
     height: 100%;
 	background-color: white;
-	color: var(--texto-color);
+	color: var(--text-color);
 	padding: 40px;
+    vertical-align: baseline;
 }
 
-.recipeDetails {
-	margin: auto;
-	width: 1200px;
-	height: 100%;
-	background-color: white;
-    padding: 40px;
-    vertical-align: baseline;
+
+
+.detailsItem{
+    list-style-type: none;
+    font-family: var(--secondary-font);
     color: var(--text-color);
+    font-weight: bolder;
+    font-weight: 900;
+    font-size: 1.5rem;
 }
+
+
+.raterStar{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    font-size: 2rem;
+    height: auto;
+    .star{
+        color: gray;
+    }
+}
+
 
 .listIcon{
     color: var(--text-color);
@@ -172,7 +183,7 @@ span{
     .doneButton:hover{
         background-color: #7E634E;
         color: white;
-        transition: all 500ms;
+        transition: background-color ease-in 250ms, color ease-in 250ms;
         cursor: pointer;
     }
 }
@@ -185,7 +196,7 @@ span{
 
 .nutritionContainer{
     width: 1200px;
-    height: 100%;
+    height: auto;
     margin: auto;
     background-color: white;
     display: flex;
@@ -203,35 +214,42 @@ span{
     border: #7E634E solid 5px;
     border-radius: 5px;
     padding: 10px;
-    margin-top: 20px;
-    margin-bottom: 20px;
+    margin-top: 10px;
+    margin-bottom: 10px;
     cursor: pointer;
+    text-decoration: underline;
 }
 
 .nutritionButton:hover{
     background-color: white;
     color: #7E634E;
-    transition: 500ms;
+    transition: background-color ease-in 250ms, color ease-in 250ms;
     cursor: pointer;
 }
 
 .nutritionFacts{
-    display: flex;
+    display: none;
     flex-direction: column;
     align-items: center;
     margin-top: 20px;
-    margin-bottom: 20px;
+    margin-bottom: 10px;
     overflow: hidden;
-    height: 0;
-    transition: all 500ms;
+    &.visible{
+        display: flex;
+        background-color: #f0ece7;
+        animation: reveal ease-out forwards 300ms;
+        transform-origin: top;
+        font-weight: bolder;
+        padding: 15px;
+        margin-bottom: 30px;
+    }
 }
 
-.nutritionFacts2{
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    margin-top: 20px;
-    margin-bottom: 20px;
-    height: auto;
-    transition: all 500ms;
+@keyframes reveal {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
 }

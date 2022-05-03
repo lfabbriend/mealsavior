@@ -1,6 +1,6 @@
-const nutritionButton = document.querySelector('#nutritionButton');
-const nutritionFacts = document.querySelector('#nutritionFacts');
+const button = document.querySelector('.nutritionButton')
+const facts = document.querySelector('#nutritionFacts')
 
-nutritionButton.addEventListener('click', () => {
-    nutritionFacts.classList.toggle("nutritionFacts2");
-})
+button.addEventListener('click', () => {
+    facts.classList.toggle('visible')
+});
