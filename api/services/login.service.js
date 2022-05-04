@@ -11,6 +11,7 @@ export default class UsersService {
 	}
 
 	async getLogIn(req, res) {
+		console.log('fui por el loguin')
 		return await this.#authBaseService.verifyAuthentication(req, res); //The two properties separated by a space so that it does the populate automatically
 	}
 	async getMany(req, res) {
@@ -22,7 +23,7 @@ export default class UsersService {
 	}
 
 	async create(req, res) {
-		console.log(req.body);
+		console.log('fui por el loguin')
 		return await this.#mongoBaseService.createUser(req, res);
 	}
 
