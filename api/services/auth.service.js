@@ -1,10 +1,7 @@
 import User from "../models/user.js";
 import jwt from 'jsonwebtoken'
-import createError from 'http-errors'
 export default class AuthaseService {
     #model;
-
-
 
     constructor(model) {
         this.#model = model;
@@ -30,7 +27,7 @@ export default class AuthaseService {
     /**
      * Returns an error code and message
      */
-    #throwError(res, { code = 500, message }) {
+    #throwError(res, { code = 404, message }) {
         return res.status(code).json({ message });
     }
     // #endregion

@@ -6,7 +6,7 @@ GET http://localhost:3000/recipes
 GET http://localhost:3000/ingredients
 
 ###
-GET http://localhost:3000/login
+GET http://localhost:3000/login/all
 
 
 ###
@@ -37,7 +37,7 @@ Content-Type: application/json
 
 {
         "userName": "ejemplo",
-        "password":"juegos987",
+        "password":"123qwe",
         "email":"@gmaill.com"
 }
 
