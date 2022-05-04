@@ -1,6 +1,13 @@
-const button = document.querySelector('.nutritionButton')
-const facts = document.querySelector('#nutritionFacts')
+const nutritionButton = document.querySelector('.nutritionButton');
+const nutritionFacts = document.querySelector('#nutritionFacts');
 
-button.addEventListener('click', () => {
-    facts.classList.toggle('visible')
+nutritionButton.addEventListener('click', () => {
+	nutritionFacts.classList.toggle('visible');
+});
+
+const bichito = document.querySelector('.bichito');
+const footer = document.querySelector('.footerBody');
+
+bichito.addEventListener('click', () => {
+	footer.classList.toggle('visible');
 });

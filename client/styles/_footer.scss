@@ -1,52 +1,81 @@
-.footerActionZone{
+.footerBody {
+	position: fixed;
+	bottom: 0;
+	left: 0;
+	width: 100%;
+	display: flex;
+	justify-content: flex-end;
+	background-color: #7e634e;
+	transition: transform ease 250ms;
+	transform: translateY(100%);
 
+	&.visible {
+		transform: translate(0);
+
+		.bichito {
+			.fa-chevron-down {
+				transform: rotate(180deg);
+			}
+		}
+	}
+
+	.bichito {
+		position: absolute;
+		left: 50px;
+		bottom: 100%;
+		background-color: transparent;
+		border: none;
+		cursor: pointer;
+
+		&:hover {
+			img {
+				transform: scale(1.1);
+			}
+		}
+
+		img {
+			height: 75px;
+			object-fit: contain;
+			transition: transform ease 250ms;
+			transform-origin: bottom;
+			margin: 0;
+		}
+
+		.fa-chevron-down {
+			position: relative;
+			left: 15px;
+			bottom: 20px;
+			font-size: 1.5rem;
+			transition: transform ease-in 250ms;
+		}
+	}
+
+	.footerRight {
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+		height: auto;
+		padding: 20px;
+		gap: 10px;
+		a {
+			color: white;
+			text-decoration: none;
+		}
+		.socialMedia {
+			display: flex;
+			justify-content: center;
+			align-items: center;
+			gap: 20px;
+			width: 100%;
+			height: auto;
+			:hover {
+				color: gray;
+				transition: color ease-in 250ms;
+			}
+		}
+	}
 }
 
-.buttonFooter{
-    height: 400px;
-    width: 400px;
+.aboutUsButton {
+	border: none;
 }
-
-
-
-
-
-
-
-
-
-
-.footerBody{
-    display: flex;
-    flex-basis: 0;
-    justify-content: flex-end;
-    background-color: #7E634E;
-    width: 100%;
-    height: auto;
-    .footerRight{
-        display: flex;
-        flex-direction: column;
-        align-items: center;    
-        height: auto;
-        padding: 20px;
-        gap: 10px;
-        a{
-            color: white;
-            text-decoration: none;
-        }
-        .socialMedia{
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            gap: 20px;
-            width: 100%;
-            height: auto;
-            :hover{
-                color: gray;
-                transition: color ease-in 250ms;
-            }
-        }
-
-    }
-}
-
