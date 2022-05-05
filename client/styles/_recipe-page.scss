@@ -13,7 +13,7 @@ body {
 span{
 	list-style-type: none;
     font-family: var(--secondary-font);
-	color: var(--texto-color);
+	color: var(--text-color);
     font-weight: bolder;
     font-weight: 900;
     font-size: 1.5rem;
@@ -96,6 +96,13 @@ span{
     width: 200px;
     background-color: antiquewhite;
     border-radius: 30px;
+    .star{
+        cursor: pointer;
+    }
+    .fa-star:hover{
+        transform: scale(1.2);
+        transition: transform ease-in-out 200ms;
+    }
 }
 
 
@@ -174,7 +181,7 @@ span{
         font-weight: bolder;
         font-size: 1.5rem;
         border: #7E634E solid 5px;
-        border-radius: 10px;
+        border-radius: 30px;
         padding: 10px;
         margin-top: 20px;
         margin-bottom: 20px;
@@ -212,7 +219,7 @@ span{
     font-weight: bolder;
     font-size: 1.5rem;
     border: #7E634E solid 5px;
-    border-radius: 5px;
+    border-radius: 25px;
     padding: 10px;
     margin-top: 10px;
     margin-bottom: 10px;
@@ -233,6 +240,7 @@ span{
     align-items: center;
     margin-top: 20px;
     margin-bottom: 10px;
+    border-radius: 30px;
     overflow: hidden;
     &.visible{
         display: flex;
