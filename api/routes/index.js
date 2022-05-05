@@ -31,14 +31,14 @@ router.put('/ingredients/:id', ingredientsService.update.bind(ingredientsService
 router.delete('/ingredients/:id', ingredientsService.delete.bind(ingredientsService));
 
 // singIn routes
-router.post('/singin', loginServiceService.getLogIn.bind(loginServiceService)); //bind para no perder refencia del service que estoy usando
+router.post('/login', loginServiceService.getLogIn.bind(loginServiceService)); //bind para no perder refencia del service que estoy usando
 
 // login routes
 router.get('/login/', loginServiceService.getMany.bind(loginServiceService)); //bind para no perder refencia del service que estoy usando
 
 router.get('/login/:id', loginServiceService.getOne.bind(loginServiceService));
 
-router.post('/login', loginServiceService.create.bind(loginServiceService));
+router.post('/signup', loginServiceService.create.bind(loginServiceService));
 
 router.put('/login/:id', loginServiceService.update.bind(loginServiceService));
 

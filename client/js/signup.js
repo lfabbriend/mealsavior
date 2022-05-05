@@ -8,7 +8,7 @@ form.addEventListener('submit', event => {
 	const userName = formData.get('userName');
 	const email = formData.get('email');
 	const password = formData.get('password');
-	fetch(`${baseApiUrl}/login`, {
+	fetch(`${baseApiUrl}/signup`, {
 		//acá iría una ruta singup a la API
 		method: 'POST',
 		body: JSON.stringify({

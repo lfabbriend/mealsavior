@@ -7,7 +7,7 @@ form.addEventListener('submit', event => {
 	const formData = new FormData(event.currentTarget);
 	const userName = formData.get('userName');
 	const password = formData.get('password');
-	fetch(`${baseApiUrl}/singin`, {
+	fetch(`${baseApiUrl}/login`, {
 		method: 'POST',
 		body: JSON.stringify({
 			userName,
