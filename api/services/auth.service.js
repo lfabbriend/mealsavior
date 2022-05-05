@@ -14,7 +14,8 @@ export default class AuthaseService {
             if (!userSearched) return this.#throwError(res, { message: "Invalid User/Password" });
             const isMatch = await userSearched.isValidPassword(newElement.password)
             if (!isMatch) return this.#throwError(res, { message: "Invalid User/Password" });
-            jwt.sign({ user: userSearched }, 'secretkey', (error, token) => {
+            //Assign a token with only the username to the user who entered
+            jwt.sign({ user: userSearched.userName }, 'secretkey', (error, token) => {
                 res.status(201).json([token]);
             })
         } catch (error) {

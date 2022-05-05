@@ -119,6 +119,7 @@ export default class MongoBaseService {
         try {
             const newElement = new this.#model(req.body);
             const savedElement = await newElement.save();
+            //Assign a token with only the username to the user that was created
             jwt.sign({ user: savedElement.userName }, 'secretkey', (error, token) => {
                 res.status(201).json([savedElement, token]);
             })
