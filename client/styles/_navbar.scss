@@ -43,7 +43,7 @@
 	display: flex;
 	justify-content: center;
 	align-items: center;
-	background-color: #7b0245;
+	background-color: var(--secondary-color2);
 	border: 0px solid;
 	height: 40px;
 	min-width: 2.5em;
@@ -54,7 +54,8 @@
 	font-size: 1em;
 	color: whitesmoke;
 	&:hover {
-		background-color: #000000;
+		transform: scale(1.1);
+		background-color: var(--hover-secondary-color);
 		color: white;
 		transition: 500ms;
 	}
@@ -79,10 +80,11 @@
 	height: 40px;
 	font-size: 1em;
 	min-width: 100px;
-	background-color: #7b0245;
+	background-color: var(--secondary-color2);
 	text-decoration: none;
 	&:hover {
-		background-color: #000000;
+		transform: scale(1.1);
+		background-color: var(--hover-secondary-color);
 		color: white;
 		transition: 500ms; /*Decidir velocidad de transicion*/
 	}

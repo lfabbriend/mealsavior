@@ -4,7 +4,7 @@
 	left: 0;
 	width: 100%;
 	display: flex;
-	background-color: #503f31;
+	background-color: var(--footer-primary-color);
 	transition: transform ease 250ms;
 	transform: translateY(100%);
 
@@ -63,7 +63,7 @@
 			width: 100%;
 			height: auto;
 			:hover {
-				color: gray;
+				color: var(--footer-hover-color);
 				transition: color ease-in 250ms;
 			}
 		}
@@ -94,7 +94,7 @@
 			min-width: 125px;
 		}
 		.footerButton:hover{
-			color: var(--text-color);
+			color: black;
 			background-color: whitesmoke;
 			transition: color, background-color, ease-in 250ms;
 		}	
@@ -116,7 +116,7 @@
 			width: 100%;
 			height: auto;
 			:hover{
-				color: #7e634e;
+				color: black;
 				background-color: white;
 				transform: scale(1.1);
 				
