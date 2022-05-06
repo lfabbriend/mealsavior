@@ -32,7 +32,7 @@
 	flex-direction: row;
 	margin: auto;
 	justify-content: center;
-	background-color: #f0ece7;
+	background-color: var(--secondary-color2);
 	padding: 1.875rem 15px;
 	width: 1200px;
     height: 100%;
@@ -77,7 +77,7 @@
     font-weight: bolder;
     height: 80px;
     width: 200px;
-    background-color: antiquewhite;
+    background-color: var(--secondary-color2);
     padding: 10px;
     border-radius: 30px;
     .star{
@@ -97,7 +97,7 @@
 }
 
 .recipeIngredients{
-    background-color: #7E634E;
+    background-color: var(--secondary-color);
     width: 1200px;
     margin: auto;
     height: 100%;
@@ -133,7 +133,7 @@
     height: 100%;
     background-color: white;
     font-size: 1.5rem;
-    color: #7E634E;
+    color: black;
     h2{
         font-family: var(--secondary-font);
         margin-bottom: 20px;
@@ -147,7 +147,7 @@
     }
     .instructionItem{
         font-family: var(--secondary-font);
-        color: #7E634E;
+        color: black;
         font-weight: 200;
         list-style-type: none;
         margin-bottom: 25px;
@@ -161,11 +161,11 @@
 
     .doneButton{
         background-color: white;
-        color: #7E634E;
+        color: var(--secondary-color);
         font-family: var(--secondary-font);
         font-weight: bolder;
         font-size: 1.5rem;
-        border: #7E634E solid 5px;
+        border: var(--secondary-color) solid 5px;
         border-radius: 30px;
         padding: 10px;
         margin-top: 20px;
@@ -173,7 +173,7 @@
     }
 
     .doneButton:hover{
-        background-color: #7E634E;
+        background-color: var(--secondary-color);
         color: white;
         transition: background-color ease-in 250ms, color ease-in 250ms;
         cursor: pointer;
@@ -198,12 +198,12 @@
 
 
 .nutritionButton{
-    background-color: #7E634E;
+    background-color: var(--hover-secondary-color);
     color: white;
     font-family: var(--secondary-font);
     font-weight: bolder;
     font-size: 1.5rem;
-    border: #7E634E solid 5px;
+    border: var(--hover-secondary-color) solid 5px;
     border-radius: 25px;
     padding: 10px;
     margin-top: 10px;
@@ -214,7 +214,7 @@
 
 .nutritionButton:hover{
     background-color: white;
-    color: #7E634E;
+    color: var(--hover-secondary-color);
     transition: background-color ease-in 250ms, color ease-in 250ms;
     cursor: pointer;
 }
