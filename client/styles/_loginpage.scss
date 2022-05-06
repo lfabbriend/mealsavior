@@ -19,7 +19,7 @@
 	position: relative;
 	overflow: auto;
 }
-.loginSection {
+.loginSection .{
 	background-color: #04040475;
 	margin-right: 5%;
 	max-width: 30%;
@@ -52,8 +52,14 @@
 }
 
 #submitBtn{
-	background-color: #26997d;
+	background-color: var(--secondary-color2);
 	color: white;
+	&:hover {
+		transform: scale(1.1);
+		background-color: var(--hover-secondary-color);
+		color: white;
+		transition: 500ms;
+	}
 }
 
 .loginSection input {
