@@ -59,8 +59,14 @@ body{
 }
 
 #submitBtn{
-	background-color: #26997d;
+	background-color: var(--secondary-color2);
 	color: white;
+	&:hover {
+		transform: scale(1.1);
+		background-color: var(--hover-secondary-color);
+		color: white;
+		transition: 500ms;
+	}
 }
 
 .loginSection input {

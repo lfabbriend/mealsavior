@@ -5,10 +5,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Tenor+Sans&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Forum&display=swap');
 
-body {
-	background-color: gainsboro;
-
-}
 
 .recipeDetailsImage {
 	display: flex;
@@ -44,10 +40,6 @@ body {
 	h1 {
 		font-family: var(--secondary-font);
 		color: var(--texto-color);
-	}
-	:hover {
-		transform: scale(1.01);
-		transition: 500ms;
 	}
 }
 
