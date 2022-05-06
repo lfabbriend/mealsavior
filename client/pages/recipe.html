@@ -7,28 +7,28 @@
 		<link rel="stylesheet" type="text/css" href="../style.css" />
 		<link rel="icon" href="../assets/img/logo.ico" type="logo" />
 		<title>Hamburguesa Doble Cheddar - MealSavior</title>
-		<script src="https://kit.fontawesome.com/353b7e874e.js" crossorigin="anonymous"></script>
+		
 	</head>
 	<body>
 		<header>
-			<div class="navigation">
-				<a class="marca" href="../index.html">
-					<img src="../assets/img/mealsavior2.png" alt="logo" class="mealsaviorAncle" />
-				</a>
+        <div class="navigation">
+            <a class="marca" href="../index.html">
+                <img src="../assets/img/mealsavior2.png" alt="logo" class="mealsaviorAncle" />
+            </a>
 
-				<div class="searchZone">
-					<input class="searchbar" type="text" placeholder="Search Recipes..." />
-					<button onclick="funcionTotalmenteInutilDePrueba()" class="sendSearchBtn" type="button">
-						<ion-icon name="search" class="searchIcon"></ion-icon>
-					</button>
-				</div>
+            <div class="searchZone">
+                <input class="searchbar" type="text" placeholder="Search Recipes..." />
+                <button onclick="funcionTotalmenteInutilDePrueba()" class="sendSearchBtn" type="button">
+                    <i class="loginIcon fa-solid fa-magnifying-glass"></i>
+                </button>
+            </div>
 
-				<a class="loginBtn" type="button" href="../pages/login.html">
-					<ion-icon name="contact" class="loginIcon"></ion-icon>
-					Log in
-				</a>
-			</div>
-		</header>
+            <a class="loginBtn" type="button" href="../pages/login.html">
+                Log in
+                <i class="loginIcon fa-solid fa-door-open"></i>
+            </a>
+        </div>
+    </header>
 
 		<div class="recipeDetailsImage">
 			<img src="https://i.blogs.es/58e562/hambruguesa/1366_2000.jpg" class="burguer" />
@@ -93,7 +93,7 @@
 				</li>
 			</ol>
 			<div class="doneButtonContainer">
-				<button class="doneButton">Mark this recipe as done</button>
+				<button class="doneButton">Mark this recipe as done <i class="fa-solid fa-circle-check"></i></button>
 			</div>
 		</div>
 
@@ -121,12 +121,12 @@
 			</button>
 
 			<div class="footerCenter">
-				<a class="footerButton">
+				<a href="../pages/aboutUs.html" class="footerButton">
 					Our team
 					<i class="fa-solid fa-people-group"></i>
 				</a>
 
-				<a class="footerButton">
+				<a href="" class="footerButton">
 					Support
 					<i class="fa-solid fa-headset"></i>
 				</a>
@@ -143,10 +143,9 @@
 			</div>
 		</footer>
 
-		<script src="https://unpkg.com/ionicons@4.5.10-0/dist/ionicons.js"></script>
-		<script src="../js/app.js" type="module"></script>
 		<script src="../js/mainRater.js" type="module"></script>
 		<script src="../js/rater.js" type="module"></script>
-		<script src="../js/recipePage.js" type="module"></script>
+		<script src="../js/footer.js"></script>
+		<script src="https://kit.fontawesome.com/353b7e874e.js" crossorigin="anonymous"></script>
 	</body>
 </html>

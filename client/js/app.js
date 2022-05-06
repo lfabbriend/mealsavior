@@ -36,3 +36,4 @@ const containerSlider = document.querySelector('#sliderContainer');
 containerSlider.appendChild(slider);
 
 //document.body.append(slider);
+

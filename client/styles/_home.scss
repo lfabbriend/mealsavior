@@ -2,11 +2,10 @@
 	min-width: 250px;
 	margin-left: 2rem;
 	min-height: 40px;
-}
-
-.marca:hover{
-	transform: scale(1.1);
-	transition: 500ms;
+	&:hover {
+		transform: scale(1.1);
+		transition: 500ms;
+	}
 }
 
 .mealsaviorAncle {
@@ -15,99 +14,35 @@
 	display: block;
 }
 
-.container {
-	display: flex;
-	margin-top: 50px;
-	gap: 50px;
-}
-
-.filters {
-	background-color: black;
-	display: flex;
-	justify-content: center;
-	height: 50px;
-	width: 300px;
-	margin-left: 100px;
-	margin-top: 100px;
-	opacity: 0.5;
-	border-radius: 20px;
-	box-shadow: 0px 0px 20px #000000;
-}
-
-.filters:hover {
-	opacity: 0.8;
-	height: 500px;
-	transition: 500ms;
-}
-
-.textoBlanco {
-	color: white;
-	font-size: 1.5em;
-	font-family: var(--font);
-	margin-top: 10px;
-	font-weight: bolder;
-}
-
-.filteredRecipes {
+.recipesContainer {
 	display: grid;
-	grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
-	max-width: 1300px;
-	width: 100%;
-	background-color: rgb(255, 255, 255);
-	overflow: auto;
-	grid-gap: 2px;
-}
+	grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+	grid-gap: 30px;
+	padding: 30px;
+	margin-top: 100px;
 
-.filteredComponent1 {
-	display: flex;
-	align-items: flex-end;
-	background-image: url(https://i.blogs.es/58e562/hambruguesa/1366_2000.jpg);
-	background-size: cover;
-	background-repeat: no-repeat;
-	background-position: center;
-}
+	.recipe {
+		background-color: aliceblue;
+		border-radius: 20px;
+		text-decoration: none;
+		color: black;
+		&:hover {
+			transform: scale(1.02);
+			box-shadow: 0 0 20px rgba(0, 0, 0, 0.20);
+			transition: transform ease-out 250ms;
+		}
+	}
 
-.filteredComponent1:hover {
-	opacity: 0.9;
-	transform: scale(1.01);
-	transition: 0.5s;
-	box-shadow: inset 0px 0px 20px #000000;
-}
+	.recipeImg {
+		width: 100%;
+		height: 250px;
+		object-fit: cover;
+		display: block;
+		border-top-left-radius: 20px;
+		border-top-right-radius: 20px;
+	}
 
-.filteredComponent {
-	background-color: rgb(99, 99, 99);
-	text-align: center;
-	height: 250px;
-	color: white;
-}
-
-.filteredComponent:hover {
-	opacity: 0.9;
-	transform: scale(1.01);
-	transition: 0.5s;
-	box-shadow: inset 0px 0px 20px #000000;
-}
-
-.componentDetailsBtn {
-	display: flex;
-	justify-self: flex-end;
-	background-color: orange;
-	border-radius: 20px;
-	color: white;
-	text-decoration: none;
-	font-weight: bolder;
-	font-size: 1em;
-	text-align: center;
-	padding: 6px;
-	margin: 10px;
-}
-
-.componentDetailsBtn:hover {
-	transition: 0.5s;
-}
-
-.componentImage {
-	width: 100%;
-	height: 200px;
-	object-fit: cover;
+	.cardDetails {
+		padding: 10px;
+	}
 }

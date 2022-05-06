@@ -1,6 +1,9 @@
 
 .navigation {
-	height: 75px;
+	position: fixed;
+	top: 0;
+	width: 100%;
+	z-index: 1;
 	background: var(--secondary-color);
 	display: flex;
 	justify-content: space-between;
@@ -50,12 +53,11 @@
 	font-weight: bolder;
 	font-size: 1em;
 	color: whitesmoke;
-}
-
-.sendSearchBtn:hover {
-	background-color: #000000;
-	color: white;
-	transition: 500ms;
+	&:hover {
+		background-color: #000000;
+		color: white;
+		transition: 500ms;
+	}
 }
 
 .searchIcon {
@@ -79,15 +81,15 @@
 	min-width: 100px;
 	background-color: #7b0245;
 	text-decoration: none;
-}
-
-.loginBtn:hover {
-	background-color: #000000;
-	color: white;
-	transition: 500ms; /*Decidir velocidad de transicion*/
+	&:hover {
+		background-color: #000000;
+		color: white;
+		transition: 500ms; /*Decidir velocidad de transicion*/
+	}
 }
 
 .loginIcon {
-	font-size: 1.5em;
+	font-size: 1em;
 	margin-right: 5px;
+	margin-left: 5px;
 }
