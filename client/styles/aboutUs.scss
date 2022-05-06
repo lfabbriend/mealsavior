@@ -1,10 +1,38 @@
-.teamMealSavior{
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    .teammate{
-        height: 400px;
-        width: 400px;
+.teamMealSavior {
+    margin-top: 225px;
+	display: grid;
+	grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+	padding: 40px;
+	grid-gap: 40px;
+}
+
+.teammate {
+	height: 500px;
+	background-color: #185b63;
+	border-radius: 20px;
+	box-shadow: 0 0 30px rgba(0, 0, 0, 0.18);
+    text-align: center;
+    &:hover{
+        box-shadow: 0 0 30px rgba(0, 0, 0, 0.70);
+        transform: scale(1.02);
+        transition: box-shadow, transform 300ms ease-in-out;
     }
 }
 
+.teammateName {
+	font-weight: bold;
+    font-family: var(--primary-font);
+    padding: 3px;
+	text-align: center;
+	color: whitesmoke;
+}
+
+.teammate {
+	img {
+		width: 100%;
+		height: 450px;
+		object-fit: cover;
+        border-top-left-radius: 20px;
+        border-top-right-radius: 20px;
+	}
+}
