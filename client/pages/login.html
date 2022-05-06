@@ -4,8 +4,14 @@
 		<meta charset="UTF-8" />
 		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
 		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<meta name="google-signin-client_id" content="89889469555-ffs7jgl7tmb3a92gm02ma1el658vjusn.apps.googleusercontent.com" />
 		<title>Login</title>
 		<link rel="stylesheet" type="text/css" href="../style.css" />
+		<link
+			href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/css/bootstrap.min.css"
+			rel="stylesheet"
+			integrity="sha384-wEmeIV1mKuiNpC+IOBjI7aAzPcEZeedi5yW5f2yOq55WWLwNGmvvx4Um1vskeMj0"
+			crossorigin="anonymous" />
 	</head>
 	<body>
 		<div class="loginPageHeader">
@@ -35,16 +41,22 @@
 			</div>
 
 			<form class="loginSection" id="loginForm" method="post">
-				<div class="login-signIn">
-					<a class="signInBtn">Log In</a>
-				</div>
+				<h2>Log in</h2>
 				<input class="login-input" type="text" name="userName" placeholder="Username" required />
 				<input class="login-input" type="password" name="password" placeholder="Password" required />
 				<a class="signUpLink" href="./singup.html">Don't you have an account? Sign up!</a>
+				<div class="g-signin2" data-width="225" data-height="50" data-longtitle="true"></div>
 				<input class="login-input" type="submit" value="Log In" id="submitBtn" />
 			</form>
 		</div>
 
 		<script src="../js/app.js" type="module"></script>
+		<script src="./js/googlelogin.js" async defer></script>
+		<script src="https://apis.google.com/js/platform.js" async defer></script>
+		<script
+			src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/js/bootstrap.bundle.min.js"
+			integrity="sha384-p34f1UUtsS3wqzfto5wAAmdvj+osOnFyQFpp4Ua3gs/ZVWx6oOypYoCJhGGScy+8"
+			crossorigin="anonymous"></script>
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 	</body>
 </html>
