@@ -23,12 +23,12 @@ const slides = Object.freeze([
 	}
 ]);
 
-document.addEventListener('DOMContentLoaded', function () {
+ document.addEventListener('DOMContentLoaded', function () {
 	const raters = document.querySelectorAll('[role=rater]');
 	raters.forEach(rater => {
 		new Rater(rater);
 	});
-});
+}); 
 
 const slider = setSlider(slides, true);
 
