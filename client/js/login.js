@@ -2,7 +2,6 @@ import { baseApiUrl } from './utils/constants.js';
 
 const form = document.getElementById('loginForm');
 const guestBtn = document.getElementById('guestBtn');
-localStorage.clear('token');
 localStorage.setItem('token', undefined);
 
 form.addEventListener('submit', event => {
@@ -24,14 +23,12 @@ form.addEventListener('submit', event => {
 		.then(response => response.json())
 		.then(json => {
 			localStorage.setItem('token', json[0]);
-			console.log(localStorage.getItem('token'));
 		}) //validate that is a tokem, not an error
 		.catch(error => {
 			console.warn(error);
-			localStorage.setItem('token', undefined);
 		});
 });
 
 guestBtn.addEventListener('click', () => {
-	localStorage.getItem('token');
+	localStorage.setItem('token', undefined);
 });
