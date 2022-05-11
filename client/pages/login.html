@@ -41,13 +41,24 @@
 			</div>
 
 			<form class="loginSection" id="loginForm" method="post">
-				<h2>Log in</h2>
-				<input class="login-input" type="text" name="userName" placeholder="Username" required />
-				<input class="login-input" type="password" name="password" placeholder="Password" required />
+				<h2>Welcome!</h2>
+				<div class="userOptionsContainer">
+					<button class="userOptionBtn" id="guestOptionBtn">
+						<img src="../assets/img/icons/plate.png" />
+						<p>Guest</p>
+					</button>
+					<button class="userOptionBtn" id="userOptionBtn">
+						<img src="../assets/img/icons/reception.png" />
+						<p>Log in</p>
+					</button>
+				</div>
+				<div id="userInput">
+					<input class="login-input" type="text" name="userName" placeholder="Username" required />
+					<input class="login-input" type="password" name="password" placeholder="Password" required />
+				</div>
 				<a class="signUpLink" href="./singup.html">Don't you have an account? Sign up!</a>
 				<div class="g-signin2" data-width="225" data-height="50" data-longtitle="true"></div>
 				<input class="login-input" type="submit" value="Log In" id="submitBtn" />
-				<a class="signUpLink" id="guestBtn" href="../index.html">login as guest</a>
 			</form>
 		</div>
 

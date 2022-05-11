@@ -92,3 +92,18 @@ body{
 	color: white;
 	font-size: 1rem;
 }
+
+.userOptionsContainer img{
+	max-width: 100%;
+	max-height: 100%;
+}
+.userOptionsContainer{
+	max-width: 100%;
+	max-height: 100%;
+	position:relative;
+}
+
+.userOptionsContainer .userOptionBtn{
+	max-width: 30%;
+	max-height: 100%;
+}
