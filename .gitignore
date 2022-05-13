@@ -1,2 +1,5 @@
 node_modules
 .vscode
+test/cypress/downloads
+test/cypress/videos
+test/cypress/screenshots
