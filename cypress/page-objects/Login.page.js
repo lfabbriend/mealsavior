@@ -4,18 +4,18 @@ class Login {
 
     url = '/pages/login.html'
     elements={
-        subtitle: () =>{ cy.get('.subtitle > p') },
-        slider: () => { cy.get('#sliderContainer > app-slider') },
+        subtitle: () => cy.get('.subtitle > p'),
+        slider: () => cy.get('#sliderContainer > app-slider'),
         loginSection:{
-            form: ()  =>{ cy.get('#loginForm') },
-            h2: ()=>{ cy.get('#loginForm > h2') },
-            guestOption: ()=>{ cy.get('#guestOptionBtn > p') },
-            userOption: ()=>{ cy.get('#userOptionBtn > p') },
-            usernameTextBox: ()=>{ cy.get('.login-input[type="text"]') },
-            passwordTextBox: ()=>{ cy.get('.login-input[type="password"]') },
-            signUpLink: () => { cy.get('.signUpLink') },
-            googleSignIn: () => { cy.get('.g-signin2') },
-            submitButton: () => { cy.get('#submitBtn') }
+            form: ()  => cy.get('#loginForm'),
+            h2: ()=> cy.get('#loginForm > h2'),
+            guestOption: ()=> cy.get('#guestOptionBtn > p'),
+            userOption: ()=> cy.get('#userOptionBtn > p') ,
+            usernameTextBox: ()=>cy.get('.login-input[type="text"]'),
+            passwordTextBox: ()=>cy.get('.login-input[type="password"]'),
+            signUpLink: () => cy.get('.signUpLink'),
+            googleSignIn: () => cy.get('.g-signin2'),
+            submitButton: () => cy.get('#submitBtn') 
         }
     }
 
@@ -36,11 +36,11 @@ class Login {
     }
 
     enterPassword(pass){
-        this.elements.loginSection.usernameTextBox().clear().type(pass).blur()
+        this.elements.loginSection.passwordTextBox().clear().type(pass).blur()
     }
 
     clickLogInButton(){
-        this.elements.loginSection.loginBtn().click()
+        this.elements.loginSection.submitButton().click()
     }
 
     openSignUp(){
