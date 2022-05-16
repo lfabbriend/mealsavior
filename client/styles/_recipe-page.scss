@@ -170,6 +170,13 @@
         padding: 10px;
         margin-top: 20px;
         margin-bottom: 20px;
+		width: 28%;
+
+		&.selected{
+			background-color: var(--secondary-color); /*cambiarlo x variable*/ 
+			color: white;
+			transition: background-color ease-in 250ms, color ease-in 250ms;
+		}
     }
 
     .doneButton:hover{
