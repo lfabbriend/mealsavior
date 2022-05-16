@@ -18,9 +18,9 @@ Feature: Recipes filters
 		And the user clicks the Search button
 		Then only recipes with ingredients "Garlic" and "Spinach" are shown
 
-	Scenario: User filters for Vegetarian recipes
+	Scenario: User filters recipes by diet
 		Given the user is on the Home page
 		When the user selects "Vegetarian" as Type of Diet
 		And the user selects "No restrictions" coincidence
 		And the user clicks the Search button
-		Then only Vegetarian recipes are shown
+		Then only "Vegetarian" recipes are shown
