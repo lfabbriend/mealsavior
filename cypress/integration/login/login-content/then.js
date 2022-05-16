@@ -39,3 +39,14 @@ Then('I should see a {string} button below', (label)=>{
     Login.elements.loginSection.submitButton().should("be.visible").and('have.value', label)
   }
 })
+
+Then('I should see a {string} field', (field)=>{
+  if (field=="Username"){
+    Login.elements.loginSection.usernameTextBox().should("be.visible")
+    Login.elements.loginSection.usernameTextBox().invoke('attr', 'placeholder').should('contain', field)
+  } else if (field=="Password"){
+    Login.elements.loginSection.passwordTextBox().should("be.visible")
+    Login.elements.loginSection.passwordTextBox().invoke('attr', 'placeholder').should('contain', field)
+    Login.elements.loginSection.passwordTextBox().invoke('attr', 'type').should('be.eq', 'password')
+  }
+})

@@ -17,12 +17,16 @@ When('I click the Login option in the Welcome section', ()=>{
 })
 
 When('I fill username with {string}', (user)=>{
-    Login.enterUsername(user)
+    if (user!=""){
+        Login.enterUsername(user)
+    }
 })
 
 
 When('I fill password with {string}', (password)=>{
-    Login.enterPassword(password)
+    if (password!=""){
+        Login.enterPassword(password)
+    }
 })
 
 When('I click the Login button', ()=>{

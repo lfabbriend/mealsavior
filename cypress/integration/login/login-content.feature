@@ -19,3 +19,9 @@ Feature: Login page content
         And I should see a link button below with the label "Don't you have an account? Sign up!"
         And I should see a "Sign in with Google" button below
         And I should see a "Log In" button below
+
+    Scenario: Fields of the login with credentials options explored
+        Given I am in the login page
+        When I click the Login option in the Welcome section
+        Then I should see a "Username" field
+        And I should see a "Password" field

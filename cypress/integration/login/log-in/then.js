@@ -10,3 +10,8 @@ Cypress.on('uncaught:exception', (err, runnable) => {
 Then('I should see homepage', ()=>{
     cy.url().should('be.eq', 'http://127.0.0.1:8080/')
 })
+
+// falta ver como validar los mensajes de error
+Then('I should see the error message', ()=>{
+  cy.url().should('includes', 'login')
+})

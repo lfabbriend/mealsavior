@@ -11,3 +11,7 @@ Cypress.on('uncaught:exception', (err, runnable) => {
 When('I click the Log In button at the navbar', ()=>{
     cy.get('.loginBtn').click()
 })
+
+When('I click the Login option in the Welcome section', ()=>{
+    Login.OpenLogin()
+})
