@@ -1,0 +1,179 @@
+{
+	"info": {
+		"_postman_id": "f1c8a7b0-de54-49c3-a096-0382a87a1a59",
+		"name": "mealsavior",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Ingredients",
+			"item": [
+				{
+					"name": "Get ingredients",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{url}}/ingredients",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"ingredients"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get an existing ingredient",
+					"event": [
+						{
+							"listen": "prerequest",
+							"script": {
+								"exec": [
+									"pm.sendRequest(pm.environment.get(\"url\") + \"/ingredients\", function (err, response) {\r",
+									"    pm.collectionVariables.set(\"existingIngredientId\", response.json()[0]._id);\r",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						},
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Body matches string\", function () {\r",
+									"\r",
+									"    pm.test(\"Status code is 200\", function () {\r",
+									"        pm.response.to.have.status(200);\r",
+									"    });\r",
+									"\r",
+									"    pm.test(\"Response contains ingredient ID\", function () {\r",
+									"        var jsonData = pm.response.json();\r",
+									"        pm.expect(jsonData._id).to.eql(pm.collectionVariables.get(\"existingIngredientId\"));\r",
+									"    });\r",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{url}}/ingredients/{{existingIngredientId}}",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"ingredients",
+								"{{existingIngredientId}}"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get an unexisting ingredient",
+					"event": [
+						{
+							"listen": "prerequest",
+							"script": {
+								"exec": [
+									"pm.sendRequest(pm.environment.get(\"url\") + \"/ingredients\", function (err, response) {\r",
+									"    pm.collectionVariables.set(\"existingIngredientId\", response.json()[0]._id);\r",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{url}}/ingredients/{{existingIngredientId}}",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"ingredients",
+								"{{existingIngredientId}}"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Login",
+			"item": [
+				{
+					"name": "Get users",
+					"request": {
+						"method": "GET",
+						"header": []
+					},
+					"response": []
+				},
+				{
+					"name": "Signup",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"userName\": \"agus123\",\r\n    \"email\": \"agustin@gmail.com\",\r\n    \"password\": \"aoeuaoeu\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{url}}/signup",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"signup"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Recipes",
+			"item": [
+				{
+					"name": "Get recipes",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{url}}/recipes",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"recipes"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	],
+	"variable": [
+		{
+			"key": "existingIngredientId",
+			"value": ""
+		}
+	]
+}
