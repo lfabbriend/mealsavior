@@ -3,7 +3,7 @@
 class Login {
 
     url = '/pages/login.html'
-    elements{
+    elements={
         subtitle: () =>{ cy.get('.subtitle > p') },
         slider: () => { cy.get('#sliderContainer > app-slider') },
         loginSection:{
@@ -55,4 +55,4 @@ class Login {
 
 }
 
-module.exports Login = new Login()
+module.exports = new Login()
