@@ -1,13 +1,81 @@
-import {Then} from "cypress-cucumber-preprocessor/steps"
-const Login = require("../../../page-objects/Login.page")
+import { Given, When, Then, And, Before } from "cypress-cucumber-preprocessor/steps"
+const Login = require("../../page-objects/Login.page")
 
 Cypress.on('uncaught:exception', (err, runnable) => {
     // returning false here prevents Cypress from
     // failing the test
     return false
-  })
+})
 
-  Then('I should see the page logo', ()=>{
+// #region GIVEN Steps
+
+
+Given('I am in the login page', () => {
+    cy.url().should('includes', 'login')
+})
+// #endregion
+
+// #region WHEN Steps
+When('I click the Log In button at the navbar', ()=>{
+    cy.get('.loginBtn').click()
+})
+
+When('I click the Login option in the Welcome section', ()=>{
+    Login.OpenLogin()
+})
+
+When('I click the {string} arrow in the slider', (arrow)=>{
+    if (arrow=="right"){
+        Login.elements.sliderNextArrow().click()
+    }
+    else{
+        Login.elements.sliderPrevArrow().click()
+    }
+})
+
+When('I fill username with {string}', (user)=>{
+    if (user!=""){
+        Login.enterUsername(user)
+    }
+})
+
+
+When('I fill password with {string}', (password)=>{
+    if (password!=""){
+        Login.enterPassword(password)
+    }
+})
+
+When('I click the Login button', ()=>{
+    Login.clickLogInButton()
+})
+// #endregion
+
+// #region THEN Steps
+Then('I should see homepage', ()=>{
+    cy.url().should('be.eq', 'http://127.0.0.1:8080/')
+})
+
+Then('I should see the error message {string} for the {string} field', (errorMessage, field)=>{
+  Login.elements.loginSection.errors.invalidTextBox().should('have.length', 1)
+  cy.url().should('includes', 'login')
+  if(field=="username"){
+    Login.elements.loginSection.usernameTextBox().invoke('prop', 'validationMessage').should('equal', errorMessage)
+  }else {
+    Login.elements.loginSection.passwordTextBox().invoke('prop', 'validationMessage').should('equal', errorMessage)
+  }
+
+})
+
+Then('I should see the error message {string}', (errorMessage)=>{
+  cy.url().should('includes', 'login')
+  cy.on(Login.elements.loginSection.errors.alert(), (text) => {
+    expect(text).to.contains(errorMessage);
+  });
+
+})
+
+Then('I should see the page logo', ()=>{
     Login.elements.pageLogo().should("be.visible")
   })
 
@@ -58,3 +126,4 @@ Then('I should see a {string} field', (field)=>{
 Then('I should see the initial recipe', ()=>{
   Login.elements.slider().invoke('attr', 'current').should('be.eq', "0")
 })
+// #endregion

@@ -4,7 +4,7 @@ Feature: Sign In
 
     Background: Visit Sign In Page
         Given I open index page
-        When I click the Don't you have an account? Sign up! link in the welcome section
+        When I click the Dont you have an account? Sign up! link in the welcome section
     
     Scenario Outline: Sucessful Sign In
         Given I am in the Sign In page

@@ -41,6 +41,8 @@
 		"npm-run-all": "^4.1.5"
 	},
 	"cypress-cucumber-preprocessor": {
-		"nonGlobalStepDefinitions": true
+		"nonGlobalStepDefinitions": false,
+		"step_definitions": "cypress/support/step_definitions/"
+
 	}
 }
