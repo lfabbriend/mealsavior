@@ -1,8 +1,8 @@
 Feature: Login
 
-    As a user I want to be able to login
+    As a user I want to be able to login in order to explore my recipes
 
-    Background: Visit login Page
+    Background: Visiting the login Page
         Given I open index page
         When I click the Log In button at the navbar
     
@@ -20,16 +20,24 @@ Feature: Login
         | "test2"  | "test2"  |
         | "hola"  | "hola"  |
 
-    Scenario Outline: Invalid login
+    Scenario: Invalid login when leaving the username empty
         Given I am in the login page
         When I click the Login option in the Welcome section
-        And I fill username with <username>
-        And I fill password with <password>
+        And I fill password with "password"
         And I click the Login button
-        Then I should see the error message
+        Then I should see the error message "Please fill out this field." for the "username" field
 
-    Examples:
-        | username | password |
-        | ""  | "test"  |
-        | "test2"  | ""  |
-        | "safdfdsfs"  | "213213213"  |
+    Scenario: Invalid login when leaving the password empty
+        Given I am in the login page
+        When I click the Login option in the Welcome section
+        And I fill username with "username"
+        And I click the Login button
+        Then I should see the error message "Please fill out this field." for the "password" field
+
+    Scenario: Invalid login when typing invalid credentials
+        Given I am in the login page
+        When I click the Login option in the Welcome section
+        And I fill username with "sadasdsadasd"
+        And I fill password with "123213213"
+        And I click the Login button
+        Then I should see the error message "Error: Invalid user or password"

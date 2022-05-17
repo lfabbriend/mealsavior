@@ -6,7 +6,9 @@ class Login {
     elements={
         pageLogo: () => cy.get('.loginPageHeader > img'),
         subtitle: () => cy.get('.subtitle > p'),
-        slider: () => cy.get('#sliderContainer > app-slider'),
+        slider: function (){return cy.get('#sliderContainer > app-slider') },
+        sliderNextArrow: function (){return this.slider().shadow().find('.slider').find('button.slider-next-btn')},
+        sliderPrevArrow: function () {return this.slider().shadow().find('.slider').find('button.slider-prev-btn')},
         loginSection:{
             form: ()  => cy.get('#loginForm'),
             h2: ()=> cy.get('#loginForm > h2'),
@@ -16,7 +18,11 @@ class Login {
             passwordTextBox: ()=>cy.get('.login-input[type="password"]'),
             signUpLink: () => cy.get('.signUpLink'),
             googleSignIn: () => cy.get('.g-signin2'),
-            submitButton: () => cy.get('#submitBtn') 
+            submitButton: () => cy.get('#submitBtn'),
+            errors:{
+                invalidTextBox: () => cy.get('.login-input:invalid'),
+                alert: () => 'window:alert'
+            } 
         }
     }
 

@@ -18,9 +18,9 @@ When('I click the Login option in the Welcome section', ()=>{
 
 When('I click the {string} arrow in the slider', (arrow)=>{
     if (arrow=="right"){
-        Login.elements.slider().shadow().find('.slider').find('button.slider-next-btn').click()
+        Login.elements.sliderNextArrow().click()
     }
     else{
-        Login.elements.slider().shadow().find('.slider').find('button.slider-prev-btn').click()
+        Login.elements.sliderPrevArrow().click()
     }
 })
