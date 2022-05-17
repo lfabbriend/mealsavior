@@ -1,6 +1,6 @@
 /// <reference types="cypress" />
 
-class Login {
+export class Login {
 
     url = '/pages/login.html'
     elements={
@@ -61,5 +61,3 @@ class Login {
     }
 
 }
-
-module.exports = new Login()

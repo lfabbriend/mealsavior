@@ -4,9 +4,11 @@ Feature: Sign In
 
     Background: Visit Sign In Page
         Given I open index page
-        When I click the Dont you have an account? Sign up! link in the welcome section
+        When I click the Log In button at the navbar
+        
     
     Scenario Outline: Sucessful Sign In
+        When I click the Dont you have an account? Sign up! link in the welcome section
         Given I am in the Sign In page
         When I fill username with <username>
         And I fill email with <email>

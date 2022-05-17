@@ -1,5 +1,7 @@
 import { Given, When, Then, And, Before } from "cypress-cucumber-preprocessor/steps"
-const Login = require("../../page-objects/Login.page")
+import { Login } from "../../page-objects/Login.page"
+
+const loginPage = new Login();
 
 Cypress.on('uncaught:exception', (err, runnable) => {
     // returning false here prevents Cypress from
@@ -21,33 +23,33 @@ When('I click the Log In button at the navbar', ()=>{
 })
 
 When('I click the Login option in the Welcome section', ()=>{
-    Login.OpenLogin()
+    loginPage.OpenLogin()
 })
 
 When('I click the {string} arrow in the slider', (arrow)=>{
     if (arrow=="right"){
-        Login.elements.sliderNextArrow().click()
+        loginPage.elements.sliderNextArrow().click()
     }
     else{
-        Login.elements.sliderPrevArrow().click()
+        loginPage.elements.sliderPrevArrow().click()
     }
 })
 
 When('I fill username with {string}', (user)=>{
     if (user!=""){
-        Login.enterUsername(user)
+        loginPage.enterUsername(user)
     }
 })
 
 
 When('I fill password with {string}', (password)=>{
     if (password!=""){
-        Login.enterPassword(password)
+        loginPage.enterPassword(password)
     }
 })
 
 When('I click the Login button', ()=>{
-    Login.clickLogInButton()
+    loginPage.clickLogInButton()
 })
 // #endregion
 
@@ -57,73 +59,73 @@ Then('I should see homepage', ()=>{
 })
 
 Then('I should see the error message {string} for the {string} field', (errorMessage, field)=>{
-  Login.elements.loginSection.errors.invalidTextBox().should('have.length', 1)
+  loginPage.elements.loginSection.errors.invalidTextBox().should('have.length', 1)
   cy.url().should('includes', 'login')
   if(field=="username"){
-    Login.elements.loginSection.usernameTextBox().invoke('prop', 'validationMessage').should('equal', errorMessage)
+    loginPage.elements.loginSection.usernameTextBox().invoke('prop', 'validationMessage').should('equal', errorMessage)
   }else {
-    Login.elements.loginSection.passwordTextBox().invoke('prop', 'validationMessage').should('equal', errorMessage)
+    loginPage.elements.loginSection.passwordTextBox().invoke('prop', 'validationMessage').should('equal', errorMessage)
   }
 
 })
 
 Then('I should see the error message {string}', (errorMessage)=>{
   cy.url().should('includes', 'login')
-  cy.on(Login.elements.loginSection.errors.alert(), (text) => {
+  cy.on(loginPage.elements.loginSection.errors.alert(), (text) => {
     expect(text).to.contains(errorMessage);
   });
 
 })
 
 Then('I should see the page logo', ()=>{
-    Login.elements.pageLogo().should("be.visible")
+    loginPage.elements.pageLogo().should("be.visible")
   })
 
 Then('I should see the subtitle {string}', (subtitle)=>{
-  Login.elements.subtitle().should("have.text", subtitle)
+  loginPage.elements.subtitle().should("have.text", subtitle)
 })
 
 Then('I should see an slider presentation below it', ()=>{
-  Login.elements.slider().should("be.visible")
+  loginPage.elements.slider().should("be.visible")
 })
 
 Then('I should see a login form section with the title {string}', (loginTitle)=>{
-  Login.elements.loginSection.form().should("be.visible")
-  Login.elements.loginSection.h2().should("have.text", loginTitle)
+  loginPage.elements.loginSection.form().should("be.visible")
+  loginPage.elements.loginSection.h2().should("have.text", loginTitle)
 })
 
 Then('I should see a {string} option', (label)=>{
   if (label=="Guest"){
-    Login.elements.loginSection.guestOption().should("be.visible").and('contain.text', label)
+    loginPage.elements.loginSection.guestOption().should("be.visible").and('contain.text', label)
   } else if (label=="Log in"){
-    Login.elements.loginSection.userOption().should("be.visible").and('contain.text', label)
+    loginPage.elements.loginSection.userOption().should("be.visible").and('contain.text', label)
   }
 })
 
 Then('I should see a link button below with the label {string}', (label)=>{
-  Login.elements.loginSection.signUpLink().should("be.visible").and('contain.text', label)
+  loginPage.elements.loginSection.signUpLink().should("be.visible").and('contain.text', label)
 })
 
 Then('I should see a {string} button below', (label)=>{
   if (label=="Sign in with Google"){
-    Login.elements.loginSection.googleSignIn().should("be.visible").and('contain.text', label)
+    loginPage.elements.loginSection.googleSignIn().should("be.visible").and('contain.text', label)
   } else if (label=="Log In"){
-    Login.elements.loginSection.submitButton().should("be.visible").and('have.value', label)
+    loginPage.elements.loginSection.submitButton().should("be.visible").and('have.value', label)
   }
 })
 
 Then('I should see a {string} field', (field)=>{
   if (field=="Username"){
-    Login.elements.loginSection.usernameTextBox().should("be.visible")
-    Login.elements.loginSection.usernameTextBox().invoke('attr', 'placeholder').should('contain', field)
+    loginPage.elements.loginSection.usernameTextBox().should("be.visible")
+    loginPage.elements.loginSection.usernameTextBox().invoke('attr', 'placeholder').should('contain', field)
   } else if (field=="Password"){
-    Login.elements.loginSection.passwordTextBox().should("be.visible")
-    Login.elements.loginSection.passwordTextBox().invoke('attr', 'placeholder').should('contain', field)
-    Login.elements.loginSection.passwordTextBox().invoke('attr', 'type').should('be.eq', 'password')
+    loginPage.elements.loginSection.passwordTextBox().should("be.visible")
+    loginPage.elements.loginSection.passwordTextBox().invoke('attr', 'placeholder').should('contain', field)
+    loginPage.elements.loginSection.passwordTextBox().invoke('attr', 'type').should('be.eq', 'password')
   }
 })
 
 Then('I should see the initial recipe', ()=>{
-  Login.elements.slider().invoke('attr', 'current').should('be.eq', "0")
+  loginPage.elements.slider().invoke('attr', 'current').should('be.eq', "0")
 })
 // #endregion
