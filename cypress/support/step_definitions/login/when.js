@@ -1,5 +1,7 @@
 import { When, And, Before } from "cypress-cucumber-preprocessor/steps"
-const Login = require("../../page-objects/Login.page")
+import { Login } from "../../page-objects/Login.page"
+
+const loginPage = new Login()
 
 Cypress.on('uncaught:exception', (err, runnable) => {
     // returning false here prevents Cypress from
@@ -13,33 +15,33 @@ When('I click the Log In button at the navbar', ()=>{
 })
 
 When('I click the Login option in the Welcome section', ()=>{
-    Login.OpenLogin()
+    loginPage.OpenLogin()
 })
 
 When('I click the {string} arrow in the slider', (arrow)=>{
     if (arrow=="right"){
-        Login.elements.sliderNextArrow().click()
+        loginPage.elements.sliderNextArrow().click()
     }
     else{
-        Login.elements.sliderPrevArrow().click()
+        loginPage.elements.sliderPrevArrow().click()
     }
 })
 
 When('I fill username with {string}', (user)=>{
     if (user!=""){
-        Login.enterUsername(user)
+        loginPage.enterUsername(user)
     }
 })
 
 
 When('I fill password with {string}', (password)=>{
     if (password!=""){
-        Login.enterPassword(password)
+        loginPage.enterPassword(password)
     }
 })
 
 When('I click the Login button', ()=>{
-    Login.clickLogInButton()
+    loginPage.clickLogInButton()
 })
 // #endregion
 
