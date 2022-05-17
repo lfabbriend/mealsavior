@@ -15,3 +15,12 @@ When('I click the Log In button at the navbar', ()=>{
 When('I click the Login option in the Welcome section', ()=>{
     Login.OpenLogin()
 })
+
+When('I click the {string} arrow in the slider', (arrow)=>{
+    if (arrow=="right"){
+        Login.elements.slider().shadow().find('.slider').find('button.slider-next-btn').click()
+    }
+    else{
+        Login.elements.slider().shadow().find('.slider').find('button.slider-prev-btn').click()
+    }
+})

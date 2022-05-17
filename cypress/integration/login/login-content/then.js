@@ -7,6 +7,10 @@ Cypress.on('uncaught:exception', (err, runnable) => {
     return false
   })
 
+  Then('I should see the page logo', ()=>{
+    Login.elements.pageLogo().should("be.visible")
+  })
+
 Then('I should see the subtitle {string}', (subtitle)=>{
   Login.elements.subtitle().should("have.text", subtitle)
 })
@@ -49,4 +53,8 @@ Then('I should see a {string} field', (field)=>{
     Login.elements.loginSection.passwordTextBox().invoke('attr', 'placeholder').should('contain', field)
     Login.elements.loginSection.passwordTextBox().invoke('attr', 'type').should('be.eq', 'password')
   }
+})
+
+Then('I should see the initial recipe', ()=>{
+  Login.elements.slider().invoke('attr', 'current').should('be.eq', "0")
 })

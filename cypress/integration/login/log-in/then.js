@@ -15,3 +15,4 @@ Then('I should see homepage', ()=>{
 Then('I should see the error message', ()=>{
   cy.url().should('includes', 'login')
 })
+

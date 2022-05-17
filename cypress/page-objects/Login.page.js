@@ -4,6 +4,7 @@ class Login {
 
     url = '/pages/login.html'
     elements={
+        pageLogo: () => cy.get('.loginPageHeader > img'),
         subtitle: () => cy.get('.subtitle > p'),
         slider: () => cy.get('#sliderContainer > app-slider'),
         loginSection:{

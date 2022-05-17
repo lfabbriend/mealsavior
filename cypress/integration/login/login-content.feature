@@ -8,7 +8,8 @@ Feature: Login page content
     
     Scenario: Login page content explored
         Given I am in the login page
-        Then I should see the subtitle "Open your fridge, select your ingredients"
+        Then I should see the page logo
+        And I should see the subtitle "Open your fridge, select your ingredients"
         And I should see an slider presentation below it
         And I should see a login form section with the title "Welcome!"
 
@@ -25,3 +26,9 @@ Feature: Login page content
         When I click the Login option in the Welcome section
         Then I should see a "Username" field
         And I should see a "Password" field
+
+    Scenario: Slides of the main recipes explored
+        Given I am in the login page
+        When I click the "right" arrow in the slider
+        And I click the "left" arrow in the slider
+        Then I should see the initial recipe
