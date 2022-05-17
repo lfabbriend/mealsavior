@@ -9,10 +9,4 @@ Cypress.on('uncaught:exception', (err, runnable) => {
     return false
 })
 
-// #region GIVEN Steps
 
-
-Given('I am in the login page', () => {
-    cy.url().should('includes', 'login')
-})
-// #endregion

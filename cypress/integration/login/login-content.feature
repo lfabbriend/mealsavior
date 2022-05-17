@@ -3,9 +3,9 @@ Feature: Login page content
     As a user I want to be able explore the login page
 
     Background: Visit login Page
-        Given I open index page
+        Given I open Index page
         When I click the Log In button at the navbar
-    
+
     Scenario: Login page content explored
         Given I am in the login page
         Then I should see the page logo

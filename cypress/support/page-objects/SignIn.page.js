@@ -9,22 +9,22 @@ export class SignIn {
 
     // Sign In Page actions
     navigate = () => cy.visit(url)
-    clickOutsideElement = () => cy.get('body').click(0,0)
+    clickOutsideElement = () => cy.get('body').click(0, 0)
 
 
-    signUp = {
+    signInSection = {
 
         // Sign Up section elements
         //title: () => cy.get(),
-        txtxUsername: () => cy.get("#create-account_form p"),
-        txtEmail: () => cy.get("#email_create"),
-        txtPassword: () => cy.get("#email_create"),
+        txtUsername: () => cy.get('input[placeholder="Username"]'),
+        txtEmail: () => cy.get('input[placeholder="Email"]'),
+        txtPassword: () => cy.get('input[placeholder="Password"]'),
         btnSubmit: () => cy.get("#submitBtn"),
 
         // Sign Up section actions
-        enterUsername : function (username) { this.txtUsername().type(username) },
-        enterEmail : function (email) { this.txtEmail().type(email) },
-        enterPassword : function (password) { this.txtPassword().type(password) },
+        enterUsername: function (username) { this.txtUsername().type(username) },
+        enterEmail: function (email) { this.txtEmail().type(email) },
+        enterPassword: function (password) { this.txtPassword().type(password) },
         submit: function () { this.btnSubmit().click() },
     }
 

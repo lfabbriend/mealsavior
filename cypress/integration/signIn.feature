@@ -3,7 +3,7 @@ Feature: Sign In
     As a user I want to be able to sign in
 
     Background: Visit Sign In Page
-        Given I open index page
+        Given I open Index page
         When I click the Log In button at the navbar
         
     
@@ -18,4 +18,4 @@ Feature: Sign In
 
     Examples:
         | username | email | password |
-        | polola  | polola@gmail.com  | pololapassword  |
+        | "polola"  | "polola@gmail.com"  | "pololapassword"  |

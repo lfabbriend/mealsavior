@@ -2,48 +2,42 @@
 
 export class Login {
 
-    url = '/pages/login.html'
-    elements={
+    url = 'pages/login.html'
+    navigate = () => cy.visit(url)
+    elements = {
         pageLogo: () => cy.get('.loginPageHeader > img'),
         subtitle: () => cy.get('.subtitle > p'),
-        slider: function (){return cy.get('#sliderContainer > app-slider') },
-        sliderNextArrow: function (){return this.slider().shadow().find('.slider').find('button.slider-next-btn')},
-        sliderPrevArrow: function () {return this.slider().shadow().find('.slider').find('button.slider-prev-btn')},
-        loginSection:{
+        slider: function () { return cy.get('#sliderContainer > app-slider') },
+        sliderNextArrow: function () { return this.slider().shadow().find('.slider').find('button.slider-next-btn') },
+        sliderPrevArrow: function () { return this.slider().shadow().find('.slider').find('button.slider-prev-btn') },
+        loginSection: {
             form: () => cy.get('#loginForm'),
             h2: () => cy.get('#loginForm > h2'),
             guestOption: () => cy.get('#guestOptionBtn > p'),
-            userOption: () => cy.get('#userOptionBtn > p') ,
+            userOption: () => cy.get('#userOptionBtn > p'),
             usernameTextBox: () => cy.get('.login-input[type="text"]'),
             passwordTextBox: () => cy.get('.login-input[type="password"]'),
             signUpLink: () => cy.get('.signUpLink'),
             googleSignIn: () => cy.get('.g-signin2'),
             submitButton: () => cy.get('#submitBtn'),
-            errors:{
+            errors: {
                 invalidTextBox: () => cy.get('.login-input:invalid'),
                 alert: () => 'window:alert'
-            } 
+            }
         }
-    }
-
-    /**
-     * @returns The current URL of the page
-     */
-    get Url(){
-        return cy.url()
     }
 
     /**
      * @description It clicks the Log in option within the 'Welcome!' section in order to expand the text fields to enter the login's credentials
      */
-    OpenLogin(){
+    OpenLogin() {
         this.elements.loginSection.userOption().click()
     }
 
     /**
      * @description It clicks the Guest option within the 'Welcome!' section in order to navigate to the recipes page as a guest user
      */
-    EnterAsGuest(){
+    EnterAsGuest() {
         this.elements.loginSection.guestOption().click()
     }
 
@@ -51,7 +45,7 @@ export class Login {
      * @description It enters an username passed as parameter within the 'Username' text box of the Login section
      * @param {String} username 
      */
-    enterUsername(username){
+    enterUsername(username) {
         this.elements.loginSection.usernameTextBox().clear().type(username).blur()
     }
 
@@ -59,21 +53,21 @@ export class Login {
      * @description It enters a password passed as parameter within the 'Password' text box of the Login section
      * @param {String} pass 
      */
-    enterPassword(pass){
+    enterPassword(pass) {
         this.elements.loginSection.passwordTextBox().clear().type(pass).blur()
     }
 
     /**
      * @description It clicks the Login button within the 'Welcome!' section in order to login and to navigate to Repices page as a logged user
      */
-    clickLogInButton(){
+    clickLogInButton() {
         this.elements.loginSection.submitButton().click()
     }
 
     /**
      * @description It clicks 'Don't you have an account? Sign up!' link button within the 'Welcome!' section in order to navigate to the SignUp page
      */
-    openSignUp(){
+    openSignUp() {
         this.elements.loginSection.signUpLink().click()
     }
 
@@ -82,7 +76,7 @@ export class Login {
      * @param {String} username Username used to login with an existing account
      * @param {String} password Password used to login with an existing account
      */
-    login(username, password){
+    login(username, password) {
         this.enterUsername(username)
         this.enterPassword(password)
         this.clickLogInButton()

@@ -10,37 +10,37 @@ Cypress.on('uncaught:exception', (err, runnable) => {
 })
 
 // #region WHEN Steps
-When('I click the Log In button at the navbar', ()=>{
+When('I click the Log In button at the navbar', () => {
     cy.get('.loginBtn').click()
 })
 
-When('I click the Login option in the Welcome section', ()=>{
+When('I click the Login option in the Welcome section', () => {
     loginPage.OpenLogin()
 })
 
-When('I click the {string} arrow in the slider', (arrow)=>{
-    if (arrow=="right"){
+When('I click the {string} arrow in the slider', (arrow) => {
+    if (arrow == "right") {
         loginPage.elements.sliderNextArrow().click()
     }
-    else{
+    else {
         loginPage.elements.sliderPrevArrow().click()
     }
 })
 
-When('I fill username with {string}', (user)=>{
-    if (user!=""){
-        loginPage.enterUsername(user)
-    }
-})
+// When('I fill username with {string}', (user)=>{
+//     if (user!=""){
+//         loginPage.enterUsername(user)
+//     }
+// })
 
 
-When('I fill password with {string}', (password)=>{
-    if (password!=""){
-        loginPage.enterPassword(password)
-    }
-})
+// When('I fill password with {string}', (password)=>{
+//     if (password!=""){
+//         loginPage.enterPassword(password)
+//     }
+// })
 
-When('I click the Login button', ()=>{
+When('I click the Login button', () => {
     loginPage.clickLogInButton()
 })
 // #endregion

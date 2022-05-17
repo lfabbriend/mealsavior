@@ -16,7 +16,7 @@ export class Home {
    * @description Method used to search for a specific input on the navigation bar
    * @param {string} input the string to search for
    */
-  search(input){
+  search(input) {
     this.elements.searchBar().type(input)
     this.elements.searchBarBtn().click()
   }
