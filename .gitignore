@@ -4,3 +4,4 @@ client/styles.css
 cypress/downloads
 cypress/videos
 cypress/screenshots
+test/api/report.html
