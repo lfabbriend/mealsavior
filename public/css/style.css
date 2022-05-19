@@ -177,12 +177,24 @@ body {
   }  
 
   .marca{
-    height: 30%;
+    height: 100%;
     width: 20%;
     margin-left: 2%;
   }
 
   /*esto es el estilo del footer*/
+
+  .marca-footer{
+    height: 100%;
+    width: 20%;
+    margin-left: 2%;
+  }
+
+  .marca-footer img{
+    height: 100%;
+    width: 100%;
+  }  
+
 
   .guest-user .footerBody {
     background-color: red;
