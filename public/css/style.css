@@ -60,13 +60,13 @@ body {
 /*esto es el estilo del navbar*/
 
 .navigation {
-    position: fixed;
+    position: relative;
     top: 0;
     width: 100%;
     z-index: 1;
     background: #228896;/*cambiarlo a variable*/
     display: flex;
-    justify-content: space-between;
+    justify-content: space-between; 
     align-items: center;
   }
   .searchZone {
@@ -171,6 +171,16 @@ body {
     visibility: hidden;
   }
 
+  .marca img{
+    height: 30%;
+    width: 100%;
+  }  
+
+  .marca{
+    height: 30%;
+    width: 20%;
+    margin-left: 2%;
+  }
 
   /*esto es el estilo del footer*/
 
