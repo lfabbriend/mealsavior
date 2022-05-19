@@ -27,19 +27,6 @@ When('I click the {string} arrow in the slider', (arrow) => {
     }
 })
 
-// When('I fill username with {string}', (user)=>{
-//     if (user!=""){
-//         loginPage.enterUsername(user)
-//     }
-// })
-
-
-// When('I fill password with {string}', (password)=>{
-//     if (password!=""){
-//         loginPage.enterPassword(password)
-//     }
-// })
-
 When('I click the Login button', () => {
     loginPage.clickLogInButton()
 })

@@ -7,14 +7,14 @@ Feature: Login page content
         When I click the Log In button at the navbar
 
     Scenario: Login page content explored
-        Given I am in the login page
+        Given I am in the "Log In" page
         Then I should see the page logo
         And I should see the subtitle "Open your fridge, select your ingredients"
         And I should see an slider presentation below it
         And I should see a login form section with the title "Welcome!"
 
     Scenario: Login section content explored
-        Given I am in the login page
+        Given I am in the "Log In" page
         Then I should see a "Guest" option
         And I should see a "Log in" option
         And I should see a link button below with the label "Don't you have an account? Sign up!"
@@ -22,13 +22,13 @@ Feature: Login page content
         And I should see a "Log In" button below
 
     Scenario: Fields of the login with credentials options explored
-        Given I am in the login page
+        Given I am in the "Log In" page
         When I click the Login option in the Welcome section
         Then I should see a "Username" field
         And I should see a "Password" field
 
     Scenario: Slides of the main recipes explored
-        Given I am in the login page
+        Given I am in the "Log In" page
         When I click the "right" arrow in the slider
         And I click the "left" arrow in the slider
         Then I should see the initial recipe

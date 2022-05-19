@@ -1,10 +1,10 @@
 import { defineStep, Given, When, Then, And, Before } from "cypress-cucumber-preprocessor/steps"
 import { Login } from "../../page-objects/Login.page"
-import { SignIn } from "../../page-objects/SignIn.page"
+import { SignUp } from "../../page-objects/SignUp.page"
 
 
 const loginPage = new Login()
-const signInPage = new SignIn()
+const signUpPage = new SignUp()
 
 Cypress.on('uncaught:exception', (err, runnable) => {
   // returning false here prevents Cypress from
@@ -12,17 +12,17 @@ Cypress.on('uncaught:exception', (err, runnable) => {
   return false
 })
 
-defineStep('I am in the {word} page', page => {
+defineStep('I am in the {string} page', page => {
     if (page === "Index") {
-
+      cy.url().should('eq', Cypress.config().baseUrl)
     }
   
-    if (page === "Login") {
-        cy.url().should('include', loginPage.url) 
+    if (page === "Log In") {
+        cy.url().should('eq', Cypress.config().baseUrl + loginPage.url) 
     }
   
-    if (page === "Sign In") {
-        cy.url().should('include', signInPage.url) 
+    if (page === "Sign Up") {
+        cy.url().should('eq', Cypress.config().baseUrl + signUpPage.url) 
     }
   
   })

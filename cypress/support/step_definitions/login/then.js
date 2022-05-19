@@ -14,16 +14,16 @@ Then('I should see homepage', () => {
   cy.url().should('be.eq', Cypress.config().baseUrl)
 })
 
-Then('I should see the error message {string} for the {string} field', (errorMessage, field) => {
-  loginPage.elements.loginSection.errors.invalidTextBox().should('have.length', 1)
-  cy.url().should('eq', Cypress.config().baseUrl + loginPage.url)
-  if (field == "username") {
-    loginPage.elements.loginSection.usernameTextBox().invoke('prop', 'validationMessage').should('equal', errorMessage)
-  } else {
-    loginPage.elements.loginSection.passwordTextBox().invoke('prop', 'validationMessage').should('equal', errorMessage)
-  }
+// Then('I should see the error message {string} for the {string} field', (errorMessage, field) => {
+//   loginPage.elements.loginSection.errors.invalidTextBox().should('have.length', 1)
+//   cy.url().should('eq', Cypress.config().baseUrl + loginPage.url)
+//   if (field == "username") {
+//     loginPage.elements.loginSection.usernameTextBox().invoke('prop', 'validationMessage').should('equal', errorMessage)
+//   } else {
+//     loginPage.elements.loginSection.passwordTextBox().invoke('prop', 'validationMessage').should('equal', errorMessage)
+//   }
 
-})
+// })
 
 Then('I should see the error message {string}', (errorMessage) => {
   cy.url().should('eq', Cypress.config().baseUrl + loginPage.url)

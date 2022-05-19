@@ -7,7 +7,7 @@ Feature: Login
         When I click the Log In button at the navbar
     
     Scenario Outline: Sucessful login
-        Given I am in the Login page
+        Given I am in the "Log In" page
         When I click the Login option in the Welcome section
         And I fill username with <username>
         And I fill password with <password>
@@ -21,21 +21,21 @@ Feature: Login
         | "hola"  | "hola"  |
 
     Scenario: Invalid login when leaving the username empty
-        Given I am in the Login page
+        Given I am in the "Log In" page
         When I click the Login option in the Welcome section
         And I fill password with "password"
         And I click the Login button
         Then I should see the error message "Please fill out this field." for the "username" field
 
     Scenario: Invalid login when leaving the password empty
-        Given I am in the Login page
+        Given I am in the "Log In" page
         When I click the Login option in the Welcome section
         And I fill username with "username"
         And I click the Login button
         Then I should see the error message "Please fill out this field." for the "password" field
 
     Scenario: Invalid login when typing invalid credentials
-        Given I am in the Login page
+        Given I am in the "Log In" page
         When I click the Login option in the Welcome section
         And I fill username with "sadasdsadasd"
         And I fill password with "123213213"

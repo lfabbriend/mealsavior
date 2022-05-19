@@ -1,10 +1,10 @@
 import { defineStep, Given, When, Then, And, Before } from "cypress-cucumber-preprocessor/steps"
 import { Login } from "../../page-objects/Login.page"
-import { SignIn } from "../../page-objects/SignIn.page"
+import { SignUp } from "../../page-objects/SignUp.page"
 
 
 const loginPage = new Login()
-const signInPage = new SignIn()
+const signUpPage = new SignUp()
 
 Cypress.on('uncaught:exception', (err, runnable) => {
     // returning false here prevents Cypress from
@@ -21,8 +21,8 @@ defineStep('I open {word} page', page => {
         loginPage.navigate()
     }
 
-    if (page === "Sign In") {
-        signInPage.navigate()
+    if (page === "Sign Up") {
+        signUpPage.navigate()
     }
 
 })
@@ -34,9 +34,9 @@ defineStep('I fill username with {string}', user => {
         }
     }
 
-    if (cy.url() === (Cypress.config().baseUrl + signInPage.url)) {
+    if (cy.url() === (Cypress.config().baseUrl + signUpPage.url)) {
         if (user != "") {
-            signInPage.enterUsername(user)
+            signUpPage.enterUsername(user)
         }
     }
 })
@@ -49,9 +49,9 @@ defineStep('I fill password with {string}', password => {
         }
     }
 
-    if (cy.url() === (Cypress.config().baseUrl + signInPage.url)) {
+    if (cy.url() === (Cypress.config().baseUrl + signUpPage.url)) {
         if (password != "") {
-            signInPage.enterPassword(password)
+            signUpPage.enterPassword(password)
         }
     }
 
