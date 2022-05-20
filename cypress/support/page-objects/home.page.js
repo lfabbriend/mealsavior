@@ -1,6 +1,7 @@
 /// <reference types="cypress" />
 
 export class Home {
+  navigate = () => cy.visit('/')
   elements = {
     searchBar: () => cy.get('input.search'),
     searchBarBtn: () => cy.get('button.sendSearchBtn'),

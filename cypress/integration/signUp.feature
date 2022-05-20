@@ -3,7 +3,7 @@ Feature: Sign Up
     As a user I want to be able to Sign Up
 
     Background: Visit Sign Up Page
-        Given I open Index page
+        Given I am in the "Index" page
         When I click the Log In button at the navbar
         And  I click the Dont you have an account? Sign up! link in the welcome section
 

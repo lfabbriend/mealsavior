@@ -3,7 +3,7 @@ Feature: Login
     As a user I want to be able to login in order to explore my recipes
 
     Background: Visiting the login Page
-        Given I open Index page
+        Given I am in the "Index" page
         When I click the Log In button at the navbar
     
     Scenario Outline: Sucessful login
