@@ -22,6 +22,22 @@ export class Home {
     this.elements.searchBarBtn().click()
   }
 
+  selectIngredients(ingredients) {
+    this.elements.ingredientsFilter().select(ingredients)
+  }
+
+  selectDiet(diet) {
+    this.elements.typeOfDietFilter().select(diet)
+  }
+
+  selectCoincidence(coincidence) {
+    this.elements.coincidencesFilter().select(coincidence)
+  }
+
+  clickFilterBtn() {
+    this.filterSearchBtn().click()
+  }
+
   /**
    * @description Method used to filter recipes
    * @param {Array} ingredients An array of valid ingredients
@@ -29,10 +45,10 @@ export class Home {
    * @param {string} coincidence valid options are "Strict", "Quite strict" and "No restrictions" 
    */
   filterRecipes(ingredients, diet, coincidence) {
-    this.elements.ingredientsFilter().select(ingredients)
-    this.elements.ingredientsFilter().select(diet)
-    this.elements.ingredientsFilter().select(coincidence)
-    this.filterSearchBtn().click()
+    this.selectIngredients(ingredients)
+    this.selectDiet(diet)
+    this.selectCoincidence(coincidence)
+    this.clickFilterBtn()
   }
 
   /**

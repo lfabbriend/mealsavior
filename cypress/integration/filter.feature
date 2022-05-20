@@ -3,24 +3,24 @@
 
 Feature: Recipes filters
 	Scenario: User filters by an ingredient with no diet and strict coincidence
-		Given the user is on the Home page
-		When the user selects ingredient "Garlic"
-		And the user selects "No diet" as Type of Diet
-		And the user selects "Strict" coincidence
-		And the user clicks the Search button
+		Given I am in the "Index" page
+		When I select ingredient "Garlic"
+		And I select "No diet" as Type of Diet
+		And I select "Strict" coincidence
+		And I click the Search button
 		Then only recipes with ingredient "Garlic" are shown
 
 	Scenario: User filters by two ingredients with no diet and strict coincidence
-		Given the user is on the Home page
-		When the user selects ingredients "Garlic" and "Spinach"
-		And the user selects "No diet" as Type of Diet
-		And the user selects "Strict" coincidence
-		And the user clicks the Search button
+		Given I am in the "Index" page
+		When I select ingredients "Garlic" and "Spinach"
+		And I select "No diet" as Type of Diet
+		And I select "Strict" coincidence
+		And I click the Search button
 		Then only recipes with ingredients "Garlic" and "Spinach" are shown
 
 	Scenario: User filters recipes by diet
-		Given the user is on the Home page
-		When the user selects "Vegetarian" as Type of Diet
-		And the user selects "No restrictions" coincidence
-		And the user clicks the Search button
+		Given I am in the "Index" page
+		When I select "Vegetarian" as Type of Diet
+		And I select "No restrictions" coincidence
+		And I click the Search button
 		Then only "Vegetarian" recipes are shown
