@@ -8,10 +8,15 @@ removeLoginToken();
 const form = document.getElementById('loginForm');
 const guestOptionBtn = document.getElementById('guestOptionBtn');
 const userOptionBtn = document.getElementById('userOptionBtn');
-const userInput = (document.getElementById('userInput').style.display = 'none');
+
+//ocultamos el btn de login y los campos a llenar 
+document.getElementById('userInput').style.display = 'none';
+document.getElementById('submitBtn').style.display = 'none';
+
 
 userOptionBtn.addEventListener('click', () => {
 	document.getElementById('userInput').style.display = 'block'; //it only appears when page is reloaded
+	document.getElementById('submitBtn').style.display = 'block';
 
 	form.addEventListener('submit', event => {
 		event.preventDefault();
