@@ -25,21 +25,24 @@
 		"prestart": "npm i",
 		"start": "npm-run-all --parallel serve run-api sass",
 		"test:ui": "npx cypress run",
-		"test:api": "npx newman run test/api/mealsavior.api"
+		"test:api": "npx newman run ./test/api/mealsavior.postman_collection.json -e ./test/api/mealsavior-local-environment.postman_environment.json --reporters \"cli,htmlextra\" --reporter-htmlextra-export ./test/api/report.html"
 	},
 	"devDependencies": {
 		"cypress": "^9.6.1",
 		"newman": "^5.3.2",
+		"newman-reporter-htmlextra": "^1.22.9",
 		"prettier": "^2.6.2",
 		"sass": "^1.50.1"
 	},
 	"dependencies": {
 		"bcrypt": "^5.0.1",
+		"cypress-cucumber-preprocessor": "^4.3.1",
 		"live-server": "^1.1.0",
-		"npm-run-all": "^4.1.5",
-		"cypress-cucumber-preprocessor": "^4.3.1"
+		"npm-run-all": "^4.1.5"
 	},
-	"cypress-cucumber-preprocessor": { 
-		"nonGlobalStepDefinitions": true 
+	"cypress-cucumber-preprocessor": {
+		"nonGlobalStepDefinitions": false,
+		"step_definitions": "cypress/support/step_definitions/"
+
 	}
 }

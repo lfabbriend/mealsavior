@@ -1,6 +1,7 @@
 /// <reference types="cypress" />
 
 export class Home {
+  navigate = () => cy.visit('/')
   elements = {
     searchBar: () => cy.get('input.search'),
     searchBarBtn: () => cy.get('button.sendSearchBtn'),
@@ -16,9 +17,25 @@ export class Home {
    * @description Method used to search for a specific input on the navigation bar
    * @param {string} input the string to search for
    */
-  search(input){
+  search(input) {
     this.elements.searchBar().type(input)
     this.elements.searchBarBtn().click()
+  }
+
+  selectIngredients(ingredients) {
+    this.elements.ingredientsFilter().select(ingredients)
+  }
+
+  selectDiet(diet) {
+    this.elements.typeOfDietFilter().select(diet)
+  }
+
+  selectCoincidence(coincidence) {
+    this.elements.coincidencesFilter().select(coincidence)
+  }
+
+  clickFilterBtn() {
+    this.filterSearchBtn().click()
   }
 
   /**
@@ -28,10 +45,10 @@ export class Home {
    * @param {string} coincidence valid options are "Strict", "Quite strict" and "No restrictions" 
    */
   filterRecipes(ingredients, diet, coincidence) {
-    this.elements.ingredientsFilter().select(ingredients)
-    this.elements.ingredientsFilter().select(diet)
-    this.elements.ingredientsFilter().select(coincidence)
-    this.filterSearchBtn().click()
+    this.selectIngredients(ingredients)
+    this.selectDiet(diet)
+    this.selectCoincidence(coincidence)
+    this.clickFilterBtn()
   }
 
   /**

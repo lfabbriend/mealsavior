@@ -1,0 +1,771 @@
+{
+	"info": {
+		"_postman_id": "15078eea-151b-4bfa-9b92-d721df5abf7a",
+		"name": "mealsavior",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Ingredients",
+			"item": [
+				{
+					"name": "Get ingredients",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status code is 200\", function () {\r",
+									"    pm.response.to.have.status(200);\r",
+									"});\r",
+									"\r",
+									"pm.test(\"Response contains id and name of the ingredients\", function () {\r",
+									"    var jsonData = pm.response.json();\r",
+									"    pm.expect(jsonData[0]).to.have.property(\"_id\");\r",
+									"    pm.expect(jsonData[0]).to.have.property(\"name\");\r",
+									"});\r",
+									"\r",
+									"pm.test(\"Response has at least one ingredient\", function(){\r",
+									"    var jsonData = pm.response.json();\r",
+									"    pm.expect(jsonData.length).not.to.eql(0);\r",
+									"})"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{url}}/ingredients",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"ingredients"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get an existing ingredient",
+					"event": [
+						{
+							"listen": "prerequest",
+							"script": {
+								"exec": [
+									"pm.sendRequest(pm.environment.get(\"url\") + \"/ingredients\", function (err, response) {\r",
+									"    pm.collectionVariables.set(\"existingIngredientId\", response.json()[0]._id);\r",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						},
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Body matches string\", function () {\r",
+									"\r",
+									"    pm.test(\"Status code is 200\", function () {\r",
+									"        pm.response.to.have.status(200);\r",
+									"    });\r",
+									"\r",
+									"    pm.test(\"Response contains ingredient ID\", function () {\r",
+									"        var jsonData = pm.response.json();\r",
+									"        pm.expect(jsonData._id).to.eql(pm.collectionVariables.get(\"existingIngredientId\"));\r",
+									"    });\r",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{url}}/ingredients/{{existingIngredientId}}",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"ingredients",
+								"{{existingIngredientId}}"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get an unexisting ingredient",
+					"event": [
+						{
+							"listen": "prerequest",
+							"script": {
+								"exec": [
+									"function generateID(len){\r",
+									"        let result =''\r",
+									"        let characters = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789'\r",
+									"        let charactersLength = len\r",
+									"        for (let i = 0; i<charactersLength; i++){\r",
+									"            result += characters.charAt(Math.floor(Math.random() * characters.length))\r",
+									"        }\r",
+									"        return result\r",
+									"    }\r",
+									"\r",
+									"\r",
+									"pm.sendRequest(pm.environment.get(\"url\") + \"/ingredients\", function (err, response) {\r",
+									"    pm.collectionVariables.set(\"inexistentIngredientId\", generateID(10));\r",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						},
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status code is 500\", function () {\r",
+									"    pm.response.to.have.status(500);\r",
+									"});\r",
+									"\r",
+									"pm.test(\"Verify error message\", function () {\r",
+									"    pm.expect(pm.response.text()).to.include(\"Invalid ID\");\r",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{url}}/ingredients/{{inexistentIngredientId}}",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"ingredients",
+								"{{inexistentIngredientId}}"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Login",
+			"item": [
+				{
+					"name": "Get users",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status code is 200\", function () {\r",
+									"    pm.response.to.have.status(200);\r",
+									"});\r",
+									"\r",
+									"pm.test(\"Response has at least one user registered\", function(){\r",
+									"    var jsonData = pm.response.json();\r",
+									"    pm.expect(jsonData.length).not.to.eql(0);\r",
+									"})"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{url}}/login",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"login"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get user",
+					"event": [
+						{
+							"listen": "prerequest",
+							"script": {
+								"exec": [
+									"pm.sendRequest(pm.environment.get(\"url\") + \"/login\", function (err, response) {\r",
+									"    pm.collectionVariables.set(\"existingUserId\", response.json()[0]._id);\r",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						},
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Body matches string\", function () {\r",
+									"\r",
+									"    pm.test(\"Status code is 200\", function () {\r",
+									"        pm.response.to.have.status(200);\r",
+									"    });\r",
+									"\r",
+									"    pm.test(\"Response contains the user ID\", function () {\r",
+									"        var jsonData = pm.response.json();\r",
+									"        pm.expect(jsonData._id).to.eql(pm.collectionVariables.get(\"existingUserId\"));\r",
+									"    });\r",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{url}}/login/{{existingUserId}}",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"login",
+								"{{existingUserId}}"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Failed login",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status code\", function () {\r",
+									"    pm.response.to.have.status(404);\r",
+									"});\r",
+									"pm.test(\"Verify error message\", function () {\r",
+									"    pm.expect(pm.response.text()).to.include(\"Invalid User/Password\");\r",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json"
+							},
+							{
+								"key": "Accept-Language",
+								"value": "en-US,en;q=0.9"
+							},
+							{
+								"key": "Connection",
+								"value": "keep-alive"
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							},
+							{
+								"key": "Origin",
+								"value": "http://127.0.0.1:8080"
+							},
+							{
+								"key": "Referer",
+								"value": "http://127.0.0.1:8080/"
+							},
+							{
+								"key": "Sec-Fetch-Dest",
+								"value": "empty"
+							},
+							{
+								"key": "Sec-Fetch-Mode",
+								"value": "cors"
+							},
+							{
+								"key": "Sec-Fetch-Site",
+								"value": "cross-site"
+							},
+							{
+								"key": "User-Agent",
+								"value": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/101.0.4951.41 Safari/537.36 Edg/101.0.1210.32"
+							},
+							{
+								"key": "sec-ch-ua",
+								"value": "\" Not A;Brand\";v=\"99\", \"Chromium\";v=\"101\", \"Microsoft Edge\";v=\"101\""
+							},
+							{
+								"key": "sec-ch-ua-mobile",
+								"value": "?0"
+							},
+							{
+								"key": "sec-ch-ua-platform",
+								"value": "\"Windows\""
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"userName\":\"{{$randomUserName}}\",\r\n    \"password\":\"{{$randomWord}}\"\r\n}"
+						},
+						"url": {
+							"raw": "http://localhost:3000/login",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"login"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Successful login",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status code\", function () {\r",
+									"    pm.response.to.have.status(201);\r",
+									"});\r",
+									"\r",
+									"pm.test(\"Response contains the generated token\", function () {\r",
+									"        var jsonData = pm.response.json();\r",
+									"        pm.expect(jsonData.length).not.to.eql(0);\r",
+									"    });"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json"
+							},
+							{
+								"key": "Accept-Language",
+								"value": "en-US,en;q=0.9"
+							},
+							{
+								"key": "Connection",
+								"value": "keep-alive"
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							},
+							{
+								"key": "Origin",
+								"value": "http://127.0.0.1:8080"
+							},
+							{
+								"key": "Referer",
+								"value": "http://127.0.0.1:8080/"
+							},
+							{
+								"key": "Sec-Fetch-Dest",
+								"value": "empty"
+							},
+							{
+								"key": "Sec-Fetch-Mode",
+								"value": "cors"
+							},
+							{
+								"key": "Sec-Fetch-Site",
+								"value": "cross-site"
+							},
+							{
+								"key": "User-Agent",
+								"value": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/101.0.4951.41 Safari/537.36 Edg/101.0.1210.32"
+							},
+							{
+								"key": "sec-ch-ua",
+								"value": "\" Not A;Brand\";v=\"99\", \"Chromium\";v=\"101\", \"Microsoft Edge\";v=\"101\""
+							},
+							{
+								"key": "sec-ch-ua-mobile",
+								"value": "?0"
+							},
+							{
+								"key": "sec-ch-ua-platform",
+								"value": "\"Windows\""
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"userName\":\"test\",\r\n    \"password\":\"test\"\r\n}"
+						},
+						"url": {
+							"raw": "http://localhost:3000/login",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"login"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Recipes",
+			"item": [
+				{
+					"name": "Get recipes",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status code is 200\", function () {\r",
+									"    pm.response.to.have.status(200);\r",
+									"});\r",
+									"\r",
+									"pm.test(\"Response has at least one recipe\", function(){\r",
+									"    var jsonData = pm.response.json();\r",
+									"    pm.expect(jsonData.length).not.to.eql(0);\r",
+									"})\r",
+									"\r",
+									"pm.test(\"Response contains all recipes properties\", function () {\r",
+									"    var jsonData = pm.response.json();\r",
+									"    pm.expect(jsonData[0]).to.have.property(\"_id\");\r",
+									"    pm.expect(jsonData[0]).to.have.property(\"name\");\r",
+									"    pm.expect(jsonData[0]).to.have.property(\"recipeDescription\");\r",
+									"    pm.expect(jsonData[0]).to.have.property(\"celiac\");\r",
+									"    pm.expect(jsonData[0]).to.have.property(\"vegetarian\");\r",
+									"    pm.expect(jsonData[0]).to.have.property(\"vegan\");\r",
+									"    pm.expect(jsonData[0]).to.have.property(\"porciones\");\r",
+									"    pm.expect(jsonData[0]).to.have.property(\"ingredients\");\r",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{url}}/recipes",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"recipes"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get an existing recipe",
+					"event": [
+						{
+							"listen": "prerequest",
+							"script": {
+								"exec": [
+									"pm.sendRequest(pm.environment.get(\"url\") + \"/recipes\", function (err, response) {\r",
+									"    pm.collectionVariables.set(\"existingRecipeId\", response.json()[0]._id);\r",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						},
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Body matches string\", function () {\r",
+									"\r",
+									"    pm.test(\"Status code is 200\", function () {\r",
+									"        pm.response.to.have.status(200);\r",
+									"    });\r",
+									"\r",
+									"    pm.test(\"Response contains recipe ID\", function () {\r",
+									"        var jsonData = pm.response.json();\r",
+									"        pm.expect(jsonData._id).to.eql(pm.collectionVariables.get(\"existingRecipeId\"));\r",
+									"    });\r",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{url}}/recipes/{{existingRecipeId}}",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"recipes",
+								"{{existingRecipeId}}"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get an unexisting recipe",
+					"event": [
+						{
+							"listen": "prerequest",
+							"script": {
+								"exec": [
+									"function generateID(len){\r",
+									"        let result =''\r",
+									"        let characters = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789'\r",
+									"        let charactersLength = len\r",
+									"        for (let i = 0; i<charactersLength; i++){\r",
+									"            result += characters.charAt(Math.floor(Math.random() * characters.length))\r",
+									"        }\r",
+									"        return result\r",
+									"    }\r",
+									"\r",
+									"\r",
+									"pm.sendRequest(pm.environment.get(\"url\") + \"/recipes\", function (err, response) {\r",
+									"    pm.collectionVariables.set(\"inexistentRecipeId\", generateID(10));\r",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						},
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status code is 500\", function () {\r",
+									"    pm.response.to.have.status(500);\r",
+									"});\r",
+									"\r",
+									"pm.test(\"Verify error message\", function () {\r",
+									"    pm.expect(pm.response.text()).to.include(\"Invalid ID\");\r",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{url}}/recipes/{{inexistentRecipeId}}",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"recipes",
+								"{{inexistentRecipeId}}"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Sign up",
+			"item": [
+				{
+					"name": "Signup with unique username",
+					"event": [
+						{
+							"listen": "prerequest",
+							"script": {
+								"exec": [
+									"function generateString(){\r",
+									"        let result =''\r",
+									"        let characters = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789'\r",
+									"        let charactersLength = characters.length\r",
+									"        for (let i = 0; i<charactersLength; i++){\r",
+									"            result += characters.charAt(Math.floor(Math.random() * charactersLength))\r",
+									"        }\r",
+									"        return result\r",
+									"    }\r",
+									"function generateEmail(){\r",
+									"        let values = 'abcdefghijklmnopqrstuvwxyz0123456789'\r",
+									"        let email = ''\r",
+									"        let temp\r",
+									"        for (let i = 0; i < 10; i++) {\r",
+									"            temp = values.charAt(Math.round(values.length * Math.random()))\r",
+									"            email += temp          \r",
+									"        }\r",
+									"        temp =''\r",
+									"        email += '@'\r",
+									"        for (let i = 0; i < 8; i++) {\r",
+									"            temp = values.charAt(Math.round(values.length * Math.random()))\r",
+									"            email += temp          \r",
+									"        }\r",
+									"        email += '.com'\r",
+									"        return email\r",
+									"}\r",
+									"\r",
+									"pm.variables.set(\"username\", generateString())\r",
+									"pm.variables.set(\"email\", generateString())\r",
+									"pm.variables.set(\"password\", generateString())\r",
+									""
+								],
+								"type": "text/javascript"
+							}
+						},
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status code is 200\", function () {\r",
+									"    pm.response.to.have.status(201);\r",
+									"});\r",
+									"\r",
+									"pm.test(\"Response is correct\", function () {\r",
+									"    var newUser = pm.response.json()[0];\r",
+									"    pm.expect(newUser).to.have.property(\"_id\");\r",
+									"    pm.expect(newUser).to.have.property(\"userName\");\r",
+									"    pm.expect(newUser).to.have.property(\"password\");\r",
+									"    pm.expect(newUser).to.have.property(\"email\");\r",
+									"    pm.expect(newUser).to.have.property(\"ownrecipes\");\r",
+									"    pm.expect(newUser).to.have.property(\"favrecipes\");\r",
+									"    pm.expect(newUser.userName, \"unexpected username\").to.eql(pm.variables.get(\"username\"));\r",
+									"    pm.expect(newUser.email, \"unexpected email\").to.eql(pm.variables.get(\"email\"));\r",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"userName\": \"{{username}}\",\r\n    \"email\": \"{{email}}\",\r\n    \"password\": \"{{password}}\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{url}}/signup",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"signup"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Invalid signup",
+					"event": [
+						{
+							"listen": "prerequest",
+							"script": {
+								"exec": [
+									"pm.sendRequest(pm.environment.get(\"url\") + \"/login\", function (err, response) {\r",
+									"    pm.collectionVariables.set(\"existingUsername\", response.json()[0].userName);\r",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						},
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status code\", function () {\r",
+									"    pm.response.to.have.status(404);\r",
+									"});\r",
+									"pm.test(\"Verify error message\", function () {\r",
+									"    pm.expect(pm.response.text()).to.include(\"Error\"); //error message not implemented yet\r",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"userName\":\"{{existingUsername}}\",\r\n    \"email\": \"{{$randomEmail}}\",\r\n    \"password\": \"{{$randomPassword}}\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{url}}/signup",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"signup"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	],
+	"variable": [
+		{
+			"key": "existingIngredientId",
+			"value": ""
+		},
+		{
+			"key": "existingUserId",
+			"value": ""
+		},
+		{
+			"key": "inexistentIngredientId",
+			"value": ""
+		},
+		{
+			"key": "inexistentRecipeId",
+			"value": ""
+		},
+		{
+			"key": "existingRecipeId",
+			"value": ""
+		},
+		{
+			"key": "existingUsername",
+			"value": ""
+		}
+	]
+}
