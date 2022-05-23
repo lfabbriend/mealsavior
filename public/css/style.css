@@ -348,3 +348,110 @@ body {
     border-top-right-radius: 20px;
   }
   
+
+  /*login page*/
+
+  .loginPageHeader img {
+    height: 10%;
+    width: 50%;
+    padding-top: 5%;
+    padding-left: 5%;
+  }
+  
+  .loginPageHeader p {
+    padding-left: 6%;
+    font-size: 2vw;
+  }
+  
+  .containerLogin {
+    padding-top: 2%;
+    width: 100%;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    position: relative;
+    overflow: auto;
+  }
+  
+  .loginSection {
+    background-color: #04040475;
+    margin-right: 5%;
+    max-width: 30%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    width: 100%;
+    text-align: center;
+    overflow: auto;
+    border-radius: 5%;
+  }
+  
+  .loginSection .login-input {
+    max-height: 60px;
+  }
+  
+  .sliderSection {
+    max-width: 65%;
+    float: left;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    width: 100%;
+    text-align: center;
+    overflow: auto;
+    margin-bottom: 3%;
+  }
+  
+  #submitBtn {
+    background-color: green;
+    color: white;
+  }
+  #submitBtn:hover {
+    transform: scale(1.1);
+    background-color: var(--hover-secondary-color);
+    color: white;
+    transition: 500ms;
+  }
+  
+  
+  .loginSection input {
+    width: 80%;
+    height: 100px;
+    margin: 10px;
+    border: none;
+    outline: none;
+    padding-left: 10px;
+  }
+  
+  .containerLogin .sliderSection img {
+    width: 75%;
+    height: 100%;
+    border-radius: 5%;
+  }
+  
+  .g-signin2{
+      margin: 10px;
+  }
+  
+  .signUpLink{
+    color: white;
+    font-size: 1rem;
+  }
+  
+  .userOptionsContainer img{
+    max-width: 100%;
+    max-height: 100%;
+  }
+  .userOptionsContainer{
+    max-width: 100%;
+    max-height: 100%;
+    position:relative;
+  }
+  
+  .userOptionsContainer .userOptionBtn{
+    max-width: 30%;
+    max-height: 100%;
+  }

@@ -1,72 +1,19 @@
 {{#> base}}
 
-    <h1>{{title}}</h1>
+<h1>{{title}}</h1>
 
-    	<div class="teamMealSavior">
-			<div class="teammate teammate1">
-				<div class="teammateImage">
-					<img src="/assets/img/teamImages/franco.png" />
-				</div>
-				<div class="teammateName">
-					<h2>Franco Gaytan</h2>
-				</div>
-			</div>
+<div class="teamMealSavior">
 
-			<div class="teammate teammate2">
-				<div class="teammateImage">
-					<img src="/assets/img/teamImages/lucia.png" />
-				</div>
-				<div class="teammateName">
-					<h2>Lucía Fabbri</h2>
-				</div>
-			</div>
-
-			<div class="teammate teammate3">
-				<div class="teammateImage">
-					<img src="/assets/img/teamImages/fede.png" />
-				</div>
-				<div class="teammateName">
-					<h2>Federico Gramajo</h2>
-				</div>
-			</div>
-
-			<div class="teammate teammate4">
-				<div class="teammateImage">
-					<img src="/assets/img/teamImages/jero.jpg" />
-				</div>
-				<div class="teammateName">
-					<h2>Jerónimo Alvarez</h2>
-				</div>
-			</div>
-
-			<div class="teammate teammate5">
-				<div class="teammateImage">
-					<img src="/assets/img/teamImages/juli.png" />
-				</div>
-				<div class="teammateName">
-					<h2>Julián Lostumbo</h2>
-				</div>
-			</div>
-
-			<div class="teammate teammate6">
-				<div class="teammateImage">
-					<img src="/assets/img/teamImages/alexis.png" />
-				</div>
-				<div class="teammateName">
-					<h2>Alexis Ivan Jeriha</h2>
-				</div>
-			</div>
-
-			<div class="teammate teammate7">
-				<div class="teammateImage">
-					<img src="/assets/img/teamImages/agus.png" />
-				</div>
-				<div class="teammateName">
-					<h2>Agustin D'Angelo</h2>
-				</div>
-			</div>
+	{{#each teammates}}
+	<div class="teammate">
+		<div class="teammateImage">
+			<img src="/assets/img/teamImages/{{this.thumb}}" />
 		</div>
-
-    <script src="/js/pages/aboutUs.js" type="module"></script>
+		<div class="teammateName">
+			<h2>{{this.name}}</h2>
+		</div>
+	</div>
+	{{/each}}
+</div>
 
 {{/base}}
