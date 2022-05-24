@@ -82,13 +82,3 @@ guestOptionBtn.addEventListener('click', () => {
 });
 
 
-//is-login validtion
-
-const loginCheck = true;
-
-//trato con el ejemplo de la documentacion
-
-Handlebars.registerHelper('isLogin', function(value){
-	return value !== undefined;
-});
-
