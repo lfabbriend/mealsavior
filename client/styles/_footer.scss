@@ -1,0 +1,135 @@
+.guest-user {
+	.footerBody {
+		background-color: red;
+	}
+}
+
+.footerBody {
+	position: fixed;
+	bottom: 0;
+	left: 0;
+	width: 100%;
+	display: flex;
+	background-color: var(--footer-primary-color);
+	transition: transform ease 250ms;
+	transform: translateY(100%);
+
+	&.visible {
+		transform: translate(0);
+
+		.bichito {
+			.fa-chevron-down {
+				transform: rotate(180deg);
+			}
+		}
+	}
+
+	.bichito {
+		position: absolute;
+		left: 50px;
+		bottom: 95%;
+		background-color: transparent;
+		border: none;
+		cursor: pointer;
+
+		&:hover {
+			img {
+				transform: scale(1.1);
+			}
+		}
+
+		img {
+			height: 75px;
+			object-fit: contain;
+			transition: transform ease 250ms;
+			transform-origin: bottom;
+			margin: 0;
+		}
+
+		.fa-chevron-down {
+			position: relative;
+			left: 15px;
+			bottom: 20px;
+			font-size: 1.5rem;
+			transition: transform ease-in 250ms;
+		}
+	}
+
+
+
+	a {
+			color: white;
+			text-decoration: none;
+		}
+		.socialMedia {
+			display: flex;
+			justify-content: center;
+			align-items: center;
+			gap: 20px;
+			width: 100%;
+			height: auto;
+			:hover {
+				color: var(--footer-hover-color);
+				transition: color ease-in 250ms;
+			}
+		}
+
+
+	.footerCenter{
+		display: flex;
+		align-items: center;
+		justify-content: space-around;
+		height: auto;
+		padding: 10px;
+		width: 100%;
+		gap: 10px;
+		margin-left: 25px;
+		margin-right: 25px;
+		.footerButton{
+			background-color: transparent;
+			border: 3px solid whitesmoke;
+			border-radius: 10px;
+			font-family: var(--primary-font);
+			color: whitesmoke;
+			font-size: 1.1rem;
+			font-weight: bolder;
+			width: auto;
+			padding: 4px;
+			text-align: center;
+			cursor: pointer;
+			min-width: 125px;
+		}
+		.footerButton:hover{
+			color: black;
+			background-color: whitesmoke;
+			transition: color, background-color, ease-in 250ms;
+		}	
+		a {
+			color: white;
+			text-decoration: none;
+			border-radius: 20px;
+			.fa-brands{
+				font-size: 1.5rem;
+				padding: 5px;
+				border-radius: 20px;
+			}
+		}
+		.socialMedia {
+			display: flex;
+			justify-content: center;
+			align-items: center;
+			gap: 40px;
+			width: 100%;
+			height: auto;
+			:hover{
+				color: black;
+				background-color: white;
+				transform: scale(1.1);
+				
+				transition: background-color, color, transform, ease-in 250ms;
+			}
+		}
+	}
+}
+
+

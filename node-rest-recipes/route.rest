@@ -1,0 +1,38 @@
+GET http://localhost:3000/recipes
+
+###
+GET http://localhost:3000/ingredients
+
+
+###
+
+POST http://localhost:3000/recipes
+Content-Type: application/json
+
+{
+        "name": "Ensalada Veggie 1",
+        "recipeDescription": "Cortas lechuga, tomate y queso, le pones un poco de vinagre y la mezclas",
+        "celiac":false,
+        "vegetarian":true,
+        "vegan":false,
+        "porciones":2,
+        "idIngredient":["62601f26566535e549fec517"]
+}
+###
+POST http://localhost:3000/ingredients
+Content-Type: application/json
+
+{
+        "name": "Lechuga"
+}
+
+###
+POST http://localhost:3000/login
+Content-Type: application/json
+
+{
+        "userName": "fran",
+        "password":"123",
+        "email":"@gmaill.com"
+}
+

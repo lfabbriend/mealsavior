@@ -1,0 +1,179 @@
+.marca {
+	min-width: 250px;
+	margin-left: 2rem;
+	min-height: 40px;
+	&:hover {
+		transform: scale(1.1);
+		transition: 500ms;
+	}
+}
+
+.mealsaviorAncle {
+	height: 40px;
+	width: 100%;
+	display: block;
+}
+
+.container{
+	display: flex;
+}
+
+.filtersContainer{
+	 //display: flex;
+	max-width: 30%;
+	min-width: 30%;
+	margin-right: 3%;
+	margin-left: 2%;
+	border-radius: 5px;
+	background-color: rgb(133, 133, 133);
+	margin-top: 10%;
+	justify-content: center;
+	max-height: 500px;/*este despues se va a tener que cambiar, no puede quedar estatico*/
+}
+
+.filter-title{
+	//width: 100%;
+	margin-top: 10%;
+	max-height: 10px;
+	color: white;
+	justify-content: center;
+	margin-left: 35%;
+	margin-bottom: 15%;
+}
+
+.recipesContainer {
+	max-width: 65%;
+	min-width: 65%;
+	display: grid;
+	grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+	grid-gap: 30px;
+	padding: 30px;
+	margin-top: 100px;
+
+	.recipe {
+		background-color: aliceblue;
+		border-radius: 20px;
+		text-decoration: none;
+		color: black;
+		&:hover {
+			transform: scale(1.02);
+			box-shadow: 0 0 20px rgba(0, 0, 0, 0.20);
+			transition: transform ease-out 250ms;
+		}
+	}
+
+	.recipeImg {
+		width: 100%;
+		height: 250px;
+		object-fit: cover;
+		display: block;
+		border-top-left-radius: 20px;
+		border-top-right-radius: 20px;
+	}
+
+	.cardDetails {
+		padding: 10px;
+	}
+}
+
+.submitFiltersBtn{
+	width: 75%;
+	height: 42px;
+	margin-left: 12%;
+	background-color: green;
+	border: none;
+}
+
+/*a partir de aca para los filtros*/
+
+.select {
+	$max-width: 75%;
+	$padding: 10px 15px;
+	$primary-color: #fff;
+	$secondary-color: #eee;
+
+	width: 100%;
+	position: relative;
+	max-width: $max-width;
+	margin-top: 10%;
+	margin-bottom: 10%;
+	margin-left: 12%;
+	margin-right: 50%;
+
+	* {
+		font-size: 14px;
+	}
+
+	&.open {
+		.select-dropdown {
+			display: block;
+		}
+	}
+
+	button,
+	[type="button"] {
+		width: 100%;
+		padding: $padding;
+		text-align: left;
+		line-height: 1.5;
+		background-color: transparent;
+		transition: background-color ease 150ms, color ease 150ms;
+		cursor: pointer;
+	}
+
+	.select-toggler,
+	.select-dropdown {
+		width: 100%;
+		border: 1px solid $secondary-color;
+		background-color: $primary-color;
+	}
+
+	.select-toggler {
+		padding: $padding;
+		text-align: left;
+	}
+
+	.select-dropdown {
+		position: absolute;
+		top: 100%;
+		left: 0;
+		width: 100%;
+		max-height: 200px;
+		overflow-y: auto;
+		list-style: none;
+		border-top-color: transparent;
+		display: none;
+		z-index: 1;
+
+		&::-webkit-scrollbar {
+			width: 8px;
+			height: 8px;
+
+			&-track {
+				background-color: $primary-color;
+			}
+
+			&-thumb {
+				background-color: $secondary-color;
+			}
+		}
+
+		li {
+			&.hidden {
+				display: none;
+			}
+
+			button {
+				border: none;
+
+				&:hover {
+					background-color: $secondary-color;
+				}
+
+				&.selected {
+					background-color: darken($secondary-color, 10%);
+				}
+			}
+		}
+	}
+}

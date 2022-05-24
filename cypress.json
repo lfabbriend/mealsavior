@@ -1,0 +1,15 @@
+{
+  "fixturesFolder": "cypress/fixtures",
+  "integrationFolder": "cypress/integration",
+  "pluginsFile": "cypress/plugins/index.js",
+  "screenshotsFolder": "cypress/screenshots",
+  "videosFolder": "cypress/videos",
+  "downloadsFolder": "cypress/downloads",
+  "supportFile": "cypress/support/index.js",
+  "videos":false,
+  "ignoreTestFiles": ["*.js", "*.md"],
+    "testFiles": "**/**/**/*.feature",
+  "baseUrl":"http://127.0.0.1:8080/",
+  "viewportHeight":1080,
+  "viewportWidth": 1920
+}

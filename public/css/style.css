@@ -347,12 +347,15 @@ body {
     border-top-left-radius: 20px;
     border-top-right-radius: 20px;
   }
-  
 
   /*login page*/
 
+  .loginPageHeader{
+    display: block;
+  }
+
   .loginPageHeader img {
-    height: 10%;
+    height: 28%;
     width: 50%;
     padding-top: 5%;
     padding-left: 5%;
@@ -361,6 +364,7 @@ body {
   .loginPageHeader p {
     padding-left: 6%;
     font-size: 2vw;
+    width: 100%;
   }
   
   .containerLogin {

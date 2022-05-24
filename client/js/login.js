@@ -1,6 +1,6 @@
-import { baseApiUrl } from '/js/utils/constants.js';
-import { setLoginToken, removeLoginToken } from '/js/utils/helpers.js';
-import { setSlider } from '/components/slider.js';
+import { baseApiUrl } from './utils/constants.js';
+import { setLoginToken, removeLoginToken } from './utils/helpers.js';
+import { setSlider } from '../components/slider.js';
 
 //#region Login
 removeLoginToken();
@@ -9,15 +9,6 @@ const form = document.getElementById('loginForm');
 const guestOptionBtn = document.getElementById('guestOptionBtn');
 const userOptionBtn = document.getElementById('userOptionBtn');
 const userInput = (document.getElementById('userInput').style.display = 'none');
-
-
-// estos dos son para sacar el navbar y el footer del login, la manera correcta es hacerlo con las condiciones de los handlebars
-const navbar = document.querySelector('.navigation');
-navbar.style.display = 'none';
-
-const footer = document.querySelector('.footerBody');
-footer.style.display = 'none';
-
 
 userOptionBtn.addEventListener('click', () => {
 	document.getElementById('userInput').style.display = 'block'; //it only appears when page is reloaded
@@ -78,17 +69,5 @@ containerSlider.appendChild(slider);
 guestOptionBtn.addEventListener('click', () => {
 	localStorage.removeItem('token');
 	//localStorage.setItem('token', undefined);//aca hay que removerlo
-	location.href = '/';
+	location.href = '../index.html';
 });
-
-
-//is-login validtion
-
-const loginCheck = true;
-
-//trato con el ejemplo de la documentacion
-
-Handlebars.registerHelper('isLogin', function(value){
-	return value !== undefined;
-});
-
