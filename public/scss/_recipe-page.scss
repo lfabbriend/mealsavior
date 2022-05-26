@@ -194,13 +194,14 @@
 }
 
 .nutritionContainer{
-    width: 1200px;
-    height: 500px;
-    margin: auto;
-    background-color: white;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
+    width: 80%;
+	height: 500px;
+	margin: auto;
+	background-color: white;
+	display: flex;
+	/* flex-direction: column; */
+	justify-content: center;
+    align-items: flex-start;
 }
 
 
@@ -227,13 +228,18 @@
 }
 
 .nutritionFacts{
-    display: none;
-    flex-direction: column;
-    align-items: center;
-    margin-top: 10px;
-    margin-bottom: 10px;
-    border-radius: 30px;
-    overflow: hidden;
+    background-color: #0da45b;
+	color: white;
+	font-family: 'Forum', cursive; 
+	font-weight: bolder;
+	font-size: 1.5rem;
+	border: #0da45b solid 5px;
+	border-radius: 25px;
+	padding: 10px;
+	margin-top: 125px;
+	margin-bottom: 10px;
+	cursor: pointer;
+	text-decoration: underline;
     &.visible{
         display: flex;
         background-color: #f0ece7;
