@@ -1,0 +1,97 @@
+{{#> base}}
+
+<style>
+	body{
+		background-color: rgb(197, 197, 197);
+	}
+</style>
+
+<h1>{{title}}</h1>
+
+<div class="recipeDetailsImage">
+			<img src="https://i.blogs.es/58e562/hambruguesa/1366_2000.jpg" class="burguer" />
+		</div>
+		<div class="recipeDetailsTitle">
+			<h1>DoubleCheese Burguer</h1>
+		</div>
+		<div class="recipeDetailsContainer">
+			<ul>
+				<li class="detailsItem"><i class="fa-solid fa-users listIcon"></i> 23 people have already cooked this recipe</li>
+				<li class="detailsItem"><i class="fa-solid fa-clock listIcon"></i> Duration: 33 minutes</li>
+				<li class="detailsItem">
+					<i class="fa-solid fa-chart-simple listIcon"></i> Difficulty: <i class="fa-solid fa-square"></i>
+					<i class="fa-regular fa-square"></i> <i class="fa-regular fa-square"></i>
+				</li>
+			</ul>
+
+			<!--Comienzo rater-->
+			<div class="raterStar" id="rater-1" role="rater" data-rating="">
+				<div>
+					<span class="star" data-value="1"><i class="fa-solid fa-star"></i></span>
+					<span class="star" data-value="2"><i class="fa-solid fa-star"></i></span>
+					<span class="star" data-value="3"><i class="fa-solid fa-star"></i></span>
+					<span class="star" data-value="4"><i class="fa-solid fa-star"></i></span>
+					<span class="star" data-value="5"><i class="fa-solid fa-star"></i></span>
+				</div>
+				<span>Rate this recipe!</span>
+			</div>
+			<!--Fin rater-->
+		</div>
+		<div class="recipeIngredients">
+			<h3>Ingredients</h3>
+			<ul class="ingredientsList">
+				<li type="disc" class="ingredientItem">1 (6 oz.) ground chuck, shaped into a burger</li>
+				<li type="disc" class="ingredientItem">2 eggs</li>
+				<li type="disc" class="ingredientItem">3 tsp. olive oil, divided</li>
+				<li type="disc" class="ingredientItem">1/2 small onion, sliced</li>
+				<li type="disc" class="ingredientItem">2 slices of cheddar cheese or other cheese</li>
+				<li type="disc" class="ingredientItem">2 thick slices bacon, cut in half</li>
+				<li type="disc" class="ingredientItem">2 tsp. Dijon mustard</li>
+				<li type="disc" class="ingredientItem">1 burger bun</li>
+			</ul>
+		</div>
+
+		<div class="recipeInstructions">
+			<h2>Instructions</h2>
+			<ol>
+				<li class="instructionItem">
+					<i class="fa-solid fa-1 numberItem"></i>Brush burger lightly with 2 tsp. olive oil and grill 7 to 9 minutes; turn. Cook 5 to 7
+					minutes more until desired doneness.
+				</li>
+				<li class="instructionItem">
+					<i class="fa-solid fa-2 numberItem"></i>Meanwhile, toast bun and spread mustard on bottom half. Sauté onion in remaining 1 tsp.
+					olive oil and cook bacon until crisp.
+				</li>
+				<li class="instructionItem">
+					<i class="fa-solid fa-3 numberItem"></i>Place burger on bottom half of bun, top with onions and Cheddar.
+				</li>
+				<li class="instructionItem">
+					<i class="fa-solid fa-4 numberItem"></i>Top with tomato slice, season with salt and pepper. Top with Swiss and bacon. Close with
+					bun top.
+				</li>
+			</ol>
+			<div class="doneButtonContainer">
+				<button class="doneButton">Mark this recipe as done <i class="fa-solid fa-circle-check"></i></button>
+			</div>
+		</div>
+
+		<div class="nutritionContainer">
+			<button class="nutritionButton" id="nutritionButton">Nutrition Facts <i class="fa-solid fa-chevron-down"></i></button>
+			<div class="nutritionFacts" id="nutritionFacts">
+				<span>Calories : 743</span>
+				<span>Total Fat : 40g</span>
+				<span>Saturated Fat: 15g</span>
+				<span>Cholesterol: 188mg</span>
+				<span>Sodium: 1183mg</span>
+				<span>Total Carbohydrate: 36g</span>
+				<span>Net carbs: 34g</span>
+				<span>Sugar: 3g</span>
+				<span>Fiber: 2g</span>
+				<span>Protein: 59g</span>
+				<!-- Nota de Jero: 'Cambiar formato <span>, por <ul> con <li>' -->
+			</div>
+		</div>
+
+		<script src="/js/pages/recipePage.js"></script>
+
+{{/base}}

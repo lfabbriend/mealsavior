@@ -28,6 +28,10 @@ router.get("/about", (_req, res) =>
   })
 );
 
+router.get("/recipe", (_req, res) =>
+  res.render("recipe", { title: "Recipe", layout: false })
+);
+
 // Recipes routes
 router.get("/recipes", recipesService.getMany.bind(recipesService)); //bind para no perder refencia del service que estoy usando
 

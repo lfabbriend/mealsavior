@@ -607,3 +607,238 @@ body {
 	background-color: #d5d5d5;
   }
   
+
+  /*recipe page*/
+
+@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Faustina:wght@300&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Yeseva+One&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Varela&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Tenor+Sans&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Forum&display=swap');
+
+.recipeDetailsImage {
+  display: flex;
+  justify-content: center;
+  margin: auto;
+  width: 80%;
+  height: auto;
+}
+.burguer {
+  width: 100%;
+  margin: auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.burguer:hover {
+  transform: scale(1.005);
+  transition: 500ms;
+}
+.recipeDetailsTitle {
+  display: flex;
+  flex-direction: row;
+  margin: auto;
+  justify-content: center;
+  background-color: #A9C52F;
+  padding: 1.875rem 15px;
+  width: 80%;
+  height: 30%;
+  font-size: 1.5em;
+}
+.recipeDetailsTitle h1 {
+  font-family: 'Forum', cursive;
+  color: black;
+}
+.recipeDetailsContainer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin: auto;
+  width: 80%;
+  height: 50%;
+  background-color: white;
+  color: var(--text-color);
+  padding: 40px;
+  vertical-align: baseline;
+}
+.detailsItem {
+  list-style-type: none;
+  font-family: 'Forum', cursive;
+  color: black;
+  font-weight: bolder;
+  font-weight: 900;
+  font-size: 1.5rem;
+}
+.raterStar {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  font-size: 1.25rem;
+  font-family: 'Oxygen', sans-serif;
+  font-weight: bolder;
+  height: 80px;
+  width: 200px;
+  background-color: #A9C52F;
+  padding: 10px;
+  border-radius: 30px;
+}
+.raterStar .star {
+  cursor: pointer;
+  font-size: 1.5rem;
+}
+.raterStar .fa-star:hover {
+  transform: scale(1.2);
+  transition: transform ease-in-out 200ms;
+}
+.listIcon {
+  color: var(--text-color);
+  padding-right: 10px;
+}
+.recipeIngredients {
+  background-color: #228896;
+  width: 80%;
+  margin: auto;
+  height: 100%;
+  font-weight: 400;
+  font-family: 'Forum', cursive; 
+  padding: 40px;
+  font-size: 1.5rem;
+}
+.recipeIngredients h3 {
+  color: whitesmoke;
+  font-size: 2rem;
+  font-weight: bolder;
+  margin-bottom: 10px;
+  margin-left: 40px;
+  font-family: 'Forum', cursive; 
+  text-decoration: underline;
+}
+.recipeIngredients .ingredientItem {
+  font-family: 'Forum', cursive; 
+  color: whitesmoke;
+  vertical-align: baseline;
+  font-weight: 200;
+  margin-left: 20px;
+}
+.recipeInstructions {
+  width: 80%;
+  margin: auto;
+  padding: 40px;
+  height: 100%;
+  background-color: white;
+  font-size: 1.5rem;
+  color: black;
+}
+
+.recipeInstructions h2 {
+  font-family: 'Forum', cursive; 
+  margin-bottom: 20px;
+  margin-left: 40px;
+  text-decoration: underline;
+}
+.recipeInstructions .numberItem {
+  vertical-align: baseline;
+  margin-right: 15px;
+  color: black;
+}
+.recipeInstructions .instructionItem {
+  font-family: 'Forum', cursive; 
+  color: black;
+  font-weight: 200;
+  list-style-type: none;
+  margin-bottom: 25px;
+}
+.recipeInstructions .instructionItem:hover {
+  transform: scale(1.025);
+  font-weight: bolder;
+  transition: 200ms;
+}
+.recipeInstructions .doneButton {
+  background-color: white;
+  color: #228896;
+  font-family: 'Forum', cursive; 
+  font-weight: bolder;
+  font-size: 1.5rem;
+  border: #228896 solid 5px;
+  border-radius: 30px;
+  padding: 10px;
+  margin-top: 20px;
+  margin-bottom: 20px;
+  width: 28%;
+}
+.recipeInstructions .doneButton.selected {
+  background-color: #228896;
+  /*cambiarlo x variable*/
+  color: white;
+  transition: background-color ease-in 250ms, color ease-in 250ms;
+}
+.recipeInstructions .doneButton:hover {
+  background-color: #228896;
+  color: white;
+  transition: background-color ease-in 250ms, color ease-in 250ms;
+  cursor: pointer;
+}
+.doneButtonContainer {
+  display: flex;
+  justify-content: center;
+  /* align-items: center; */
+}
+.nutritionContainer {
+  width: 80%;
+  height: 500px;
+  margin: auto;
+  background-color: white;
+  display: flex;
+  /* flex-direction: column; */
+  justify-content: center;
+   align-items: flex-start; 
+}
+.nutritionButton {
+  background-color: #0da45b;
+  color: white;
+  font-family: 'Forum', cursive; 
+  font-weight: bolder;
+  font-size: 1.5rem;
+  border: #0da45b solid 5px;
+  border-radius: 25px;
+  padding: 10px;
+  margin-top: 125px;
+  margin-bottom: 10px;
+  cursor: pointer;
+  text-decoration: underline;
+}
+.nutritionButton:hover {
+  background-color: white;
+  color: #0da45b;
+  transition: background-color ease-in 250ms, color ease-in 250ms;
+  cursor: pointer;
+}
+.nutritionFacts {
+  position: absolute;
+  transform: translateY(200px);
+  display: none;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 10px;
+  margin-bottom: 10px;
+  border-radius: 30px;
+  overflow: hidden;
+}
+.nutritionFacts.visible {
+  display: flex;
+  background-color: #f0ece7;
+  animation: reveal ease-out forwards 300ms;
+  transform-origin: top;
+  font-weight: bolder;
+  padding: 15px;
+  margin-bottom: 30px;
+}
+@keyframes reveal {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
