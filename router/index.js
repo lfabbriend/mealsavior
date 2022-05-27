@@ -12,6 +12,11 @@ router.get("/", (_req, res) =>
   res.render("home", { title: "Home", layout: false })
 );
 
+
+router.get("/signup", (_req, res) =>
+  res.render("signup", { title: "Signup", layout: false })
+);
+
 router.get("/about", (_req, res) =>
   res.render("about", {
     title: "About us",

@@ -1,3 +1,6 @@
+import {slides} from './slides.js'
+
+
 class Slider extends HTMLElement {
 	constructor() {
 		super();
@@ -136,3 +139,19 @@ export function setSlider(slides, infinite = false) {
 	slider.infinite = infinite;
 	return slider;
 }
+
+
+//#region Slider
+const containerSlider = document.querySelector('#sliderContainer');
+
+/* const slider = setSlider(slides, true);
+
+slides.forEach(slide => {
+	containerSlider.appendChild(slider)
+});
+ */
+
+const slider = setSlider(slides, true);
+containerSlider.appendChild(slider); 
+
+//#endregion

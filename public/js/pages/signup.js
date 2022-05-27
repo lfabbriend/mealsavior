@@ -1,14 +1,5 @@
 import { baseApiUrl } from '/js/utils/constants.js';
-import { setLoginToken, removeLoginToken } from '/js/utils/helpers.js';
-import { setSlider } from '/components/slider.js';
-
-//#region Login
-removeLoginToken();
-
-const form = document.getElementById('loginForm');
-const guestOptionBtn = document.getElementById('guestOptionBtn');
-const userOptionBtn = document.getElementById('userOptionBtn');
-const userInput = (document.getElementById('userInput').style.display = 'none');
+import '/components/slider.js';
 
 
 // estos dos son para sacar el navbar y el footer del login, la manera correcta es hacerlo con las condiciones de los handlebars
@@ -18,38 +9,37 @@ navbar.style.display = 'none';
 const footer = document.querySelector('.footerBody');
 footer.style.display = 'none';
 
+const form = document.getElementById('signUpForm');
 
-userOptionBtn.addEventListener('click', () => {
-	document.getElementById('userInput').style.display = 'block'; //it only appears when page is reloaded
-
-	form.addEventListener('submit', event => {
-		event.preventDefault();
-
-		const formData = new FormData(event.currentTarget);
-		const userName = formData.get('userName');
-		const password = formData.get('password');
-
-		fetch(`${baseApiUrl}/login`, {
+form.addEventListener('submit', event => {
+	event.preventDefault();
+	const formData = new FormData(event.currentTarget);
+	const userName = formData.get('userName');
+	const email = formData.get('email');
+	const password = formData.get('password');
+	
+	if(email){
+		fetch(`${baseApiUrl}/signup`, {
+			//acá iría una ruta singup a la API
 			method: 'POST',
-			body: JSON.stringify({ userName, password }),
+			body: JSON.stringify({
+				userName,
+				email,
+				password
+			}),
 			headers: {
 				Accept: 'application/json',
 				'Content-Type': 'application/json'
 			}
 		})
 			.then(response => response.json())
-			.then(token => {
-				if (!token.length) throw new Error('Invalid user or password');
+			.then(json => console.log(json))
+			.catch(error => console.warn(error));
+	}else{
+		alert("please fill out the field email");
+	}
 
-				setLoginToken(token);
-				location.href = '/';
-			})
-			.catch(error => alert(error));
-	});
-});
-//#endregion
-/* 
-//#region Slider
+/* 	//#region Slider
 const containerSlider = document.querySelector('#sliderContainer');
 const slides = Object.freeze([
 	{
@@ -75,11 +65,23 @@ const slider = setSlider(slides, true);
 containerSlider.appendChild(slider);
 //#endregion */
 
-guestOptionBtn.addEventListener('click', () => {
-	localStorage.removeItem('token');
-	//localStorage.setItem('token', undefined);//aca hay que removerlo
-	location.href = '/';
+
+	/*el siguiente bloque no es necesario fue reemplazado adentro del if para que valide el email que es el unico campo que no puede ser validado x el html*/ 
+
+	/* fetch(`${baseApiUrl}/signup`, {
+		//acá iría una ruta singup a la API
+		method: 'POST',
+		body: JSON.stringify({
+			userName,
+			email,
+			password
+		}),
+		headers: {
+			Accept: 'application/json',
+			'Content-Type': 'application/json'
+		}
+	})
+		.then(response => response.json())
+		.then(json => console.log(json))
+		.catch(error => console.warn(error)); */
 });
-
-
-

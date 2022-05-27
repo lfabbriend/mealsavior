@@ -11,24 +11,11 @@
 			</div>
 		</div>
 
-		<div class="containerLogin">
-			<div class="sliderSection" id="sliderContainer">
-				<template id="slider-template">
-					<div class="slider">
-						<button class="slider-prev-btn"></button>
-						<button class="slider-next-btn"></button>
-					</div>
-				</template>
-
-				<template id="slide-template">
-					<div class="slide">
-						<div class="slide-text">
-							<h2 id="slide-title"></h2>
-							<p id="slide-description"></p>
-						</div>
-					</div>
-				</template>
-			</div>
+		 <div class="containerLogin">
+			 <div class="sliderSection" id="sliderContainer">
+				{{#> slider}}
+				{{/slider}}
+			 </div>
 
 			<form class="loginSection" id="loginForm" method="post">
 				<h2>Welcome!</h2>
@@ -46,7 +33,7 @@
 					<input class="login-input" type="text" name="userName" placeholder="Username" required />
 					<input class="login-input" type="password" name="password" placeholder="Password" required />
 				</div>
-				<a class="signUpLink" href="./singup.html">Don't you have an account? Sign up!</a>
+				<a class="signUpLink" href="./signup">Don't you have an account? Sign up!</a>
 				<div class="g-signin2" data-width="225" data-height="50" data-longtitle="true"></div>
 				<input class="login-input" type="submit" value="Log In" id="submitBtn" />
 			</form>

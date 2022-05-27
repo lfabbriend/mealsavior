@@ -1,0 +1,42 @@
+{{#> base}}
+
+    <h1>{{title}}</h1>
+
+    <style>body{background-color:lightblue}</style><!--esto no tiene que estar aca-->
+
+     <div class="loginPageHeader">
+			<img src="/assets/img/mealsavior.png" />
+			<div class="subtitle">
+				<p>Open your fridge, select your ingredients</p>
+			</div>
+		</div>
+
+		<div class="containerLogin">
+			<div class="sliderSection" id="sliderContainer">
+				{{#> slider}}
+			    {{/slider}}
+			</div>
+			
+			<form class="loginSection" id="signUpForm" method="post">
+				<div class="login-signIn">
+					<a class="signInBtn">Sign up</a>
+				</div>
+				<input class="login-input" type="text" name="userName" placeholder="Username" required />
+				<input class="login-input" type="email" name="email" placeholder="Email"/><!--el required rompe la validacion x eso la saque de aca-->
+				<input class="login-input" type="password" name="password" placeholder="Password" required />
+				<div class="g-signin2" data-onsuccess="onSignIn"></div>
+				<input class="login-input" type="submit" value="Sign Up" id="submitBtn" />
+			</form>
+		</div>
+
+
+		<script src="/js/pages/signup.js" type="module"></script>
+		<script src="/js/utils/googlelogin.js" async defer></script>
+		<script src="https://apis.google.com/js/platform.js" async defer></script>
+		<script
+			src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/js/bootstrap.bundle.min.js"
+			integrity="sha384-p34f1UUtsS3wqzfto5wAAmdvj+osOnFyQFpp4Ua3gs/ZVWx6oOypYoCJhGGScy+8"
+			crossorigin="anonymous"></script>
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
+{{/base}}
