@@ -48,121 +48,21 @@
 			</div>
 
 			<div class="recipesContainer">
-				<a href="/recipe" class="recipe recipe1">
+				{{#each recipes}}
+				<a href="/recipe" class="recipe">
 					<div class="recipeImage">
-						<img src="https://i.blogs.es/58e562/hambruguesa/1366_2000.jpg" alt="recipe" class="recipeImg" />
+						<img src="{{this.image}}" alt="recipe" class="recipeImg" />
 					</div>
 					<div class="cardDetails">
-						<h3>DoubleCheese Burguer</h3>
-						<p>
-							Lorem ipsum dolor sit amet consectetur adipisicing elit. Ea nihil distinctio quia labore repellendus. Facere, molestias
-							voluptatem. Numquam doloremque, asperiores quia repudiandae atque cumque eos, vel laboriosam, fugiat quidem commodi!
-						</p>
+						<h3>{{this.name}}</h3>
+						<p>{{this.description}}</p> 
 					</div>
 				</a>
-				<a class="recipe recipe2">
-					<div class="recipeImage">
-						<img
-							src="https://imagesvc.meredithcorp.io/v3/mm/image?url=https%3A%2F%2Fstatic.onecms.io%2Fwp-content%2Fuploads%2Fsites%2F21%2F2018%2F02%2F14%2Frecetas-4115-spaghetti-boloesa-facil-2000.jpg&q=60"
-							alt="recipe"
-							class="recipeImg" />
-					</div>
-					<div class="cardDetails">
-						<h3>Spaghetti Rock</h3>
-						<p>
-							Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolor quia neque aperiam nesciunt omnis asperiores, rem, dicta
-							numquam dolores officiis fuga culpa eligendi inventore voluptatibus libero. Impedit esse dolor quod.
-						</p>
-					</div>
-				</a>
-				<a class="recipe recipe3">
-					<div class="recipeImage">
-						<img
-							src="https://img-global.cpcdn.com/recipes/recipes_166271_v1428083076_receta_foto_00166271-l8sozatquuh1mrqtfac2/1200x630cq70/photo.jpg"
-							alt="recipe"
-							class="recipeImg" />
-					</div>
-					<div class="cardDetails">
-						<h3>Sweet Sushi</h3>
-						<p>
-							Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolor quia neque aperiam nesciunt omnis asperiores, rem, dicta
-							numquam dolores officiis fuga culpa eligendi inventore voluptatibus libero. Impedit esse dolor quod.
-						</p>
-					</div>
-				</a>
-				<div class="recipe recipe4">
-					<div class="recipeImage">
-						<img src="https://static.misionesonline.news/wp-content/uploads/2020/05/28163533/milaaa.jpg" alt="recipe" class="recipeImg" />
-					</div>
-					<div class="cardDetails">
-						<h3>Milanesa Argenta</h3>
-						<p>
-							Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolor quia neque aperiam nesciunt omnis asperiores, rem, dicta
-							numquam dolores officiis fuga culpa eligendi inventore voluptatibus libero. Impedit esse dolor quod.
-						</p>
-					</div>
-				</div>
-				<a class="recipe recipe5">
-					<div class="recipeImage">
-						<img
-							src="https://www.simplyrecipes.com/thmb/JWjdE8YwikAae0KZuyy6ZJW7Utw=/3000x2001/filters:no_upscale():max_bytes(150000):strip_icc()/Simply-Recipes-Homemade-Pizza-Dough-Lead-Shot-1c-c2b1885d27d4481c9cfe6f6286a64342.jpg"
-							alt="recipe"
-							class="recipeImg" />
-					</div>
-					<div class="cardDetails">
-						<h3>Homemade Pizza</h3>
-						<p>
-							Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolor quia neque aperiam nesciunt omnis asperiores, rem, dicta
-							numquam dolores officiis fuga culpa eligendi inventore voluptatibus libero. Impedit esse dolor quod.
-						</p>
-					</div>
-				</a>
-				<a class="recipe recipe6">
-					<div class="recipeImage">
-						<img
-							src="https://static.onecms.io/wp-content/uploads/sites/44/2022/03/01/cucumber-vinegar-salad.jpg"
-							alt="recipe"
-							class="recipeImg" />
-					</div>
-					<div class="cardDetails">
-						<h3>Cucumber Vinegar Salad</h3>
-						<p>
-							Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolor quia neque aperiam nesciunt omnis asperiores, rem, dicta
-							numquam dolores officiis fuga culpa eligendi inventore voluptatibus libero. Impedit esse dolor quod.
-						</p>
-					</div>
-				</a>
-				<a class="recipe recipe7">
-					<div class="recipeImage">
-						<img
-							src="https://static01.nyt.com/images/2019/01/08/dining/jm-creamy-macaroni-and-cheese/jm-creamy-macaroni-and-cheese-articleLarge-v2.jpg"
-							alt="recipe"
-							class="recipeImg" />
-					</div>
-					<div class="cardDetails">
-						<h3>Creamy Mac N Cheese</h3>
-						<p>
-							Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolor quia neque aperiam nesciunt omnis asperiores, rem, dicta
-							numquam dolores officiis fuga culpa eligendi inventore voluptatibus libero. Impedit esse dolor quod.
-						</p>
-					</div>
-				</a>
-				<a class="recipe recipe8">
-					<div class="recipeImage">
-						<img src="https://comedelahuerta.com/wp-content/uploads/2020/09/iStock-1180869403.jpg" alt="recipe" class="recipeImg" />
-					</div>
-					<div class="cardDetails">
-						<h3>Epic Ratatouille</h3>
-						<p>
-							Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolor quia neque aperiam nesciunt omnis asperiores, rem, dicta
-							numquam dolores officiis fuga culpa eligendi inventore voluptatibus libero. Impedit esse dolor quod.
-						</p>
-					</div>
-				</a>
+				{{/each}}
 			</div>
 		</div>
 
 	<script src="/js/utils/selects.js"></script>
-	<script src="/js/utils/rater.js"></script>	
+	{{!-- <script src="/js/utils/rater.js"></script>	 --}}
 
 {{/base}}

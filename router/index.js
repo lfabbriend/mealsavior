@@ -9,7 +9,20 @@ const ingredientsService = new IngredientsService();
 const loginService = new LoginService();
 
 router.get("/", (_req, res) =>
-  res.render("home", { title: "Home", layout: false })
+  res.render("home", { 
+    title: "Home",
+    layout: false,
+	recipes: [
+		{name: "DoubleCheese Burguer", description:"Lorem ipsum dolor sit amet consectetur adipisicing elit. Ea nihil distinctio quia labore repellendus. Facere, molestiasvoluptatem. Numquam doloremque, asperiores quia repudiandae atque cumque eos, vel laboriosam, fugiat quidem commodi!", image:"https://i.blogs.es/58e562/hambruguesa/1366_2000.jpg"},
+		{name: "Spaghetti Rock", description:"Lorem ipsum dolor sit amet consectetur adipisicing elit. Ea nihil distinctio quia labore repellendus. Facere, molestiasvoluptatem. Numquam doloremque, asperiores quia repudiandae atque cumque eos, vel laboriosam, fugiat quidem commodi!", image:"https://imagesvc.meredithcorp.io/v3/mm/image?url=https%3A%2F%2Fstatic.onecms.io%2Fwp-content%2Fuploads%2Fsites%2F21%2F2018%2F02%2F14%2Frecetas-4115-spaghetti-boloesa-facil-2000.jpg&q=60"},
+		{name: "Sweet Sushi", description:"Lorem ipsum dolor sit amet consectetur adipisicing elit. Ea nihil distinctio quia labore repellendus. Facere, molestiasvoluptatem. Numquam doloremque, asperiores quia repudiandae atque cumque eos, vel laboriosam, fugiat quidem commodi!", image:"https://img-global.cpcdn.com/recipes/recipes_166271_v1428083076_receta_foto_00166271-l8sozatquuh1mrqtfac2/1200x630cq70/photo.jpg"},
+		{name: "Milanesa Argenta", description:"Lorem ipsum dolor sit amet consectetur adipisicing elit. Ea nihil distinctio quia labore repellendus. Facere, molestiasvoluptatem. Numquam doloremque, asperiores quia repudiandae atque cumque eos, vel laboriosam, fugiat quidem commodi!", image:"https://static.misionesonline.news/wp-content/uploads/2020/05/28163533/milaaa.jpg"},
+		{name: "Homemade Pizza", description:"Lorem ipsum dolor sit amet consectetur adipisicing elit. Ea nihil distinctio quia labore repellendus. Facere, molestiasvoluptatem. Numquam doloremque, asperiores quia repudiandae atque cumque eos, vel laboriosam, fugiat quidem commodi!", image:"https://www.simplyrecipes.com/thmb/JWjdE8YwikAae0KZuyy6ZJW7Utw=/3000x2001/filters:no_upscale():max_bytes(150000):strip_icc()/Simply-Recipes-Homemade-Pizza-Dough-Lead-Shot-1c-c2b1885d27d4481c9cfe6f6286a64342.jpg"},
+		{name: "Cucumber Vinegar Salad", description:"Lorem ipsum dolor sit amet consectetur adipisicing elit. Ea nihil distinctio quia labore repellendus. Facere, molestiasvoluptatem. Numquam doloremque, asperiores quia repudiandae atque cumque eos, vel laboriosam, fugiat quidem commodi!", image:"https://static.onecms.io/wp-content/uploads/sites/44/2022/03/01/cucumber-vinegar-salad.jpg"},
+		{name: "Creamy Mac N Cheese", description:"Lorem ipsum dolor sit amet consectetur adipisicing elit. Ea nihil distinctio quia labore repellendus. Facere, molestiasvoluptatem. Numquam doloremque, asperiores quia repudiandae atque cumque eos, vel laboriosam, fugiat quidem commodi!", image:"https://static01.nyt.com/images/2019/01/08/dining/jm-creamy-macaroni-and-cheese/jm-creamy-macaroni-and-cheese-articleLarge-v2.jpg"},
+		{name: "Epic Ratatouille", description:"Lorem ipsum dolor sit amet consectetur adipisicing elit. Ea nihil distinctio quia labore repellendus. Facere, molestiasvoluptatem. Numquam doloremque, asperiores quia repudiandae atque cumque eos, vel laboriosam, fugiat quidem commodi!", image:"https://comedelahuerta.com/wp-content/uploads/2020/09/iStock-1180869403.jpg"}
+		],
+	})
 );
 
 
