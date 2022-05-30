@@ -46,19 +46,20 @@
 
 				<input class="submitFiltersBtn" type="submit" value="Search" id="submitFiltersBtn" />
 			</div>
-
-			<div class="recipesContainer">
-				{{#each recipes}}
-				<a href="/recipe" class="recipe">
-					<div class="recipeImage">
-						<img src="{{this.image}}" alt="recipe" class="recipeImg" />
-					</div>
-					<div class="cardDetails">
-						<h3>{{this.name}}</h3>
-						<p>{{this.description}}</p> 
-					</div>
-				</a>
-				{{/each}}
+			<div class="mainRecipeContainer"><!--este es para tener un div del 100% para despues alinear el siguiente div a la izquierda-->
+				<div class="recipesContainer">
+					{{#each recipes}}
+					<a href="/recipe" class="recipe">
+						<div class="recipeImage">
+							<img src="{{this.image}}" alt="recipe" class="recipeImg" />
+						</div>
+						<div class="cardDetails">
+							<h3>{{this.name}}</h3>
+							<p>{{this.description}}</p> 
+						</div>
+					</a>
+					{{/each}}
+				</div>
 			</div>
 		</div>
 

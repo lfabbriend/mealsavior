@@ -17,6 +17,11 @@
 .container{
 	display: flex;
 }
+.mainRecipeContainer{
+	display: flex;
+	width: 100%;
+	justify-content: flex-end;
+}
 
 .filtersContainer{
 	 //display: flex;
@@ -29,6 +34,8 @@
 	margin-top: 10%;
 	justify-content: center;
 	max-height: 500px;/*este despues se va a tener que cambiar, no puede quedar estatico*/
+	position: fixed;
+	z-index: 999;
 }
 
 .filter-title{

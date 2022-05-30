@@ -580,6 +580,12 @@ header{
   }
   .containerHome {
 	display: flex;
+	width: 100%;
+  }
+  .mainRecipeContainer{
+	display: flex;
+	width: 100%;
+	justify-content: flex-end;
   }
   .filtersContainer {
 	max-width: 30%;
@@ -591,12 +597,19 @@ header{
 	margin-top: 10%;
 	justify-content: center;
 	max-height: 600px;
+	position: fixed;
+	z-index: 999;
+
   }
 
   @media (max-width: 1300px){
+	.mainRecipeContainer{
+		justify-content: center;
+	}
 	  .filtersContainer{
 		  max-width: 95%;
 		  min-width: 95%;
+		  position: static;
 	  }
 	  .recipesContainer{
 		max-width: 100%;
