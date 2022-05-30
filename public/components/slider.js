@@ -144,14 +144,12 @@ export function setSlider(slides, infinite = false) {
 //#region Slider
 const containerSlider = document.querySelector('#sliderContainer');
 
+const slider = setSlider(slides, true);
+containerSlider.appendChild(slider); 
+
 /* const slider = setSlider(slides, true);
 
 slides.forEach(slide => {
 	containerSlider.appendChild(slider)
 });
  */
-
-const slider = setSlider(slides, true);
-containerSlider.appendChild(slider); 
-
-//#endregion

@@ -59,6 +59,12 @@ body {
 
 /*esto es el estilo del navbar*/
 
+header{
+	position: fixed;
+	width: 100%;
+	z-index: 1000;
+}
+
 .navigation {
     position: relative;
     top: 0;
