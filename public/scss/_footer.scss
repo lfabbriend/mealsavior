@@ -1,29 +1,26 @@
+.marca-footer {
+	height: 100%;
+	width: 20%;
+	margin-left: 2%;
+	img {
+		height: 100%;
+		width: 100%;
+	}
+}
 .guest-user {
 	.footerBody {
 		background-color: red;
 	}
 }
-
 .footerBody {
 	position: fixed;
 	bottom: 0;
 	left: 0;
 	width: 100%;
 	display: flex;
-	background-color: var(--footer-primary-color);
+	background-color: #283739;
 	transition: transform ease 250ms;
 	transform: translateY(100%);
-
-	&.visible {
-		transform: translate(0);
-
-		.bichito {
-			.fa-chevron-down {
-				transform: rotate(180deg);
-			}
-		}
-	}
-
 	.bichito {
 		position: absolute;
 		left: 50px;
@@ -31,13 +28,12 @@
 		background-color: transparent;
 		border: none;
 		cursor: pointer;
-
+		z-index: 100;
 		&:hover {
 			img {
 				transform: scale(1.1);
 			}
 		}
-
 		img {
 			height: 75px;
 			object-fit: contain;
@@ -45,7 +41,6 @@
 			transform-origin: bottom;
 			margin: 0;
 		}
-
 		.fa-chevron-down {
 			position: relative;
 			left: 15px;
@@ -54,28 +49,23 @@
 			transition: transform ease-in 250ms;
 		}
 	}
-
-
-
 	a {
-			color: white;
-			text-decoration: none;
+		color: white;
+		text-decoration: none;
+	}
+	.socialMedia {
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		gap: 20px;
+		width: 100%;
+		height: auto;
+		&:hover {
+			color: #283739;
+			transition: color ease-in 250ms;
 		}
-		.socialMedia {
-			display: flex;
-			justify-content: center;
-			align-items: center;
-			gap: 20px;
-			width: 100%;
-			height: auto;
-			:hover {
-				color: var(--footer-hover-color);
-				transition: color ease-in 250ms;
-			}
-		}
-
-
-	.footerCenter{
+	}
+	.footerCenter {
 		display: flex;
 		align-items: center;
 		justify-content: space-around;
@@ -85,11 +75,11 @@
 		gap: 10px;
 		margin-left: 25px;
 		margin-right: 25px;
-		.footerButton{
+		.footerButton {
 			background-color: transparent;
 			border: 3px solid whitesmoke;
 			border-radius: 10px;
-			font-family: var(--primary-font);
+			font-family: 'Oxygen', sans-serif;
 			color: whitesmoke;
 			font-size: 1.1rem;
 			font-weight: bolder;
@@ -98,17 +88,17 @@
 			text-align: center;
 			cursor: pointer;
 			min-width: 125px;
+			&:hover {
+				color: black;
+				background-color: whitesmoke;
+				transition: color, background-color, ease-in 250ms;
+			}
 		}
-		.footerButton:hover{
-			color: black;
-			background-color: whitesmoke;
-			transition: color, background-color, ease-in 250ms;
-		}	
 		a {
 			color: white;
 			text-decoration: none;
 			border-radius: 20px;
-			.fa-brands{
+			.fa-brands {
 				font-size: 1.5rem;
 				padding: 5px;
 				border-radius: 20px;
@@ -121,13 +111,20 @@
 			gap: 40px;
 			width: 100%;
 			height: auto;
-			:hover{
+			&:hover {
 				color: black;
 				background-color: white;
 				transform: scale(1.1);
-				
 				transition: background-color, color, transform, ease-in 250ms;
 			}
+		}
+	}
+}
+.footerBody.visible {
+	transform: translate(0);
+	.bichito {
+		.fa-chevron-down {
+			transform: rotate(180deg);
 		}
 	}
 }

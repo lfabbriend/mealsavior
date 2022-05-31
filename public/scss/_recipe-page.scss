@@ -10,252 +10,222 @@
 	display: flex;
 	justify-content: center;
 	margin: auto;
-	width: 1200px;
+	width: 80%;
 	height: auto;
 }
-
 .burguer {
 	width: 100%;
 	margin: auto;
 	display: flex;
 	justify-content: center;
 	align-items: center;
+	&:hover {
+		transform: scale(1.005);
+		transition: 500ms;
+	}
 }
-
-.burguer:hover {
-	transform: scale(1.005);
-	transition: 500ms;
-}
-
 .recipeDetailsTitle {
 	display: flex;
 	flex-direction: row;
 	margin: auto;
 	justify-content: center;
-	background-color: var(--secondary-color2);
+	background-color: #a9c52f;
 	padding: 1.875rem 15px;
-	width: 1200px;
-    height: 100%;
-    font-size: 1.5em;
+	width: 80%;
+	height: auto;
+	font-size: 1.5em;
 	h1 {
-		font-family: var(--secondary-font);
-		color: var(--texto-color);
+		font-family: 'Forum', cursive;
+		color: black;
 	}
 }
-
 .recipeDetailsContainer {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
 	margin: auto;
-	width: 1200px;
-    height: 100%;
+	width: 80%;
+	height: auto;
 	background-color: white;
 	color: var(--text-color);
 	padding: 40px;
-    vertical-align: baseline;
+	vertical-align: baseline;
 }
-
-
-
-.detailsItem{
-    list-style-type: none;
-    font-family: var(--secondary-font);
-    color: var(--text-color);
-    font-weight: bolder;
-    font-weight: 900;
-    font-size: 1.5rem;
+.detailsItem {
+	list-style-type: none;
+	font-family: 'Forum', cursive;
+	color: black;
+	font-weight: bolder;
+	font-weight: 900;
+	font-size: 1.5rem;
 }
-
-
-.raterStar{
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    font-size: 1.25rem;
-    font-family: var(--primary-font);
-    font-weight: bolder;
-    height: 80px;
-    width: 200px;
-    background-color: var(--secondary-color2);
-    padding: 10px;
-    border-radius: 30px;
-    .star{
-        cursor: pointer;
-        font-size: 1.5rem;
-    }
-    .fa-star:hover{
-        transform: scale(1.2);
-        transition: transform ease-in-out 200ms;
-    }
+.raterStar {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	font-size: 1.25rem;
+	font-family: 'Oxygen', sans-serif;
+	font-weight: bolder;
+	height: 80px;
+	width: 200px;
+	background-color: #a9c52f;
+	padding: 10px;
+	border-radius: 30px;
+	.star {
+		cursor: pointer;
+		font-size: 1.5rem;
+	}
+	.fa-star {
+		&:hover {
+			transform: scale(1.2);
+			transition: transform ease-in-out 200ms;
+		}
+	}
 }
-
-
-.listIcon{
-    color: var(--text-color);
-    padding-right: 10px
+.listIcon {
+	color: var(--text-color);
+	padding-right: 10px;
 }
-
-.recipeIngredients{
-    background-color: var(--secondary-color);
-    width: 1200px;
-    margin: auto;
-    height: 100%;
-    font-weight: 400;
-    font-family: var(--secondary-font);
-    padding: 40px;
-    font-size: 1.5rem;
-    
-    h3{
-        color: whitesmoke;
-        font-size: 2rem;
-        font-weight: bolder;
-        margin-bottom: 10px;
-        margin-left: 40px;
-        font-family: var(--secondary-font);
-        text-decoration: underline;
-    }
-
-    .ingredientItem{
-        font-family: var(--secondary-font);
-        color: whitesmoke;
-        vertical-align: baseline;
-        font-weight: 200;
-        margin-left: 20px;
-    }
+.recipeIngredients {
+	background-color: #228896;
+	width: 80%;
+	margin: auto;
+	height: auto;
+	font-weight: 400;
+	font-family: 'Forum', cursive;
+	padding: 40px;
+	font-size: 1.5rem;
+	h3 {
+		color: whitesmoke;
+		font-size: 2rem;
+		font-weight: bolder;
+		margin-bottom: 10px;
+		margin-left: 40px;
+		font-family: 'Forum', cursive;
+		text-decoration: underline;
+	}
+	.ingredientItem {
+		font-family: 'Forum', cursive;
+		color: whitesmoke;
+		vertical-align: baseline;
+		font-weight: 200;
+		margin-left: 20px;
+	}
 }
-
-
-.recipeInstructions{
-    width: 1200px;
-    margin: auto;
-    padding: 40px;
-    height: 100%;
-    background-color: white;
-    font-size: 1.5rem;
-    color: black;
-    h2{
-        font-family: var(--secondary-font);
-        margin-bottom: 20px;
-        margin-left: 40px;
-        text-decoration: underline;
-    }
-    .numberItem{
-        vertical-align: baseline;
-        margin-right: 15px;
-        color: var(--texto-color);
-    }
-    .instructionItem{
-        font-family: var(--secondary-font);
-        color: black;
-        font-weight: 200;
-        list-style-type: none;
-        margin-bottom: 25px;
-    }
-
-    .instructionItem:hover{
-        transform: scale(1.025);
-        font-weight: bolder;
-        transition: 200ms;
-    }
-
-    .doneButton{
-        background-color: white;
-        color: var(--secondary-color);
-        font-family: var(--secondary-font);
-        font-weight: bolder;
-        font-size: 1.5rem;
-        border: var(--secondary-color) solid 5px;
-        border-radius: 30px;
-        padding: 10px;
-        margin-top: 20px;
-        margin-bottom: 20px;
+.recipeInstructions {
+	width: 80%;
+	margin: auto;
+	padding: 40px;
+	height: auto;
+	background-color: white;
+	font-size: 1.5rem;
+	color: black;
+	h2 {
+		font-family: 'Forum', cursive;
+		margin-bottom: 20px;
+		margin-left: 40px;
+		text-decoration: underline;
+	}
+	.numberItem {
+		vertical-align: baseline;
+		margin-right: 15px;
+		color: black;
+	}
+	.instructionItem {
+		font-family: 'Forum', cursive;
+		color: black;
+		font-weight: 200;
+		list-style-type: none;
+		margin-bottom: 25px;
+		&:hover {
+			transform: scale(1.025);
+			font-weight: bolder;
+			transition: 200ms;
+		}
+	}
+	.doneButton {
+		background-color: white;
+		color: #228896;
+		font-family: 'Forum', cursive;
+		font-weight: bolder;
+		font-size: 1.5rem;
+		border: #228896 solid 5px;
+		border-radius: 30px;
+		padding: 10px;
+		margin-top: 20px;
+		margin-bottom: 20px;
 		width: 28%;
-
-		&.selected{
-			background-color: var(--secondary-color); /*cambiarlo x variable*/ 
+		&:hover {
+			background-color: #228896;
 			color: white;
 			transition: background-color ease-in 250ms, color ease-in 250ms;
+			cursor: pointer;
 		}
-    }
-
-    .doneButton:hover{
-        background-color: var(--secondary-color);
-        color: white;
-        transition: background-color ease-in 250ms, color ease-in 250ms;
-        cursor: pointer;
-    }
+	}
+	.doneButton.selected {
+		background-color: #228896;
+		color: white;
+		transition: background-color ease-in 250ms, color ease-in 250ms;
+	}
 }
-
-.doneButtonContainer{
-    display: flex;
-    justify-content: center;
-    align-items: center;
+.doneButtonContainer {
+	display: flex;
+	justify-content: center;
 }
-
-.nutritionContainer{
-    width: 80%;
+.nutritionContainer {
+	width: 80%;
 	height: 500px;
 	margin: auto;
 	background-color: white;
 	display: flex;
-	/* flex-direction: column; */
 	justify-content: center;
-    align-items: flex-start;
+	align-items: flex-start;
 }
-
-
-.nutritionButton{
-    background-color: var(--hover-secondary-color);
-    color: white;
-    font-family: var(--secondary-font);
-    font-weight: bolder;
-    font-size: 1.5rem;
-    border: var(--hover-secondary-color) solid 5px;
-    border-radius: 25px;
-    padding: 10px;
-    margin-top: 10px;
-    margin-bottom: 10px;
-    cursor: pointer;
-    text-decoration: underline;
-}
-
-.nutritionButton:hover{
-    background-color: white;
-    color: var(--hover-secondary-color);
-    transition: background-color ease-in 250ms, color ease-in 250ms;
-    cursor: pointer;
-}
-
-.nutritionFacts{
-    background-color: #0da45b;
+.nutritionButton {
+	background-color: #0da45b;
 	color: white;
-	font-family: 'Forum', cursive; 
+	font-family: 'Forum', cursive;
 	font-weight: bolder;
 	font-size: 1.5rem;
 	border: #0da45b solid 5px;
 	border-radius: 25px;
 	padding: 10px;
-	margin-top: 125px;
-	margin-bottom: 10px;
+	margin-top: 0px;
+	margin-bottom: 250px;
 	cursor: pointer;
 	text-decoration: underline;
-    &.visible{
-        display: flex;
-        background-color: #f0ece7;
-        animation: reveal ease-out forwards 300ms;
-        transform-origin: top;
-        font-weight: bolder;
-        padding: 15px;
-        margin-bottom: 30px;
-    }
+	&:hover {
+		background-color: white;
+		color: #0da45b;
+		transition: background-color ease-in 250ms, color ease-in 250ms;
+		cursor: pointer;
+	}
 }
-
+.nutritionFacts {
+	position: absolute;
+	transform: translateY(60px);
+	display: none;
+	flex-direction: column;
+	align-items: center;
+	margin-top: 10px;
+	margin-bottom: 10px;
+	border-radius: 30px;
+	overflow: hidden;
+}
+.nutritionFacts.visible {
+	display: flex;
+	background-color: #f0ece7;
+	animation: reveal ease-out forwards 300ms;
+	transform-origin: top;
+	font-weight: bolder;
+	padding: 15px;
+	margin-bottom: 30px;
+}
 @keyframes reveal {
-    from {
-        opacity: 0;
-    }
-    to {
-        opacity: 1;
-    }
+	from {
+		opacity: 0;
+	}
+	to {
+		opacity: 1;
+	}
 }
