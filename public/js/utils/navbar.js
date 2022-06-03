@@ -1,5 +1,5 @@
 const menuBtn = document.querySelector('.menu-btn');
-	
+
 menuBtn.addEventListener('click', ()=>{
 	const desplegableMenu = document.querySelector('.desplegableMenu');
 	if(desplegableMenu.classList.contains('show')){
@@ -7,3 +7,4 @@ menuBtn.addEventListener('click', ()=>{
 	}else{
 		desplegableMenu.classList.add('show');
 	}});
+

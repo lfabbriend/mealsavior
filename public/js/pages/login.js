@@ -18,7 +18,6 @@ navbar.style.display = 'none';
 const footer = document.querySelector('.footerBody');
 footer.style.display = 'none';
 
-
 userOptionBtn.addEventListener('click', () => {
 	document.getElementById('userInput').style.display = 'block'; //it only appears when page is reloaded
 

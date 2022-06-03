@@ -57,7 +57,7 @@
 		display: flex;
 		justify-content: center;
 		align-items: center;
-		gap: 20px;
+		gap: 40px;
 		width: 100%;
 		height: auto;
 		&:hover {
@@ -104,7 +104,7 @@
 				border-radius: 20px;
 			}
 		}
-		.socialMedia {
+		.socialMedia i{
 			display: flex;
 			justify-content: center;
 			align-items: center;
