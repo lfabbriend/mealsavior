@@ -3,6 +3,7 @@ import RecipesService from "../services/recipes.service.js";
 import IngredientsService from "../services/ingredients.service.js";
 import LoginService from "../services/login.service.js";
 
+
 const router = Router();
 const recipesService = new RecipesService();
 const ingredientsService = new IngredientsService();
@@ -29,6 +30,11 @@ router.get("/", (_req, res) =>
 router.get("/signup", (_req, res) =>
   res.render("signup", { title: "Signup", layout: false })
 );
+
+router.post("/signup", (req, res) =>{
+  console.log(req.body)
+  res.send({token: "sarasa"});
+});
 
 router.get("/about", (_req, res) =>
   res.render("about", {

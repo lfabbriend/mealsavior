@@ -1,7 +1,6 @@
 import { baseApiUrl } from '/js/utils/constants.js';
 import '/components/slider.js';
 
-
 // estos dos son para sacar el navbar y el footer del login, la manera correcta es hacerlo con las condiciones de los handlebars
 const navbar = document.querySelector('.navigation');
 navbar.style.display = 'none';
@@ -17,8 +16,8 @@ form.addEventListener('submit', event => {
 	const userName = formData.get('userName');
 	const email = formData.get('email');
 	const password = formData.get('password');
-	
-	if(email){
+
+	if (email) {
 		fetch(`${baseApiUrl}/signup`, {
 			//acá iría una ruta singup a la API
 			method: 'POST',
@@ -33,9 +32,15 @@ form.addEventListener('submit', event => {
 			}
 		})
 			.then(response => response.json())
-			.then(json => console.log(json))
+			.then(user => {
+				if (user.token){
+					window.location.href = '/';
+				}else{
+					alert("usuario incorrecto")
+				}
+			})
 			.catch(error => console.warn(error));
-	}else{
-		alert("please fill out the field email");
+	} else {
+		alert('please fill out the field email');
 	}
 });
